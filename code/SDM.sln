@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Startup", "Startup", "{9716
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupInfo.Interface", "XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj", "{9BDDE43E-7458-476D-980C-C2B32566B129}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupInfo.Implementation", "XElement\DotNet\System\Environment\StartupInfo.Implementation\StartupInfo.Implementation.csproj", "{BF9CD479-0C4B-4D38-8793-E3B4DD5B01E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{9BDDE43E-7458-476D-980C-C2B32566B129}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BDDE43E-7458-476D-980C-C2B32566B129}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BDDE43E-7458-476D-980C-C2B32566B129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9CD479-0C4B-4D38-8793-E3B4DD5B01E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9CD479-0C4B-4D38-8793-E3B4DD5B01E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9CD479-0C4B-4D38-8793-E3B4DD5B01E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9CD479-0C4B-4D38-8793-E3B4DD5B01E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9BDDE43E-7458-476D-980C-C2B32566B129} = {9716F09F-433F-42BD-8147-116704E3D525}
+		{BF9CD479-0C4B-4D38-8793-E3B4DD5B01E2} = {9716F09F-433F-42BD-8147-116704E3D525}
 	EndGlobalSection
 EndGlobal
