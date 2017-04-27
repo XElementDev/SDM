@@ -31,7 +31,7 @@ namespace XElement.DotNet.System.Environment.Startup
                                      "Start Menu", "Programs", "Startup" );
             var directory = new DirectoryInfo( path );
             var fileInfos = directory.GetFiles();
-            var fileInfosOfVisibleFiles = fileInfos.Where( fi => this.IsHiddenFile( fi ) ).ToList();
+            var fileInfosOfVisibleFiles = fileInfos.Where( this.IsHiddenFile ).ToList();
             var filePaths = fileInfosOfVisibleFiles.Select( fi => fi.FullName ).ToList();
             return filePaths;
         }
@@ -56,7 +56,7 @@ namespace XElement.DotNet.System.Environment.Startup
         public IEnumerable<IProgramInfo> Retrieve()
         {
             var filePaths = this.GetFilePathsOfFilesInStartupFolder();
-            var programInfos = filePaths.Select( fp => this.CreateProgramInfoFromFilePath( fp ) ).ToList();
+            var programInfos = filePaths.Select( this.CreateProgramInfoFromFilePath ).ToList();
             return programInfos;
         }
 
