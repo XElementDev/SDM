@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using IWshRuntimeLibrary;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -12,11 +13,12 @@ namespace XElement.DotNet.System.Environment.Startup
 
         private IProgramInfo CreateProgramInfoFromFilePath( string filePath )
         {
+            var shortcut = this.GetShortcutInfo( filePath );
             var origin = new FileOrigin { Location = filePath };
             var programInfo = new ProgramInfo
             {
-                Argument = "TODO",
-                FilePath = "TODO",
+                Argument = shortcut.Arguments,
+                FilePath = shortcut.TargetPath,
                 Origin = origin
             };
             return programInfo;
@@ -32,6 +34,15 @@ namespace XElement.DotNet.System.Environment.Startup
             var fileInfosOfVisibleFiles = fileInfos.Where( fi => this.IsHiddenFile( fi ) ).ToList();
             var filePaths = fileInfosOfVisibleFiles.Select( fi => fi.FullName ).ToList();
             return filePaths;
+        }
+
+
+        private IWshShortcut GetShortcutInfo( string filePath )
+        {
+            //  --> https://stackoverflow.com/questions/139010/how-to-resolve-a-lnk-in-c-sharp
+            IWshShell shell = new WshShell();
+            IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut( filePath );
+            return shortcut;
         }
 
 
