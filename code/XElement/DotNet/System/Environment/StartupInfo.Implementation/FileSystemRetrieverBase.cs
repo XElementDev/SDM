@@ -37,9 +37,9 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
+        //  --> https://stackoverflow.com/questions/139010/how-to-resolve-a-lnk-in-c-sharp
         private IWshShortcut GetShortcutInfo( string filePath )
         {
-            //  --> https://stackoverflow.com/questions/139010/how-to-resolve-a-lnk-in-c-sharp
             IWshShell shell = new WshShell();
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut( filePath );
             return shortcut;
