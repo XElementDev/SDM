@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IOrigin.cs" />
     <Compile Include="IProgramInfo.cs" />
+    <Compile Include="IRegistryOrigin.cs" />
     <Compile Include="IStartupInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

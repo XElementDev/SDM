@@ -46,6 +46,7 @@
     <Compile Include="GlobalFileSystemRetriever.cs" />
     <Compile Include="LocalFileSystemRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistryOrigin.cs" />
     <Compile Include="RegistryRetrieverBase.cs" />
   </ItemGroup>
   <ItemGroup>
