@@ -7,7 +7,7 @@ namespace XElement.DotNet.System.Environment.Startup
 {
 #region not unit-tested
     //  --> https://stackoverflow.com/questions/13181009/c-sharp-get-list-of-application-which-runs-on-windows-startup-programatically
-    public class RegistryRetrieverBase : IStartupInfo
+    public abstract class RegistryRetrieverBase : IStartupInfo
     {
         public RegistryRetrieverBase() { }
 
@@ -30,6 +30,7 @@ namespace XElement.DotNet.System.Environment.Startup
             var index = value.IndexOf( pattern );
             var argument = value.Substring( index + pattern.Length ).Trim( ' ' );
             var filePath = value.Substring( 0, index + pattern.Length );
+
             var programInfo = new ProgramInfo
             {
                 Argument = argument, 
@@ -62,13 +63,20 @@ namespace XElement.DotNet.System.Environment.Startup
         {
             IDictionary<string, string> registryEntries = new Dictionary<string, string>();
 
-            using ( var key = Registry.LocalMachine.OpenSubKey( RegistryRetrieverBase.SUB_KEY ) )
+            using ( var baseKey = RegistryKey.OpenBaseKey( RegistryHive.LocalMachine, this.Mode ) )
             {
-                registryEntries = this.GetDictionaryFromRegistryKey( key );
+                using ( RegistryKey regKey = baseKey.OpenSubKey( RegistryRetrieverBase.SUB_KEY ) )
+                {
+                    registryEntries = this.GetDictionaryFromRegistryKey( regKey );
+
+                }
             }
 
             return registryEntries;
         }
+
+
+        protected abstract RegistryView Mode { get; }
 
 
         public IEnumerable<IProgramInfo> /*IStartupInfo.*/Retrieve()

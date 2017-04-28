@@ -47,7 +47,9 @@
     <Compile Include="LocalFileSystemRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistryOrigin.cs" />
+    <Compile Include="RegistryRetriever32bit.cs" />
     <Compile Include="RegistryRetrieverBase.cs" />
+    <Compile Include="RegistryRetriever64bit.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StartupInfo.Interface\StartupInfo.Interface.csproj">

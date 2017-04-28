@@ -17,9 +17,13 @@ namespace XElement.SDM.UI.WinConsole
             var localFsResults = localFsRetriever.Retrieve();
             OutputResults( localFsResults );
 
-            var registryRetriever = new RegistryRetrieverBase();
-            var registryResults = registryRetriever.Retrieve();
-            OutputResults( registryResults );
+            var registryRetriever32 = new RegistryRetriever32bit();
+            var registry32Results = registryRetriever32.Retrieve();
+            OutputResults( registry32Results );
+
+            var registryRetriever64 = new RegistryRetriever64bit();
+            var registry64Results = registryRetriever64.Retrieve();
+            OutputResults( registry64Results );
 
             Console.Read();
         }
