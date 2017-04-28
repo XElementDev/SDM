@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartupLogic", "StartupLogi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup.Implementation", "Startup\Startup.Implementation\Startup.Implementation.csproj", "{38B3E162-16E5-40AE-91E3-6E704031EB9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupInfo.MefExtensions", "XElement\DotNet\System\Environment\StartupInfo.MefExtensions\StartupInfo.MefExtensions.csproj", "{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{38B3E162-16E5-40AE-91E3-6E704031EB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38B3E162-16E5-40AE-91E3-6E704031EB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38B3E162-16E5-40AE-91E3-6E704031EB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +57,6 @@ Global
 		{58359C46-78AD-4A15-B487-D517F46909E8} = {BCF5F522-0032-4ED8-A732-E1F6C3473A9D}
 		{E671361D-0B32-4AB4-9622-5DE08D47368E} = {58359C46-78AD-4A15-B487-D517F46909E8}
 		{38B3E162-16E5-40AE-91E3-6E704031EB9A} = {DCEA9C1A-F230-4548-93F8-3528A81B6B8A}
+		{317F4D74-3868-45EA-B2CA-5BE5F5F6749F} = {9716F09F-433F-42BD-8147-116704E3D525}
 	EndGlobalSection
 EndGlobal
