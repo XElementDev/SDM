@@ -27,6 +27,7 @@ namespace XElement.SDM.UI.WinConsole
 
         private static void OutputResults( IEnumerable<IProgramInfo> programInfos )
         {
+            //  --> https://stackoverflow.com/questions/6201529/turn-c-sharp-object-into-a-json-string-in-net-4
             var jsonEncoded = new JavaScriptSerializer().Serialize( programInfos );
             Console.WriteLine( jsonEncoded );
         }
