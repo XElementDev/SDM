@@ -1,7 +1,7 @@
-﻿namespace XElement.DotNet.System.Environment.Startup
+﻿namespace XElement.DotNet.System.Environment.Startup.DataTypes
 {
 #region not unit-tested
-    public class ProgramInfo : IProgramInfo
+    internal class ProgramInfo : IProgramInfo
     {
         public string /*IProgramInfo.*/Argument { get; set; }
 
