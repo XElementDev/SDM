@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Script.Serialization;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.UI.WinConsole
@@ -17,24 +18,14 @@ namespace XElement.SDM.UI.WinConsole
             OutputResults( localFsResults );
 
             Console.Read();
-        }
 
-
-        private static void OutputResult( IProgramInfo programInfo )
-        {
-            var output = $"ProgramInfo {{ argument = {programInfo.Argument}, " + 
-                         $"filePath = {programInfo.FilePath}, " + 
-                         $"origin = Origin {{ location = {programInfo.Origin.Location} }} }}";
-            Console.WriteLine( output );
         }
 
 
         private static void OutputResults( IEnumerable<IProgramInfo> programInfos )
         {
-            foreach ( var programInfo in programInfos )
-            {
-                OutputResult( programInfo );
-            }
+            var jsonEncoded = new JavaScriptSerializer().Serialize( programInfos );
+            Console.WriteLine( jsonEncoded );
         }
     }
 }
