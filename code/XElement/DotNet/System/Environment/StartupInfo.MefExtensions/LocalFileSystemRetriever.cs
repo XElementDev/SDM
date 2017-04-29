@@ -1,4 +1,6 @@
-﻿namespace XElement.DotNet.System.Environment.Startup.MefExtensions
+﻿using System.ComponentModel.Composition;
+
+namespace XElement.DotNet.System.Environment.Startup.MefExtensions
 {
 #region not unit-tested
     [Export( typeof( IStartupInfoInt ) )]
