@@ -5,7 +5,7 @@ using System.Linq;
 namespace XElement.DotNet.System.Environment.Startup.MefExtensions
 {
 #region not unit-tested
-    [Export]
+    [Export( typeof( IStartupInfo ) )]
     internal class AggregateAllRetriever : IStartupInfo
     {
         public AggregateAllRetriever()
