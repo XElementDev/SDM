@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDM", "UI\Console\SDM\SDM.c
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartupLogic", "StartupLogic", "{DCEA9C1A-F230-4548-93F8-3528A81B6B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup.Implementation", "Startup\Startup.Implementation\Startup.Implementation.csproj", "{38B3E162-16E5-40AE-91E3-6E704031EB9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupLogic.Implementation", "Startup\Startup.Implementation\StartupLogic.Implementation.csproj", "{38B3E162-16E5-40AE-91E3-6E704031EB9A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupInfo.MefExtensions", "XElement\DotNet\System\Environment\StartupInfo.MefExtensions\StartupInfo.MefExtensions.csproj", "{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}"
 EndProject
