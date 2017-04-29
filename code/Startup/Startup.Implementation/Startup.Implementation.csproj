@@ -7,8 +7,8 @@
     <ProjectGuid>{38B3E162-16E5-40AE-91E3-6E704031EB9A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XElement.SDM.Startup</RootNamespace>
-    <AssemblyName>XElement.SDM.Startup.Implementation</AssemblyName>
+    <RootNamespace>XElement.SDM.StartupLogic</RootNamespace>
+    <AssemblyName>XElement.SDM.StartupLogic.Implementation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
