@@ -8,7 +8,10 @@ namespace XElement.DotNet.System.Environment.Startup.MefExtensions
     [Export]
     internal class AggregateAllRetriever : IStartupInfo
     {
-        public AggregateAllRetriever() { }
+        public AggregateAllRetriever()
+        {
+            this._allRetrievers = null;
+        }
 
 
         public IEnumerable<IProgramInfo> Retrieve()
