@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{120B5863-0E3D-4A41-8615-EAE31B64B482}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>XElement.SDM.UI.Win32.WPF</RootNamespace>
+    <RootNamespace>XElement.SDM.UI.Win32</RootNamespace>
     <AssemblyName>SDM_win32</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>XElement.SDM.UI.Win32.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XElement.SDM.UI.Win32.WPF.Properties {
+namespace XElement.SDM.UI.Win32.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
