@@ -44,6 +44,8 @@
     <Compile Include="DataTypes\FileOrigin.cs" />
     <Compile Include="FileSystemRetrieverBase.cs" />
     <Compile Include="GlobalFileSystemRetriever.cs" />
+    <Compile Include="Local32bitRegistryRetriever.cs" />
+    <Compile Include="Local64bitRegistryRetriever.cs" />
     <Compile Include="LocalFileSystemRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataTypes\RegistryOrigin.cs" />
