@@ -70,12 +70,21 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Modules\Main\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\ProgramInfos\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\Main\Model.cs" />
+    <Compile Include="Modules\Main\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Main\ViewModel.cs" />
     <Compile Include="Modules\ProgramInfos\Model.cs" />
     <Compile Include="Modules\ProgramInfos\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
