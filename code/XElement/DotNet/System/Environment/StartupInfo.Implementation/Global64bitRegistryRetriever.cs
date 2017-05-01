@@ -3,9 +3,9 @@
 namespace XElement.DotNet.System.Environment.Startup
 {
 #region not unit-tested
-    public class RegistryRetriever64bit : RegistryRetrieverBase, IStartupInfo
+    public class Global64bitRegistryRetriever : RegistryRetrieverBase, IStartupInfo
     {
-        public RegistryRetriever64bit() { }
+        public Global64bitRegistryRetriever() { }
 
 
         protected override RegistryView Mode { get { return RegistryView.Registry64; } }

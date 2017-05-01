@@ -4,7 +4,7 @@ namespace XElement.DotNet.System.Environment.Startup.MefExtensions
 {
 #region not unit-tested
     [Export( typeof( IStartupInfoInt ) )]
-    internal class RegistryRetriever64bit : 
-        global::XElement.DotNet.System.Environment.Startup.RegistryRetriever64bit { }
+    internal class Global32bitRegistryRetriever : 
+        global::XElement.DotNet.System.Environment.Startup.Global32bitRegistryRetriever { }
 #endregion
 }
