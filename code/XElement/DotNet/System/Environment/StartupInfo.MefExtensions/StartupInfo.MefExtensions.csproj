@@ -45,6 +45,8 @@
     <Compile Include="FileSystemRetriever\GlobalFileSystemRetriever.cs" />
     <Compile Include="IStartupInfoInt.cs" />
     <Compile Include="FileSystemRetriever\LocalFileSystemRetriever.cs" />
+    <Compile Include="Local32bitRegistryRetriever.cs" />
+    <Compile Include="Local64bitRegistryRetriever.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Global32bitRegistryRetriever.cs" />
     <Compile Include="Global64bitRegistryRetriever.cs" />

@@ -64,7 +64,7 @@ namespace XElement.DotNet.System.Environment.Startup
         {
             IDictionary<string, string> registryEntries = new Dictionary<string, string>();
 
-            using ( var baseKey = RegistryKey.OpenBaseKey( RegistryHive.LocalMachine, this.Mode ) )
+            using ( var baseKey = RegistryKey.OpenBaseKey( this.TopLevelNode, this.Mode ) )
             {
                 using ( RegistryKey regKey = baseKey.OpenSubKey( RegistryRetrieverBase.SUB_KEY ) )
                 {
@@ -86,6 +86,9 @@ namespace XElement.DotNet.System.Environment.Startup
             var programInfos = registryEntries.Select( this.CreateProgramInfoFrom ).ToList();
             return programInfos;
         }
+
+
+        protected abstract RegistryHive TopLevelNode { get; }
 
 
         private const string SUB_KEY = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";

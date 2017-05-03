@@ -8,7 +8,16 @@ namespace XElement.DotNet.System.Environment.Startup
         public Global64bitRegistryRetriever() { }
 
 
-        protected override RegistryView Mode { get { return RegistryView.Registry64; } }
+        protected override RegistryView /*RegistryRetrieverBase.*/Mode
+        {
+            get { return RegistryView.Registry64; }
+        }
+
+
+        protected override RegistryHive /*RegistryRetrieverBase.*/TopLevelNode
+        {
+            get { return RegistryHive.LocalMachine; }
+        }
     }
 #endregion
 }

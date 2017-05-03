@@ -1,9 +1,23 @@
-﻿namespace XElement.DotNet.System.Environment.Startup
+﻿using Microsoft.Win32;
+
+namespace XElement.DotNet.System.Environment.Startup
 {
 #region not uni-tested
-    public class Local32bitRegistryRetriever
+    public class Local32bitRegistryRetriever : RegistryRetrieverBase, IStartupInfo
     {
-        // TODO: use HKEY_CURRENT_USER
+        public Local32bitRegistryRetriever() { }
+
+
+        protected override RegistryView /*RegistryRetrieverBase.*/Mode
+        {
+            get { return RegistryView.Registry32; }
+        }
+
+
+        protected override RegistryHive /*RegistryRetrieverBase.*/TopLevelNode
+        {
+            get { return RegistryHive.CurrentUser; }
+        }
     }
 #endregion
 }
