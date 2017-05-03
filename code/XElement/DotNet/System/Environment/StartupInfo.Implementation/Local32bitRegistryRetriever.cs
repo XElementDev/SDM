@@ -2,7 +2,7 @@
 
 namespace XElement.DotNet.System.Environment.Startup
 {
-#region not uni-tested
+#region not unit-tested
     public class Local32bitRegistryRetriever : RegistryRetrieverBase, IStartupInfo
     {
         public Local32bitRegistryRetriever() { }
