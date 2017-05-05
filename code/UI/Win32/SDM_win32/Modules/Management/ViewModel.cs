@@ -6,8 +6,11 @@
     {
         public ViewModel( Model model )
         {
-            this.DelayedProgramInfosVM = new ProgramInfos.ViewModel( model.DelayedProgramInfosModel );
-            this.StartupProgramInfosVM = new ProgramInfos.ViewModel( model.StartupProgramInfosModel );
+            var delayed = new ProgramInfos.ViewModel( model.DelayedProgramInfosModel );
+            this.DelayedProgramInfosVM = delayed;
+
+            var startup = new ProgramInfos.ViewModel( model.StartupProgramInfosModel );
+            this.StartupProgramInfosVM = startup;
         }
 
 
