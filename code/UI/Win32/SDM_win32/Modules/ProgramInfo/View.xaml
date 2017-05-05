@@ -17,12 +17,16 @@
 
 
     <StackPanel>
-        <Expander IsExpanded="True">
+        <Expander>
             <Expander.Header>
                 <StackPanel 
                             Orientation="Horizontal">
                     <Image 
                            Source="{Binding Path=ApplicationIcon}" 
+                    />
+
+                    <Label 
+                           Content="{Binding Path=ApplicationName}" 
                     />
                 </StackPanel>
             </Expander.Header>
