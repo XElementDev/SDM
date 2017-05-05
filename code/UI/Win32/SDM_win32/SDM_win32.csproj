@@ -98,6 +98,8 @@
     </Compile>
     <Compile Include="Modules\Main\ViewModel.cs" />
     <Compile Include="Modules\Management\Model.cs" />
+    <Compile Include="Modules\Management\ModelFactory.cs" />
+    <Compile Include="Modules\Management\ModelParameters.cs" />
     <Compile Include="Modules\Management\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
@@ -139,6 +141,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Startup\StartupLogic.Interface\StartupLogic.Interface.csproj">
+      <Project>{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}</Project>
+      <Name>StartupLogic.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Startup\StartupLogic.MefExtensions\StartupLogic.MefExtensions.csproj">
+      <Project>{96316379-86dc-4ee4-91de-1beb7552b26e}</Project>
+      <Name>StartupLogic.MefExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>
       <Name>StartupInfo.Interface</Name>

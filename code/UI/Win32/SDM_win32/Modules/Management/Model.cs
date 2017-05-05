@@ -1,16 +1,14 @@
-﻿using System.Collections.Generic;
-using XElement.DotNet.System.Environment.Startup;
+﻿using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
 {
 #region not unit-tested
     internal class Model
     {
-        public Model( IEnumerable<IProgramInfo> startupProgramInfos, 
-                      IEnumerable<IProgramInfo> delayedProgramInfos )
+        public Model( ModelParameters parameters )
         {
-            this.DelayedProgramInfosModel = new ProgramInfos.Model( delayedProgramInfos );
-            this.StartupProgramInfosModel = new ProgramInfos.Model( startupProgramInfos );
+            this.DelayedProgramInfosModel = new ProgramInfos.Model( parameters.DelayedProgramInfos );
+            this.StartupProgramInfosModel = new ProgramInfos.Model( parameters.StartupProgramInfos );
         }
 
 
