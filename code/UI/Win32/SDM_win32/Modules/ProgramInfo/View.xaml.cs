@@ -9,9 +9,6 @@ namespace XElement.SDM.UI.Win32.Modules
         {
             InitializeComponent();
         }
-
-
-        // TODO
     }
 #endregion
 }
