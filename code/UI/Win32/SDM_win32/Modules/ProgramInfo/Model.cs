@@ -11,9 +11,6 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
         }
 
 
-        // TODO
-
-
         public IProgramInfo ProgramInfo { get; private set; }
     }
 #endregion
