@@ -4,7 +4,7 @@ namespace XElement.SDM.UI.Win32.Modules.Main
 {
 #region not unit-tested
     [Export]
-    internal class ViewModel
+    internal class ViewModel : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
         public ViewModel( Model model )
@@ -13,8 +13,13 @@ namespace XElement.SDM.UI.Win32.Modules.Main
         }
 
 
-        [Import]
-        public ProgramInfos.ViewModel ProgramInfosVM { get; private set; }
+        public Management.ViewModel ManagementVM { get; private set; }
+
+
+        void IPartImportsSatisfiedNotification.OnImportsSatisfied()
+        {
+            this.ManagementVM = new Management.ViewModel( this._model.ManagementModel );
+        }
 
 
         private Model _model;

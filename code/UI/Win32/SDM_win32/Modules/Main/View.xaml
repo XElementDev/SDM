@@ -10,8 +10,8 @@
              xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules">
 
     <Grid>
-        <modules:ProgramInfosUC 
-                                DataContext="{Binding Path=ProgramInfosVM}" 
+        <modules:ManagementUC 
+                              DataContext="{Binding Path=ManagementVM}" 
         />
     </Grid>
 
