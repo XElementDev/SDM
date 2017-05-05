@@ -1,10 +1,10 @@
-﻿using System.IO;
+﻿using IWshRuntimeLibrary;
+using System.IO;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.StartupLogic
 {
 #region not unit-tested
-    // TODO
     internal class FileProgramInfo : IProgramLogic
     {
         public FileProgramInfo( IProgramInfo programInfo )
@@ -15,11 +15,21 @@ namespace XElement.SDM.StartupLogic
 
         public void /*IProgramLogic.*/Do()
         {
+            var fileName = this._programInfo.Origin.Location;
+            var fileInfo = new FileInfo( fileName );
+            fileInfo.Delete();
         }
 
 
+        //  --> https://stackoverflow.com/questions/18023379/creating-a-file-shortcut-lnk
         public void /*IProgramLogic.*/Undo()
         {
+            var fileName = this._programInfo.Origin.Location;
+            var wsh = new IWshShell_Class();
+            var shortcut = wsh.CreateShortcut( fileName ) as IWshShortcut;
+            shortcut.TargetPath = this._programInfo.FilePath;
+            shortcut.Arguments = this._programInfo.Argument;
+            shortcut.Save();
         }
 
 
