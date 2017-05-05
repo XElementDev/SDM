@@ -9,6 +9,15 @@
 
              xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules">
 
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -26,14 +35,10 @@
         />
 
         <Button 
-                Grid.Column="1" Grid.Row="0" 
-                VerticalAlignment="Bottom" 
-                Content="--&gt;" 
+                Style="{StaticResource DoCommandStyle}" 
         />
         <Button 
-                Grid.Column="1" Grid.Row="1" 
-                VerticalAlignment="Top" 
-                Content="&lt;--" 
+                Style="{StaticResource UndoCommandStyle}" 
         />
 
         <modules:ProgramInfosUC 
