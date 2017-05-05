@@ -10,13 +10,18 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         [ImportingConstructor]
         private ModelFactory()
         {
+            this._dependencies = null;
         }
 
 
         public Model /*IFactoryT2.*/Get( ModelParameters parameters )
         {
-            return new Model( parameters );
+            return new Model( parameters, this._dependencies );
         }
+
+
+        [Import]
+        private ModelDependencies _dependencies;
     }
 #endregion
 }

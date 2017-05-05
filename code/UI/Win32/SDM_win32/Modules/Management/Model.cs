@@ -1,12 +1,15 @@
 ﻿using XElement.DotNet.System.Environment.Startup;
+using XElement.SDM.StartupLogic;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
 {
 #region not unit-tested
     internal class Model
     {
-        public Model( ModelParameters parameters )
+        public Model( ModelParameters parameters, ModelDependencies dependencies )
         {
+            this._dependencies = dependencies;
+
             var delayed = new ProgramInfos.Model( parameters.DelayedProgramInfos );
             this.DelayedProgramInfosModel = delayed;
 
@@ -15,10 +18,38 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         }
 
 
+        private IProgramLogic CreateProgramLogic( IProgramInfo programInfo )
+        {
+            var programLogic = this._dependencies.ProgramLogicFactory.Get( programInfo );
+            return programLogic;
+        }
+
+
         public ProgramInfos.Model DelayedProgramInfosModel { get; private set; }
 
 
+        public void DelayStartup( IProgramInfo programInfo )
+        {
+            this.StartupProgramInfosModel.Remove( programInfo );
+            var programLogic = this.CreateProgramLogic( programInfo );
+            programLogic.Do();
+            this.DelayedProgramInfosModel.Add( programInfo );
+        }
+
+
         public ProgramInfos.Model StartupProgramInfosModel { get; private set; }
+
+
+        public void PromoteStartup( IProgramInfo programInfo )
+        {
+            this.DelayedProgramInfosModel.Remove( programInfo );
+            var programLogic = this.CreateProgramLogic( programInfo );
+            programLogic.Undo();
+            this.StartupProgramInfosModel.Add( programInfo );
+        }
+
+
+        private ModelDependencies _dependencies;
     }
 #endregion
 }

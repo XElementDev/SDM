@@ -35,9 +35,13 @@
         />
 
         <Button 
+                Command="{Binding Path=DelayStartupCommand}" 
+                CommandParameter="{Binding Path=StartupProgramInfosVM.SelectedProgramInfoVM}" 
                 Style="{StaticResource DoCommandStyle}" 
         />
         <Button 
+                Command="{Binding Path=PromoteStartupCommand}" 
+                CommandParameter="{Binding Path=DelayedProgramInfosVM.SelectedProgramInfoVM}" 
                 Style="{StaticResource UndoCommandStyle}" 
         />
 

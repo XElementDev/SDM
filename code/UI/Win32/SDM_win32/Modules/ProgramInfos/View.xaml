@@ -11,7 +11,8 @@
 
     <Grid>
         <ListBox 
-                 ItemsSource="{Binding Path=ProgramInfoVMs}">
+                 ItemsSource="{Binding Path=ProgramInfoVMs}" 
+                 SelectedItem="{Binding Path=SelectedProgramInfoVM, Mode=OneWayToSource}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <modules:ProgramInfoUC 
