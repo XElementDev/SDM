@@ -1,8 +1,6 @@
 ﻿using Shell32;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media;
@@ -16,9 +14,12 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
         public ApplicationInformationViewModel( string filePath )
         {
             this._filePath = filePath;
-            this.InitializeDescription();
             this.InitializeIcon();
+            this.InitializeRemainingProperties();
         }
+
+
+        public string Company { get; private set; }
 
 
         public string Description { get; private set; }
@@ -28,32 +29,14 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
 
 
         //  --> https://blog.dotnetframework.org/2014/12/10/read-extended-properties-of-a-file-in-c/
-        private void InitializeDescription()
+        private void InitializeRemainingProperties()
         {
             var fileInfo = new FileInfo( this._filePath );
-
             var shell = new Shell();
             var folder = shell.NameSpace( fileInfo.DirectoryName );
             var file = folder.ParseName( fileInfo.Name );
-
-            var list = new List<Tuple<int, string, string>>();
-            for ( int i = 0 ; i < short.MaxValue ; ++i )
-            {
-                string header = folder.GetDetailsOf( null, i );
-                var tuple = new Tuple<int, string, string>( i, header, null );
-                list.Add( tuple );
-            }
-
-            for ( int i = 0 ; i < list.Count ; ++i )
-            {
-                var key = list[i].Item2;
-                var value = folder.GetDetailsOf( file, i );
-                var tuple = new Tuple<int, string, string>( i, key, value );
-                list[i] = tuple;
-            }
-
-            var filtered = list.Where( t => t.Item3 != String.Empty ).ToList();
-            this.Description = filtered.First( t => t.Item1 == FILE_DESCRIPTION ).Item3;
+            this.Company = folder.GetDetailsOf( file, COMPANY_INDEX );
+            this.Description = folder.GetDetailsOf( file, FILE_DESCRIPTION_INDEX );
         }
 
 
@@ -74,7 +57,9 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
         private string _filePath;
 
 
-        private const int FILE_DESCRIPTION = 34;
+        private const int COMPANY_INDEX = 33;
+
+        private const int FILE_DESCRIPTION_INDEX = 34;
     }
 #endregion
 }

@@ -41,6 +41,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Label 
@@ -78,6 +79,15 @@
                 <Label 
                        Grid.Column="1" Grid.Row="3" 
                        Content="{Binding Path=Model.ProgramInfo.Argument, Mode=OneWay}" 
+                />
+
+                <Label 
+                       Grid.Column="0" Grid.Row="4" 
+                       Content="&lt;COMPANY&gt;" 
+                />
+                <Label 
+                       Grid.Column="1" Grid.Row="4" 
+                       Content="{Binding Path=AppInfoVM.Company}" 
                 />
             </Grid>
         </Expander>
