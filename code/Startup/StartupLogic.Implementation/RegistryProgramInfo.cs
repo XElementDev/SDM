@@ -1,9 +1,28 @@
-﻿namespace XElement.SDM.StartupLogic
+using XElement.DotNet.System.Environment.Startup;
+
+namespace XElement.SDM.StartupLogic
 {
 #region not unit-tested
-    internal class RegistryProgramInfo
+    // TODO
+    internal class RegistryProgramInfo : IProgramLogic
     {
-        // TODO
+        public RegistryProgramInfo( IProgramInfo programInfo )
+        {
+            this._programInfo = programInfo;
+        }
+
+
+        public void /*IProgramLogic.*/Do()
+        {
+        }
+
+
+        public void /*IProgramLogic.*/Undo()
+        {
+        }
+
+
+        private IProgramInfo _programInfo;
     }
 #endregion
 }

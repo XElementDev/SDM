@@ -3,9 +3,9 @@ using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.StartupLogic
 {
-    // TODO
 #region not unit-tested
-    internal class FileProgramInfo
+    // TODO
+    internal class FileProgramInfo : IProgramLogic
     {
         public FileProgramInfo( IProgramInfo programInfo )
         {
@@ -13,15 +13,12 @@ namespace XElement.SDM.StartupLogic
         }
 
 
-        public void /*.*/Do()
+        public void /*IProgramLogic.*/Do()
         {
-            var fileName = this._programInfo.Origin.Location;
-            var fileInfo = new FileInfo( fileName );
-            //fileInfo.Delete();
         }
 
 
-        public void /**/Undo()
+        public void /*IProgramLogic.*/Undo()
         {
         }
 
