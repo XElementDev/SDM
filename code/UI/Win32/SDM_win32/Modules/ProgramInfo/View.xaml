@@ -7,9 +7,26 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
     <StackPanel>
-        <Expander IsExpanded="True" 
-                  Header="&lt;DETAILS&gt;">
+        <Expander IsExpanded="True">
+            <Expander.Header>
+                <StackPanel 
+                            Orientation="Horizontal">
+                    <Image 
+                           Source="{Binding Path=ApplicationIcon}" 
+                    />
+                </StackPanel>
+            </Expander.Header>
+
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
