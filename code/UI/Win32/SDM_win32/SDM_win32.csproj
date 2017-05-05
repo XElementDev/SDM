@@ -74,6 +74,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\Management\View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modules\ProgramInfos\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +93,11 @@
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Main\ViewModel.cs" />
+    <Compile Include="Modules\Management\Model.cs" />
+    <Compile Include="Modules\Management\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Management\ViewModel.cs" />
     <Compile Include="Modules\ProgramInfos\Model.cs" />
     <Compile Include="Modules\ProgramInfos\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
