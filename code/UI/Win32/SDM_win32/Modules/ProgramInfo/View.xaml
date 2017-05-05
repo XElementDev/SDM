@@ -22,11 +22,11 @@
                 <StackPanel 
                             Orientation="Horizontal">
                     <Image 
-                           Source="{Binding Path=ApplicationIcon}" 
+                           Source="{Binding Path=AppInfoVM.Icon}" 
                     />
 
                     <Label 
-                           Content="{Binding Path=ApplicationName}" 
+                           Content="{Binding Path=AppInfoVM.Description}" 
                     />
                 </StackPanel>
             </Expander.Header>
