@@ -7,8 +7,11 @@ namespace XElement.SDM.UI.Win32.Modules.Management
     {
         public Model( ModelParameters parameters )
         {
-            this.DelayedProgramInfosModel = new ProgramInfos.Model( parameters.DelayedProgramInfos );
-            this.StartupProgramInfosModel = new ProgramInfos.Model( parameters.StartupProgramInfos );
+            var delayed = new ProgramInfos.Model( parameters.DelayedProgramInfos );
+            this.DelayedProgramInfosModel = delayed;
+
+            var startup = new ProgramInfos.Model( parameters.StartupProgramInfos );
+            this.StartupProgramInfosModel = startup;
         }
 
 
