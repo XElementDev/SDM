@@ -1,11 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using System;
+using System.Linq;
 using System.Windows.Input;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
 {
 #region not unit-tested
-    // TODO
     internal class ViewModel
     {
         public ViewModel( Model model )
@@ -28,6 +28,13 @@ namespace XElement.SDM.UI.Win32.Modules.Management
 
         public ICommand DelayStartupCommand { get; private set; }
 
+        private bool DelayStartupCommand_CanExecute( ProgramInfo.ViewModel programInfoVM )
+        {
+            var startup = this.StartupProgramInfosVM.ProgramInfoVMs.ToList();
+            var isStartup = startup.Contains( programInfoVM );
+            return isStartup;
+        }
+
         private void DelayStartupCommand_Execute( ProgramInfo.ViewModel programInfoVM )
         {
             var programInfo = programInfoVM.Model.ProgramInfo;
@@ -38,9 +45,9 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         private void InitializeCommands()
         {
             this.DelayStartupCommand = this.CreateCommand( this.DelayStartupCommand_Execute, 
-                                                           _ => true );
+                                                           this.DelayStartupCommand_CanExecute );
             this.PromoteStartupCommand = this.CreateCommand( this.PromoteStartupCommand_Execute, 
-                                                             _ => true );
+                                                             this.PromoteStartupCommand_CanExecute );
         }
 
 
@@ -55,6 +62,13 @@ namespace XElement.SDM.UI.Win32.Modules.Management
 
 
         public ICommand PromoteStartupCommand { get; private set; }
+
+        private bool PromoteStartupCommand_CanExecute( ProgramInfo.ViewModel programInfoVM )
+        {
+            var delayed = this.DelayedProgramInfosVM.ProgramInfoVMs.ToList();
+            var isDelayed = delayed.Contains( programInfoVM );
+            return isDelayed;
+        }
 
         private void PromoteStartupCommand_Execute( ProgramInfo.ViewModel programInfoVM )
         {
