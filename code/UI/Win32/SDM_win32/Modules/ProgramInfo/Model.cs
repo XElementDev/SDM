@@ -7,14 +7,14 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
     {
         public Model( IProgramInfo programInfo )
         {
-            this._programInfo = programInfo;
+            this.ProgramInfo = programInfo;
         }
 
 
         // TODO
 
 
-        private IProgramInfo _programInfo;
+        public IProgramInfo ProgramInfo { get; private set; }
     }
 #endregion
 }

@@ -6,7 +6,7 @@
     {
         public ViewModel( Model model )
         {
-            this._model = model;
+            this.Model = model;
         }
 
 
@@ -16,7 +16,7 @@
         public string ApplicationName { get; private set; }
 
 
-        private Model _model;
+        public Model Model { get; private set; }
     }
 #endregion
 }

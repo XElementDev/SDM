@@ -5,13 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Modules.ProgramInfos" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300" 
+
+             xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules">
 
     <Grid>
         <ListBox 
-                 ItemsSource="{Binding Path=Model.ProgramInfos}" 
-                 DisplayMemberPath="FilePath" 
-        />
+                 ItemsSource="{Binding Path=ProgramInfoVMs}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <modules:ProgramInfoUC 
+                    />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 
 </UserControl>

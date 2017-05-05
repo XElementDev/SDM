@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
@@ -18,11 +19,13 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         {
             var programInfos = this._startupInfo.Retrieve();
-            this.ProgramInfos = programInfos;
+            var programInfoModels = programInfos.Select( pi => new ProgramInfo.Model( pi ) )
+                .ToList();
+            this.ProgramInfoModels = programInfoModels;
         }
 
 
-        public IEnumerable<IProgramInfo> ProgramInfos { get; private set; }
+        public IEnumerable<ProgramInfo.Model> ProgramInfoModels { get; private set; }
 
 
         [Import]
