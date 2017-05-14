@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using XElement.DotNet.System.Environment.Startup;
 
-namespace XElement.SDM.StartupLogic
+namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
     internal class RegistryProgramInfo : IProgramLogic

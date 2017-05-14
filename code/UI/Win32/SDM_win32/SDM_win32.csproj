@@ -177,13 +177,13 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Startup\StartupLogic.Interface\StartupLogic.Interface.csproj">
+    <ProjectReference Include="..\..\..\Startup\StartupLogic.Interface\ManagementLogic.Interface.csproj">
       <Project>{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}</Project>
-      <Name>StartupLogic.Interface</Name>
+      <Name>ManagementLogic.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Startup\StartupLogic.MefExtensions\StartupLogic.MefExtensions.csproj">
+    <ProjectReference Include="..\..\..\Startup\StartupLogic.MefExtensions\ManagementLogic.MefExtensions.csproj">
       <Project>{96316379-86dc-4ee4-91de-1beb7552b26e}</Project>
-      <Name>StartupLogic.MefExtensions</Name>
+      <Name>ManagementLogic.MefExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>

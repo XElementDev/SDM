@@ -2,7 +2,7 @@
 using System.IO;
 using XElement.DotNet.System.Environment.Startup;
 
-namespace XElement.SDM.StartupLogic
+namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
     internal class FileProgramInfo : IProgramLogic

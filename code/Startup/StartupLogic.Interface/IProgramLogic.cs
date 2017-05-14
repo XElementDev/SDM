@@ -1,6 +1,6 @@
 ﻿using XElement.DesignPatterns.BehavioralPatterns.Command;
 
-namespace XElement.SDM.StartupLogic
+namespace XElement.SDM.ManagementLogic
 {
     public interface IProgramLogic : IDoUndoCommand { }
 }

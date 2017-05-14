@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
-using XElement.SDM.StartupLogic;
+using XElement.SDM.ManagementLogic;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
 {

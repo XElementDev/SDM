@@ -1,7 +1,7 @@
 ﻿using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 
-namespace XElement.SDM.StartupLogic
+namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
     public class ProgramLogicFactory : IFactory<IProgramLogic, IProgramInfo>
