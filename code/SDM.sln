@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDM", "UI\Console\SDM\SDM.c
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartupLogic", "StartupLogic", "{DCEA9C1A-F230-4548-93F8-3528A81B6B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementLogic.Implementation", "Startup\StartupLogic.Implementation\ManagementLogic.Implementation.csproj", "{38B3E162-16E5-40AE-91E3-6E704031EB9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementLogic.Implementation", "Startup\ManagementLogic.Implementation\ManagementLogic.Implementation.csproj", "{38B3E162-16E5-40AE-91E3-6E704031EB9A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupInfo.MefExtensions", "XElement\DotNet\System\Environment\StartupInfo.MefExtensions\StartupInfo.MefExtensions.csproj", "{317F4D74-3868-45EA-B2CA-5BE5F5F6749F}"
 EndProject
@@ -25,9 +25,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Win32", "Win32", "{9E914993
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDM_win32", "UI\Win32\SDM_win32\SDM_win32.csproj", "{120B5863-0E3D-4A41-8615-EAE31B64B482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementLogic.Interface", "Startup\StartupLogic.Interface\ManagementLogic.Interface.csproj", "{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementLogic.Interface", "Startup\ManagementLogic.Interface\ManagementLogic.Interface.csproj", "{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementLogic.MefExtensions", "Startup\StartupLogic.MefExtensions\ManagementLogic.MefExtensions.csproj", "{96316379-86DC-4EE4-91DE-1BEB7552B26E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagementLogic.MefExtensions", "Startup\ManagementLogic.MefExtensions\ManagementLogic.MefExtensions.csproj", "{96316379-86DC-4EE4-91DE-1BEB7552B26E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelayLogic.Interface", "Startup\DelayLogic.Interface\DelayLogic.Interface.csproj", "{40DC1197-96B8-49AE-A839-E3E2DB70A9D5}"
 EndProject

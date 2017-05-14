@@ -177,11 +177,11 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Startup\StartupLogic.Interface\ManagementLogic.Interface.csproj">
+    <ProjectReference Include="..\..\..\Startup\ManagementLogic.Interface\ManagementLogic.Interface.csproj">
       <Project>{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}</Project>
       <Name>ManagementLogic.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Startup\StartupLogic.MefExtensions\ManagementLogic.MefExtensions.csproj">
+    <ProjectReference Include="..\..\..\Startup\ManagementLogic.MefExtensions\ManagementLogic.MefExtensions.csproj">
       <Project>{96316379-86dc-4ee4-91de-1beb7552b26e}</Project>
       <Name>ManagementLogic.MefExtensions</Name>
     </ProjectReference>

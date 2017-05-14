@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38B3E162-16E5-40AE-91E3-6E704031EB9A}</ProjectGuid>
+    <ProjectGuid>{96316379-86DC-4EE4-91DE-1BEB7552B26E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XElement.SDM.ManagementLogic</RootNamespace>
-    <AssemblyName>XElement.SDM.ManagementLogic.Implementation</AssemblyName>
+    <RootNamespace>XElement.SDM.ManagementLogic.MefExtensions</RootNamespace>
+    <AssemblyName>XElement.SDM.ManagementLogic.MefExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,11 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Interop.IWshRuntimeLibrary">
-      <HintPath>..\..\XElement\DotNet\System\Environment\StartupInfo.Implementation\obj\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,18 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileProgramInfo.cs" />
     <Compile Include="ProgramLogicFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistryProgramInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>
       <Name>StartupInfo.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StartupLogic.Interface\ManagementLogic.Interface.csproj">
-      <Project>{290d3b05-9dab-4324-ab86-34caf5aa6bb1}</Project>
+    <ProjectReference Include="..\ManagementLogic.Implementation\ManagementLogic.Implementation.csproj">
+      <Project>{38b3e162-16e5-40ae-91e3-6e704031eb9a}</Project>
+      <Name>ManagementLogic.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManagementLogic.Interface\ManagementLogic.Interface.csproj">
+      <Project>{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}</Project>
       <Name>ManagementLogic.Interface</Name>
     </ProjectReference>
   </ItemGroup>
