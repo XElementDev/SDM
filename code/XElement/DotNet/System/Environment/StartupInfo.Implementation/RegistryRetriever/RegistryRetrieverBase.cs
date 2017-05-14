@@ -17,7 +17,9 @@ namespace XElement.DotNet.System.Environment.Startup
         {
             var origin = new RegistryOrigin
             {
-                Location = RegistryRetrieverBase.SUB_KEY
+                Mode = this.Mode, 
+                SubKey = RegistryRetrieverBase.SUB_KEY, 
+                TopLevelNode = this.TopLevelNode, 
                 ValueName = kvp.Key
             };
             return origin;
