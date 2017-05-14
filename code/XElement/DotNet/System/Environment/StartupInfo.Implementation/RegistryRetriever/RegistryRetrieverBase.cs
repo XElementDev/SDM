@@ -17,8 +17,8 @@ namespace XElement.DotNet.System.Environment.Startup
         {
             var origin = new RegistryOrigin
             {
-                KeyName = kvp.Key, 
                 Location = RegistryRetrieverBase.SUB_KEY
+                ValueName = kvp.Key
             };
             return origin;
         }
@@ -69,7 +69,6 @@ namespace XElement.DotNet.System.Environment.Startup
                 using ( RegistryKey regKey = baseKey.OpenSubKey( RegistryRetrieverBase.SUB_KEY ) )
                 {
                     registryEntries = this.GetDictionaryFromRegistryKey( regKey );
-
                 }
             }
 

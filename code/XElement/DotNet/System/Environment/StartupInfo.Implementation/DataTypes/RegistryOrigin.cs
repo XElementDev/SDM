@@ -3,10 +3,10 @@
 #region not unit-tested
     internal class RegistryOrigin : IRegistryOrigin
     {
-        public string /*IRegistryOrigin.*/KeyName { get; set; }
 
 
         public string /*IRegistryOrigin.*/Location { get; set; }
+        public string /*IRegistryOrigin.*/ValueName { get; set; }
     }
 #endregion
 }

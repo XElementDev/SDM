@@ -2,6 +2,6 @@
 {
     public interface IRegistryOrigin : IOrigin
     {
-        string KeyName { get; }
+        string ValueName { get; }
     }
 }
