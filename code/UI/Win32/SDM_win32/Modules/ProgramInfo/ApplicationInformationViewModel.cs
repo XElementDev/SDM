@@ -54,12 +54,12 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
         }
 
 
-        private string _filePath;
-
-
         private const int COMPANY_INDEX = 33;
 
         private const int FILE_DESCRIPTION_INDEX = 34;
+
+
+        private string _filePath;
     }
 #endregion
 }
