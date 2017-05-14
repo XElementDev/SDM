@@ -3,7 +3,7 @@
 #region not unit-tested
     internal class ProgramInfo : IProgramInfo
     {
-        public string /*IProgramInfo.*/Argument { get; set; }
+        public string /*IProgramInfo.*/Arguments { get; set; }
 
 
         public string /*IProgramInfo.*/FilePath { get; set; }

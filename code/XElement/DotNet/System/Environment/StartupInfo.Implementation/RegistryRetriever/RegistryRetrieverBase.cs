@@ -31,12 +31,12 @@ namespace XElement.DotNet.System.Environment.Startup
             var value = kvp.Value.Replace( "\"", String.Empty );
             var pattern = ".exe";
             var index = value.IndexOf( pattern );
-            var argument = value.Substring( index + pattern.Length ).Trim( ' ' );
+            var arguments = value.Substring( index + pattern.Length ).Trim( ' ' );
             var filePath = value.Substring( 0, index + pattern.Length );
 
             var programInfo = new ProgramInfo
             {
-                Argument = argument, 
+                Arguments = arguments, 
                 FilePath = filePath, 
                 Origin = this.CreateOriginFrom( kvp )
             };

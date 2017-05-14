@@ -18,7 +18,7 @@ namespace XElement.DotNet.System.Environment.Startup
             var origin = new FileOrigin { Location = filePath };
             var programInfo = new ProgramInfo
             {
-                Argument = shortcut.Arguments,
+                Arguments = shortcut.Arguments,
                 FilePath = shortcut.TargetPath,
                 Origin = origin
             };

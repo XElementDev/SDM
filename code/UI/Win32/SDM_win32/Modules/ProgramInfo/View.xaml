@@ -74,11 +74,11 @@
 
                 <Label 
                        Grid.Column="0" Grid.Row="3" 
-                       Content="&lt;ARGUMENT&gt;" 
+                       Content="&lt;ARGUMENTS&gt;" 
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="3" 
-                       Content="{Binding Path=Model.ProgramInfo.Argument, Mode=OneWay}" 
+                       Content="{Binding Path=Model.ProgramInfo.Arguments, Mode=OneWay}" 
                 />
 
                 <Label 

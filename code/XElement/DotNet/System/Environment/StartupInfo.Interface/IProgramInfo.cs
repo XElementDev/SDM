@@ -2,7 +2,7 @@
 {
     public interface IProgramInfo
     {
-        string Argument { get; }
+        string Arguments { get; }
 
 
         string FilePath { get; }
