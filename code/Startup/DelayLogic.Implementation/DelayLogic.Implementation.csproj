@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelayManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
+      <Project>{9bdde43e-7458-476d-980c-c2b32566b129}</Project>
+      <Name>StartupInfo.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DelayLogic.Interface\DelayLogic.Interface.csproj">
+      <Project>{40DC1197-96B8-49AE-A839-E3E2DB70A9D5}</Project>
+      <Name>DelayLogic.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
