@@ -16,11 +16,15 @@ namespace XElement.DotNet.System.Environment.Startup
         {
             var shortcut = this.GetShortcutInfo( filePath );
             var origin = new FileOrigin { Location = filePath };
+            var startInfo = new StartInfo
+            {
+                Arguments = shortcut.Arguments, 
+                FilePath = shortcut.TargetPath
+            };
             var programInfo = new ProgramInfo
             {
-                Arguments = shortcut.Arguments,
-                FilePath = shortcut.TargetPath,
-                Origin = origin
+                Origin = origin, 
+                StartInfo = startInfo
             };
             return programInfo;
         }

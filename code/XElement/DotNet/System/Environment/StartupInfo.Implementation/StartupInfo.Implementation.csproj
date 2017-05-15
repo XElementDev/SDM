@@ -53,6 +53,7 @@
     <Compile Include="RegistryRetriever\Global32bitRegistryRetriever.cs" />
     <Compile Include="RegistryRetriever\RegistryRetrieverBase.cs" />
     <Compile Include="RegistryRetriever\Global64bitRegistryRetriever.cs" />
+    <Compile Include="StartInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StartupInfo.Interface\StartupInfo.Interface.csproj">

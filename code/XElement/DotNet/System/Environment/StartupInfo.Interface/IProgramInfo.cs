@@ -2,12 +2,9 @@
 {
     public interface IProgramInfo
     {
-        string Arguments { get; }
-
-
-        string FilePath { get; }
-
-
         IOrigin Origin { get; }
+
+
+        IStartInfo StartInfo { get; }
     }
 }

@@ -69,7 +69,7 @@
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="2" 
-                       Content="{Binding Path=Model.ProgramInfo.FilePath, Mode=OneWay}" 
+                       Content="{Binding Path=Model.ProgramInfo.StartInfo.FilePath, Mode=OneWay}" 
                 />
 
                 <Label 
@@ -78,7 +78,7 @@
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="3" 
-                       Content="{Binding Path=Model.ProgramInfo.Arguments, Mode=OneWay}" 
+                       Content="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
                 />
 
                 <Label 

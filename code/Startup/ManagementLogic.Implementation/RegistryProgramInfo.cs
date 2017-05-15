@@ -37,7 +37,8 @@ namespace XElement.SDM.ManagementLogic
 
         public void /*IProgramLogic.*/Undo()
         {
-            var value = $"\"{this._programInfo.FilePath}\" {this._programInfo.Arguments}";
+            var startInfo = this._programInfo.StartInfo;
+            var value = $"\"{startInfo.FilePath}\" {startInfo.Arguments}";
             this.SubKey.SetValue( this.Origin.ValueName, value );
         }
 

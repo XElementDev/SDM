@@ -33,10 +33,10 @@ namespace XElement.SDM.DelayLogic
 
         private static void StartExecutable( IDelayInfo delayedStartup )
         {
-            var filePath = delayedStartup.ProgramInfo.FilePath;
-            var arguments = delayedStartup.ProgramInfo.Arguments;
-            var startInfo = new ProcessStartInfo( filePath, arguments );
-            Process.Start( startInfo );
+            var filePath = delayedStartup.StartInfo.FilePath;
+            var arguments = delayedStartup.StartInfo.Arguments;
+            var processStartInfo = new ProcessStartInfo( filePath, arguments );
+            Process.Start( processStartInfo );
         }
 
 

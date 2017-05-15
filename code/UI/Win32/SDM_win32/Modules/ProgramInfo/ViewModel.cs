@@ -7,7 +7,7 @@
         public ViewModel( Model model )
         {
             this.Model = model;
-            var filePath = this.Model.ProgramInfo.FilePath;
+            var filePath = this.Model.ProgramInfo.StartInfo.FilePath;
             this.AppInfoVM = new ApplicationInformationViewModel( filePath );
         }
 

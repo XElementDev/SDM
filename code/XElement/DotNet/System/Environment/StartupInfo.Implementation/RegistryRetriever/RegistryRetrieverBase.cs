@@ -28,19 +28,29 @@ namespace XElement.DotNet.System.Environment.Startup
 
         private IProgramInfo CreateProgramInfoFrom( KeyValuePair<string, string> kvp )
         {
+            var programInfo = new ProgramInfo
+            {
+                Origin = this.CreateOriginFrom( kvp ), 
+                StartInfo = this.CreateStartInfoFrom( kvp )
+            };
+            return programInfo;
+        }
+
+
+        private IStartInfo CreateStartInfoFrom( KeyValuePair<string, string> kvp )
+        {
             var value = kvp.Value.Replace( "\"", String.Empty );
             var pattern = ".exe";
             var index = value.IndexOf( pattern );
             var arguments = value.Substring( index + pattern.Length ).Trim( ' ' );
             var filePath = value.Substring( 0, index + pattern.Length );
 
-            var programInfo = new ProgramInfo
+            var startInfo = new StartInfo
             {
-                Arguments = arguments, 
-                FilePath = filePath, 
-                Origin = this.CreateOriginFrom( kvp )
+                Arguments = arguments,
+                FilePath = filePath
             };
-            return programInfo;
+            return startInfo;
         }
 
 

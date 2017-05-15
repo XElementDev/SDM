@@ -27,8 +27,8 @@ namespace XElement.SDM.ManagementLogic
             var fileName = this._programInfo.Origin.Location;
             var wsh = new IWshShell_Class();
             var shortcut = wsh.CreateShortcut( fileName ) as IWshShortcut;
-            shortcut.TargetPath = this._programInfo.FilePath;
-            shortcut.Arguments = this._programInfo.Arguments;
+            shortcut.TargetPath = this._programInfo.StartInfo.FilePath;
+            shortcut.Arguments = this._programInfo.StartInfo.Arguments;
             shortcut.Save();
         }
 

@@ -7,6 +7,6 @@ namespace XElement.SDM.DelayLogic
         int DelayInMinutes { get; }
 
 
-        IProgramInfo ProgramInfo { get; }
+        IStartInfo StartInfo { get; }
     }
 }
