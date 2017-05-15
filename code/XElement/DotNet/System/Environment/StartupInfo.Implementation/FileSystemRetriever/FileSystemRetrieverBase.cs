@@ -14,19 +14,24 @@ namespace XElement.DotNet.System.Environment.Startup
 
         private IProgramInfo CreateProgramInfoFromFilePath( string filePath )
         {
-            var shortcut = this.GetShortcutInfo( filePath );
-            var origin = new FileOrigin { Location = filePath };
+            var programInfo = new ProgramInfo
+            {
+                Origin = new FileOrigin { Location = filePath }, 
+                StartInfo = FileSystemRetrieverBase.CreateStartInfoFrom( filePath )
+            };
+            return programInfo;
+        }
+
+
+        private static IStartInfo CreateStartInfoFrom( string filePath )
+        {
+            var shortcut = FileSystemRetrieverBase.GetShortcutInfo( filePath );
             var startInfo = new StartInfo
             {
                 Arguments = shortcut.Arguments, 
                 FilePath = shortcut.TargetPath
             };
-            var programInfo = new ProgramInfo
-            {
-                Origin = origin, 
-                StartInfo = startInfo
-            };
-            return programInfo;
+            return startInfo;
         }
 
 
@@ -36,14 +41,14 @@ namespace XElement.DotNet.System.Environment.Startup
                                      "Start Menu", "Programs", "Startup" );
             var directory = new DirectoryInfo( path );
             var fileInfos = directory.GetFiles();
-            var fileInfosOfVisibleFiles = fileInfos.Where( this.IsHiddenFile ).ToList();
+            var fileInfosOfVisibleFiles = fileInfos.Where( IsHiddenFile ).ToList();
             var filePaths = fileInfosOfVisibleFiles.Select( fi => fi.FullName ).ToList();
             return filePaths;
         }
 
 
         //  --> https://stackoverflow.com/questions/139010/how-to-resolve-a-lnk-in-c-sharp
-        private IWshShortcut GetShortcutInfo( string filePath )
+        private static IWshShortcut GetShortcutInfo( string filePath )
         {
             IWshShell shell = new WshShell();
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut( filePath );
@@ -51,7 +56,7 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
-        private bool IsHiddenFile( FileInfo fileInfo )
+        private static bool IsHiddenFile( FileInfo fileInfo )
         {
             var isHidden = fileInfo.Attributes.HasFlag( FileAttributes.Hidden );
             return !isHidden;
