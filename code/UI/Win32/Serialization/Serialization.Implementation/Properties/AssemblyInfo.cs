@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle( "XElement.SDM.Serialization" )]
+[assembly: AssemblyTitle( "XElement.SDM.UI.Win32.Serialization.Implementation" )]
 [assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "" )]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible( false )]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid( "27d2d66a-ee15-4b2b-9b19-60387081b7a6" )]
+[assembly: Guid( "e7ae916a-ae83-415c-86a0-6102b9bf81b1" )]
 
 // Version information for an assembly consists of the following four values:
 //
