@@ -5,6 +5,9 @@
         IData Deserialize();
 
 
+        string FilePath { get; }
+
+
         void Serialize( IData target );
     }
 }
