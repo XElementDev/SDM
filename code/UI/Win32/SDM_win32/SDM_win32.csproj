@@ -123,6 +123,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DataContainer.cs" />
+    <Compile Include="Model\Serialization\LocalDataContainer.cs" />
     <Compile Include="Modules\Main\Model.cs" />
     <Compile Include="Modules\Main\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
@@ -192,6 +194,14 @@
     <ProjectReference Include="..\..\..\XElement\DotNet\System\Environment\StartupInfo.MefExtensions\StartupInfo.MefExtensions.csproj">
       <Project>{317f4d74-3868-45ea-b2ca-5be5f5f6749f}</Project>
       <Name>StartupInfo.MefExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Serialization\Serialization.Implementation\Serialization.Implementation.csproj">
+      <Project>{e7ae916a-ae83-415c-86a0-6102b9bf81b1}</Project>
+      <Name>Serialization.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Serialization\Serialization.Interface\Serialization.Interface.csproj">
+      <Project>{E1CE7152-094C-4BA1-AFEA-73EDB535AA52}</Project>
+      <Name>Serialization.Interface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

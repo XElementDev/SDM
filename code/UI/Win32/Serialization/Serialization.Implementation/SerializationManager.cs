@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 using XElement.SDM.UI.Win32.Serialization.DataTypes;
 
@@ -16,12 +17,19 @@ namespace XElement.SDM.UI.Win32.Serialization
 
         public IData /*ISerializationManager.*/Deserialize()
         {
-            IData deserialized = null;
-
-            using ( Stream fileStream = this.GetFileStream( FileMode.Open ) )
+            IData deserialized = new SerializableData
             {
-                var obj = this._serializer.Deserialize( fileStream );
-                deserialized = obj as IData;
+                DelayedApplications = new List<SerializableDelayedApplicationInfo>()
+            };
+
+            using ( Stream fileStream = this.GetFileStream( FileMode.OpenOrCreate ) )
+            {
+                try
+                {
+                    var obj = this._serializer.Deserialize( fileStream );
+                    deserialized = (IData)obj;
+                }
+                catch { }
             }
 
             return deserialized;

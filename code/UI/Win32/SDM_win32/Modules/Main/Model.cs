@@ -2,6 +2,7 @@
 using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
+using XElement.SDM.UI.Win32.Model;
 
 namespace XElement.SDM.UI.Win32.Modules.Main
 {
@@ -33,7 +34,9 @@ namespace XElement.SDM.UI.Win32.Modules.Main
 
 
         [Import]
+        private DataContainer _dataContainer = null;
 
+        [Import]
         private IFactory<Management.Model, Management.ModelParameters> _managementModelFactory = null;
 
         [Import]
