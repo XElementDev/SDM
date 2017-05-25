@@ -33,11 +33,11 @@ namespace XElement.SDM.UI.Win32.Modules.Main
 
 
         [Import]
-        private IFactory<Management.Model, Management.ModelParameters> _managementModelFactory;
 
+        private IFactory<Management.Model, Management.ModelParameters> _managementModelFactory = null;
 
         [Import]
-        private IStartupInfo _startupInfo;
+        private IStartupInfo _startupInfo = null;
     }
 #endregion
 }
