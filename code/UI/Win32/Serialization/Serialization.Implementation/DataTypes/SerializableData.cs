@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Serialization;
+using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 {
@@ -8,9 +9,14 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
     public class SerializableData : IData
     {
         [XmlElement( "DelayedApplicationInfo" )]
-        public List<SerializableDelayedApplicationInfo> DelayedApplications { get; set; }
+        //public List<SerializableDelayedApplicationInfo> DelayedApplications { get; set; }
+        public List<SerializableProgramInfo> DelayedApplications { get; set; }
 
-        IEnumerable<IDelayedApplicationInfo> IData.DelayedApplications
+        //IEnumerable<IDelayedApplicationInfo> IData.DelayedApplications
+        //{
+        //    get { return this.DelayedApplications; }
+        //}
+        IEnumerable<IProgramInfo> IData.DelayedApplications
         {
             get { return this.DelayedApplications; }
         }

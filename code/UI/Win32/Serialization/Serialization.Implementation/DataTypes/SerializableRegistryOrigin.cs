@@ -9,7 +9,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
     public class SerializableRegistryOrigin : AbstractSerializableOrigin, IRegistryOrigin
     {
         //  --> TODO: Find better way to implement this.
-        [XmlIgnore]
+        [XmlAttribute( "location" )]
         public override string /*AbstractSerializableOrigin*/Location
         {
             get { return null; }

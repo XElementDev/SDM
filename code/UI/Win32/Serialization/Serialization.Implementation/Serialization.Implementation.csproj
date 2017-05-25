@@ -45,6 +45,7 @@
     <Compile Include="DataTypes\SerializableData.cs" />
     <Compile Include="DataTypes\SerializableDelayInfo.cs" />
     <Compile Include="DataTypes\SerializableFileOrigin.cs" />
+    <Compile Include="DataTypes\SerializableProgramInfo.cs" />
     <Compile Include="DataTypes\SerializableRegistryOrigin.cs" />
     <Compile Include="DataTypes\SerializableStartInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -19,7 +19,7 @@ namespace XElement.SDM.UI.Win32.Serialization
         {
             IData deserialized = new SerializableData
             {
-                DelayedApplications = new List<SerializableDelayedApplicationInfo>()
+                DelayedApplications = new List<SerializableProgramInfo>()
             };
 
             using ( Stream fileStream = this.GetFileStream( FileMode.OpenOrCreate ) )
