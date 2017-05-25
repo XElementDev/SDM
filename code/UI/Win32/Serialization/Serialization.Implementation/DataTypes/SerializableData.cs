@@ -8,7 +8,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
     public class SerializableData : IData
     {
         [XmlElement( "DelayedApplicationInfo" )]
-        public List<DelayedApplicationInfo> DelayedApplications { get; set; }
+        public List<SerializableDelayedApplicationInfo> DelayedApplications { get; set; }
 
         IEnumerable<IDelayedApplicationInfo> IData.DelayedApplications
         {

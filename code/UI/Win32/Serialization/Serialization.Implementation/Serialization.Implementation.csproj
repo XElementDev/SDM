@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\AbstractSerializableOrigin.cs" />
+    <Compile Include="DataTypes\SerializableDelayedApplicationInfo.cs" />
     <Compile Include="DataTypes\SerializableData.cs" />
     <Compile Include="DataTypes\SerializableDelayInfo.cs" />
     <Compile Include="DataTypes\SerializableFileOrigin.cs" />

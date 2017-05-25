@@ -4,10 +4,10 @@ using XElement.DotNet.System.Environment.Startup;
 namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 {
 #region not unit-tested
-    public class SerializableFileOrigin : IFileOrigin
+    public class SerializableFileOrigin : AbstractSerializableOrigin, IFileOrigin
     {
         [XmlAttribute( "location" )]
-        public string Location { get; set; }
+        public override string /*AbstractSerializableOrigin.*/Location { get; set; }
     }
 #endregion
 }

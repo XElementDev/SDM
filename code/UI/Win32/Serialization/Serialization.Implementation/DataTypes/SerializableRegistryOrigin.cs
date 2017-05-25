@@ -6,10 +6,15 @@ using XElement.DotNet.System.Environment.Startup;
 namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 {
 #region not unit-tested
-    public class SerializableRegistryOrigin : IRegistryOrigin
+    public class SerializableRegistryOrigin : AbstractSerializableOrigin, IRegistryOrigin
     {
+        //  --> TODO: Find better way to implement this.
         [XmlIgnore]
-        string IOrigin.Location => null;
+        public override string /*AbstractSerializableOrigin*/Location
+        {
+            get { return null; }
+            set { }
+        }
 
 
         [XmlAttribute( "mode" )]
