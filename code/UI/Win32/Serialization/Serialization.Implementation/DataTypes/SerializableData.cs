@@ -22,7 +22,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
         }
 
 
-        [XmlElement( "DelayedApplications" )]
+        [XmlElement( "DelayedApplication" )]
         //public List<SerializableDelayedApplicationInfo> DelayedApplications { get; set; }
         public List<SerializableProgramInfo> DelayedApplications { get; set; }
 
