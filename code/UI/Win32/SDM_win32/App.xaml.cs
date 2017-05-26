@@ -11,8 +11,6 @@ namespace XElement.SDM.UI.Win32
     {
         public App()
         {
-            this._mainVM = null;
-
             this.InitializeMef();
 
             this.MainWindow = new MainWindow { DataContext = this._mainVM };
@@ -41,7 +39,7 @@ namespace XElement.SDM.UI.Win32
 
 
         [Import]
-        private Modules.Main.ViewModel _mainVM;
+        private Modules.Main.ViewModel _mainVM = null;
     }
 #endregion
 }
