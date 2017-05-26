@@ -19,6 +19,18 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
         }
 
 
+        //  --> https://stackoverflow.com/questions/79126/create-generic-method-constraining-t-to-an-enum
+        private static T GetEnumFromString<T>( string toParse ) where T : struct, IConvertible
+        {
+            if ( !typeof( T ).IsEnum )
+            {
+                throw new ArgumentException();
+            }
+            var parsed = Enum.Parse( typeof( T ), toParse );
+            return (T)parsed;
+        }
+
+
         private static string GetStringFromEnum<T>( T value ) where T : struct, IConvertible
         {
             if ( !typeof( T ).IsEnum )
@@ -43,11 +55,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 
         RegistryView IRegistryOrigin.Mode
         {
-            get
-            {
-                var parsed = Enum.Parse( typeof( RegistryView ), this.Mode );
-                return (RegistryView)parsed;
-            }
+            get { return GetEnumFromString<RegistryView>( this.Mode ); }
         }
 
 
@@ -60,11 +68,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 
         RegistryHive IRegistryOrigin.TopLevelNode
         {
-            get
-            {
-                var parsed = Enum.Parse( typeof( RegistryHive ), this.TopLevelNode );
-                return (RegistryHive)parsed;
-            }
+            get { return GetEnumFromString<RegistryHive>( this.TopLevelNode ); }
         }
 
 
