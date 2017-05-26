@@ -1,4 +1,5 @@
-﻿using XElement.DotNet.System.Environment.Startup;
+﻿using System.Linq;
+using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
@@ -15,6 +16,8 @@ namespace XElement.SDM.UI.Win32.Modules.Management
 
             var startup = new ProgramInfos.Model( parameters.StartupProgramInfos );
             this.StartupProgramInfosModel = startup;
+
+            this.SubscribeEvents();
         }
 
 
@@ -46,6 +49,17 @@ namespace XElement.SDM.UI.Win32.Modules.Management
             var programLogic = this.CreateProgramLogic( programInfo );
             programLogic.Undo();
             this.StartupProgramInfosModel.Add( programInfo );
+        }
+
+
+        private void SubscribeEvents()
+        {
+            this.DelayedProgramInfosModel.PropertyChanged += ( s, e ) =>
+            {
+                var programInfoModels = this.DelayedProgramInfosModel.ProgramInfoModels;
+                var programInfos = programInfoModels.Select( m => m.ProgramInfo ).ToList();
+                this._dependencies.DataContainer.DelayedApplications = programInfos;
+            };
         }
 
 

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.ComponentModel.Composition;
 using System.IO;
+using XElement.SDM.UI.Win32.Model.AutoSave;
 using XElement.SDM.UI.Win32.Serialization;
 
 namespace XElement.SDM.UI.Win32.Model.Serialization
 {
 #region not unit-tested
     [Export]
-    internal class LocalDataContainer
+    [Export( typeof( IAutoSaveTarget ) )]
+    internal class LocalDataContainer : IAutoSaveTarget
     {
         public LocalDataContainer()
         {
@@ -16,10 +18,12 @@ namespace XElement.SDM.UI.Win32.Model.Serialization
         }
 
 
+        private IData _data;
+
         public IData Data
         {
             get { return this._serializationManager.Deserialize(); }
-            //set { /*TODO*/ }
+            set { this._data = value; }
         }
 
 
@@ -32,6 +36,12 @@ namespace XElement.SDM.UI.Win32.Model.Serialization
                 var subFolderPath = Path.Combine( SUB_FOLDERS );
                 return Path.Combine( rootFolderPath, subFolderPath, FILE_NAME );
             }
+        }
+
+
+        void IAutoSaveTarget.Persist()
+        {
+            this._serializationManager.Serialize( this._data );
         }
 
 

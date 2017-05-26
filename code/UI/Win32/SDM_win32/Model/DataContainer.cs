@@ -15,7 +15,17 @@ namespace XElement.SDM.UI.Win32.Model
 
 
         //public IEnumerable<IDelayedApplicationInfo> DelayedApplications { get; private set; }
-        public IEnumerable<IProgramInfo> DelayedApplications { get; private set; }
+        private IEnumerable<IProgramInfo> _delayedApplications;
+
+        public IEnumerable<IProgramInfo> DelayedApplications
+        {
+            get { return this._delayedApplications; }
+            set
+            {
+                this._delayedApplications = value;
+                this.UpdatePrivateDataContainers();
+            }
+        }
 
 
         //void IPartImportsSatisfiedNotification.OnImportsSatisfied()
@@ -31,6 +41,12 @@ namespace XElement.SDM.UI.Win32.Model
             delayedApplications.AddRange( this._localData.Data.DelayedApplications );
             // TODO: add global data
             this.DelayedApplications = delayedApplications;
+        }
+
+
+        private void UpdatePrivateDataContainers()
+        {
+            this._localData.Data = new Data { DelayedApplications = this.DelayedApplications };
         }
 
 

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.UI.Win32.Model;
@@ -11,8 +10,9 @@ namespace XElement.SDM.UI.Win32.Modules.Main
     internal class Model : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
-        public Model()
+        public Model( ModelDependencies dependencies )
         {
+            this._dependencies = dependencies;
             this._managementModelFactory = null;
             this._startupInfo = null;
         }
@@ -25,7 +25,7 @@ namespace XElement.SDM.UI.Win32.Modules.Main
         {
             var mgmtParams = new Management.ModelParameters
             {
-                DelayedProgramInfos = new List<IProgramInfo>(), // TODO
+                DelayedProgramInfos = this._dataContainer.DelayedApplications, 
                 StartupProgramInfos = this._startupInfo.Retrieve()
             };
             var mgmtModel = this._managementModelFactory.Get( mgmtParams );
@@ -41,6 +41,9 @@ namespace XElement.SDM.UI.Win32.Modules.Main
 
         [Import]
         private IStartupInfo _startupInfo = null;
+
+
+        private ModelDependencies _dependencies;
     }
 #endregion
 }

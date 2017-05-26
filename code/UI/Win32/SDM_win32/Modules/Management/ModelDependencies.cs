@@ -2,6 +2,7 @@
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
+using XElement.SDM.UI.Win32.Model;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
 {
@@ -11,6 +12,10 @@ namespace XElement.SDM.UI.Win32.Modules.Management
     {
         [ImportingConstructor]
         public ModelDependencies() { }
+
+
+        [Import]
+        public DataContainer DataContainer { get; set; }
 
 
         [Import]

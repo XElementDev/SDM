@@ -123,9 +123,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AutoSave\IAutoSaveTarget.cs" />
+    <Compile Include="Model\AutoSave\Model.cs" />
     <Compile Include="Model\DataContainer.cs" />
+    <Compile Include="Model\Serialization\Data.cs" />
     <Compile Include="Model\Serialization\LocalDataContainer.cs" />
     <Compile Include="Modules\Main\Model.cs" />
+    <Compile Include="Modules\Main\ModelDependencies.cs" />
     <Compile Include="Modules\Main\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
@@ -215,6 +219,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\packages\Fody.2.0.0\build\dotnet\Fody.targets" Condition="Exists('..\..\..\packages\Fody.2.0.0\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
