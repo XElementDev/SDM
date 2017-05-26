@@ -47,9 +47,10 @@ namespace XElement.SDM.UI.Win32.Serialization
 
         public void /*ISerializationManager.*/Serialize( IData target )
         {
+            var serializable = new SerializableData( target );
             using ( Stream fileStream = this.GetFileStream( FileMode.Create ) )
             {
-                this._serializer.Serialize( fileStream, target );
+                this._serializer.Serialize( fileStream, serializable );
             }
         }
 

@@ -8,6 +8,20 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
     [XmlRoot( "Data" )]
     public class SerializableData : IData
     {
+        public SerializableData() { }
+
+        public SerializableData( IData copyFrom )
+        {
+            var serializableDelayedApplications = new List<SerializableProgramInfo>();
+            foreach ( IProgramInfo programInfo in copyFrom.DelayedApplications )
+            {
+                var serializableProgramInfo = new SerializableProgramInfo( programInfo );
+                serializableDelayedApplications.Add( serializableProgramInfo );
+            }
+            this.DelayedApplications = serializableDelayedApplications;
+        }
+
+
         [XmlElement( "DelayedApplications" )]
         //public List<SerializableDelayedApplicationInfo> DelayedApplications { get; set; }
         public List<SerializableProgramInfo> DelayedApplications { get; set; }

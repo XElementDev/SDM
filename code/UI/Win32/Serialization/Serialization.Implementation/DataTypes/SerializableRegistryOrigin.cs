@@ -8,6 +8,27 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 #region not unit-tested
     public class SerializableRegistryOrigin : AbstractSerializableOrigin, IRegistryOrigin
     {
+        public SerializableRegistryOrigin() { }
+
+        public SerializableRegistryOrigin( IRegistryOrigin copyFrom )
+        {
+            this.Mode = GetStringFromEnum( copyFrom.Mode );
+            this.SubKey = copyFrom.SubKey;
+            this.TopLevelNode = GetStringFromEnum( copyFrom.TopLevelNode );
+            this.ValueName = copyFrom.ValueName;
+        }
+
+
+        private static string GetStringFromEnum<T>( T value ) where T : struct, IConvertible
+        {
+            if ( !typeof( T ).IsEnum )
+            {
+                throw new ArgumentException();
+            }
+            return Enum.GetName( typeof( T ), value );
+        }
+
+
         //  --> TODO: Find better way to implement this.
         [XmlAttribute( "location" )]
         public override string /*AbstractSerializableOrigin*/Location
