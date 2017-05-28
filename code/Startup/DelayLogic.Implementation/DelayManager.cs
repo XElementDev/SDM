@@ -18,15 +18,9 @@ namespace XElement.SDM.DelayLogic
         public IEnumerable<IDelayInfo> /*IDelayManager.*/DelayedStartups { get; set; }
 
 
-        private int MinutesRunning
-        {
-            get { return this._intervalInMinutes * this._elapsedCounter; }
-        }
-
-
         public void /*IDelayManager.*/Start()
         {
-            this._elapsedCounter = 0;
+            this._minutesRunning = 0;
             this._timer.Start();
         }
 
@@ -42,11 +36,11 @@ namespace XElement.SDM.DelayLogic
 
         private void TimerElapsed()
         {
-            ++this._elapsedCounter;
+            ++this._minutesRunning;
 
             foreach ( var delayInfo in this.DelayedStartups )
             {
-                if ( this.MinutesRunning == delayInfo.DelayInMinutes )
+                if ( this._minutesRunning == delayInfo.DelayInMinutes )
                 {
                     DelayManager.StartExecutable( delayInfo );
                 }
@@ -56,9 +50,10 @@ namespace XElement.SDM.DelayLogic
 
         private const double ONE_MINUTE = 60000d;
 
-        private int _elapsedCounter;
 
         private int _intervalInMinutes;
+
+        private int _minutesRunning;
 
         private Timer _timer;
     }
