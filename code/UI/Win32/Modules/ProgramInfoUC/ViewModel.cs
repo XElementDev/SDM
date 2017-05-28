@@ -2,7 +2,7 @@
 {
     // TODO
 #region not unit-tested
-    internal class ViewModel
+    public class ViewModel
     {
         public ViewModel( Model model )
         {

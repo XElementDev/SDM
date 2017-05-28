@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" 
 
-             xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules">
+             xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules;assembly=XElement.SDM.UI.Win32.Modules.ProgramInfoUC">
 
     <Grid>
         <ListBox 

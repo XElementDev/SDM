@@ -113,14 +113,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modules\ProgramInfo\Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Modules\ProgramInfo\View.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\AutoSave\IAutoSaveTarget.cs" />
@@ -148,12 +140,6 @@
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\ProgramInfos\ViewModel.cs" />
-    <Compile Include="Modules\ProgramInfo\ApplicationInformationViewModel.cs" />
-    <Compile Include="Modules\ProgramInfo\Model.cs" />
-    <Compile Include="Modules\ProgramInfo\View.xaml.cs">
-      <DependentUpon>View.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Modules\ProgramInfo\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -207,6 +193,10 @@
     <ProjectReference Include="..\..\..\XElement\DotNet\System\Environment\StartupInfo.MefExtensions\StartupInfo.MefExtensions.csproj">
       <Project>{317f4d74-3868-45ea-b2ca-5be5f5f6749f}</Project>
       <Name>StartupInfo.MefExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ProgramInfoUC\ProgramInfoUC.csproj">
+      <Project>{b4f5dac6-dab5-4159-a194-4f895c8caad5}</Project>
+      <Name>ProgramInfoUC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Serialization\Serialization.Implementation\Serialization.Implementation.csproj">
       <Project>{e7ae916a-ae83-415c-86a0-6102b9bf81b1}</Project>

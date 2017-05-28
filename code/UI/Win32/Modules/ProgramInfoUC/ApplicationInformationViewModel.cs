@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
 {
 #region not unit-tested
-    internal class ApplicationInformationViewModel
+    public class ApplicationInformationViewModel
     {
         public ApplicationInformationViewModel( string filePath )
         {
