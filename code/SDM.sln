@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization.Implementatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6A4DFB53-6E44-4ADE-960D-2B35ABFA2A65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramInfoUC", "UI\Win32\Modules\ProgramInfoUC\ProgramInfoUC.csproj", "{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.ProgramInfoUC", "UI\Win32\Modules\ProgramInfoUC\Modules.ProgramInfoUC.csproj", "{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

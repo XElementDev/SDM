@@ -194,9 +194,9 @@
       <Project>{317f4d74-3868-45ea-b2ca-5be5f5f6749f}</Project>
       <Name>StartupInfo.MefExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modules\ProgramInfoUC\ProgramInfoUC.csproj">
+    <ProjectReference Include="..\Modules\ProgramInfoUC\Modules.ProgramInfoUC.csproj">
       <Project>{b4f5dac6-dab5-4159-a194-4f895c8caad5}</Project>
-      <Name>ProgramInfoUC</Name>
+      <Name>Modules.ProgramInfoUC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Serialization\Serialization.Implementation\Serialization.Implementation.csproj">
       <Project>{e7ae916a-ae83-415c-86a0-6102b9bf81b1}</Project>
