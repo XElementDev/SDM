@@ -126,6 +126,7 @@
     <Compile Include="Model\AutoSave\IAutoSaveTarget.cs" />
     <Compile Include="Model\AutoSave\Model.cs" />
     <Compile Include="Model\DataContainer.cs" />
+    <Compile Include="Model\DelayModel.cs" />
     <Compile Include="Model\Serialization\Data.cs" />
     <Compile Include="Model\Serialization\LocalDataContainer.cs" />
     <Compile Include="Modules\Main\Model.cs" />
@@ -183,6 +184,14 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Startup\DelayLogic.Interface\DelayLogic.Interface.csproj">
+      <Project>{40DC1197-96B8-49AE-A839-E3E2DB70A9D5}</Project>
+      <Name>DelayLogic.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Startup\DelayLogic.MefExtensions\DelayLogic.MefExtensions.csproj">
+      <Project>{38f2a2ea-5380-4df5-bfd7-a969f41eec79}</Project>
+      <Name>DelayLogic.MefExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Startup\ManagementLogic.Interface\ManagementLogic.Interface.csproj">
       <Project>{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}</Project>
       <Name>ManagementLogic.Interface</Name>
