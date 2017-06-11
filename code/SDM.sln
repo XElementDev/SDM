@@ -45,7 +45,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6A4D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.ProgramInfoUC", "UI\Win32\Modules\ProgramInfoUC\Modules.ProgramInfoUC.csproj", "{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramInfosUC", "UI\Win32\Modules\ProgramInfosUC\ProgramInfosUC.csproj", "{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.ProgramInfosUC", "UI\Win32\Modules\ProgramInfosUC\Modules.ProgramInfosUC.csproj", "{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
