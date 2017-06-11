@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{6A4D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modules.ProgramInfoUC", "UI\Win32\Modules\ProgramInfoUC\Modules.ProgramInfoUC.csproj", "{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramInfosUC", "UI\Win32\Modules\ProgramInfosUC\ProgramInfosUC.csproj", "{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,5 +136,6 @@ Global
 		{E7AE916A-AE83-415C-86A0-6102B9BF81B1} = {1F941A6A-5C10-4DB8-8B45-8BAD6D1051A2}
 		{6A4DFB53-6E44-4ADE-960D-2B35ABFA2A65} = {9E914993-6D6A-43F9-B7D0-873C016B3BAA}
 		{B4F5DAC6-DAB5-4159-A194-4F895C8CAAD5} = {6A4DFB53-6E44-4ADE-960D-2B35ABFA2A65}
+		{54E2813A-C359-4E8F-8E17-9C47FBC4E2E3} = {6A4DFB53-6E44-4ADE-960D-2B35ABFA2A65}
 	EndGlobalSection
 EndGlobal

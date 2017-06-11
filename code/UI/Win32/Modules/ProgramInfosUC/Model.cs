@@ -7,7 +7,7 @@ using XElement.DotNet.System.Environment.Startup;
 namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
 {
 #region not unit-tested
-    internal class Model : ViewModelBase
+    public class Model : ViewModelBase
     {
         public Model( IEnumerable<IProgramInfo> programInfos )
         {

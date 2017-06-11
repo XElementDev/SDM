@@ -7,7 +7,7 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
 {
 #region not unit-tested
     [ImplementPropertyChanged]
-    internal class ViewModel : ViewModelBase
+    public class ViewModel : ViewModelBase
     {
         public ViewModel( Model model )
         {
