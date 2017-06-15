@@ -6,7 +6,7 @@ using System.Linq;
 namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
 {
 #region not unit-tested
-    [ImplementPropertyChanged]
+    [AddINotifyPropertyChangedInterface]
     public class ViewModel : ViewModelBase
     {
         public ViewModel( Model model )
