@@ -9,6 +9,15 @@
 
              xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules;assembly=XElement.SDM.UI.Win32.Modules.ProgramInfoUC">
 
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
     <Grid>
         <ListBox 
                  ItemsSource="{Binding Path=ProgramInfoVMs}" 
