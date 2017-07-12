@@ -55,6 +55,7 @@
     <Compile Include="RegistryRetriever\LocalRegistryRetrieverBase.cs" />
     <Compile Include="RegistryRetriever\RegistryRetrieverBase.cs" />
     <Compile Include="RegistryRetriever\Global64bitRegistryRetriever.cs" />
+    <Compile Include="RetrieverBaseT1.cs" />
     <Compile Include="StartInfo.cs" />
   </ItemGroup>
   <ItemGroup>

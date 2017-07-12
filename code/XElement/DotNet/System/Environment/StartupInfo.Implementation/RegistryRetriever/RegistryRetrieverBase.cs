@@ -1,21 +1,21 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using XElement.DotNet.System.Environment.Startup.DataTypes;
 
 namespace XElement.DotNet.System.Environment.Startup
 {
 #region not unit-tested
     //  --> https://stackoverflow.com/questions/13181009/c-sharp-get-list-of-application-which-runs-on-windows-startup-programatically
-    public abstract class RegistryRetrieverBase : IStartupInfo
+    public abstract class RegistryRetrieverBase : RetrieverBase<KeyValuePair<string, string>>, 
+                                                  IStartupInfo
     {
         public RegistryRetrieverBase() { }
 
 
-        private IRegistryOrigin CreateOriginFrom( KeyValuePair<string, string> kvp )
+        protected override IOrigin /*RetrieverBase<T1>.*/CreateOriginFrom( KeyValuePair<string, string> kvp )
         {
-            var origin = new RegistryOrigin
+            IRegistryOrigin origin = new RegistryOrigin
             {
                 IsForAllUsers = this.IsForAllUsers, 
                 Mode = this.Mode, 
@@ -27,18 +27,7 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
-        private IProgramInfo CreateProgramInfoFrom( KeyValuePair<string, string> kvp )
-        {
-            var programInfo = new ProgramInfo
-            {
-                Origin = this.CreateOriginFrom( kvp ), 
-                StartInfo = this.CreateStartInfoFrom( kvp )
-            };
-            return programInfo;
-        }
-
-
-        private IStartInfo CreateStartInfoFrom( KeyValuePair<string, string> kvp )
+        protected override IStartInfo /*RetrieverBase<T1>.*/CreateStartInfoFrom( KeyValuePair<string, string> kvp )
         {
             var value = kvp.Value.Replace( "\"", String.Empty );
             var pattern = ".exe";
@@ -73,6 +62,12 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
+        protected override IEnumerable<KeyValuePair<string, string>> /*RetrieverBase<T1>.*/GetEntitiesForStartInfoCreation()
+        {
+            return this.GetRegistryEntries();
+        }
+
+
         private IDictionary<string, string> GetRegistryEntries()
         {
             IDictionary<string, string> registryEntries = new Dictionary<string, string>();
@@ -89,18 +84,7 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
-        protected abstract bool IsForAllUsers { get; }
-
-
         protected abstract RegistryView Mode { get; }
-
-
-        public IEnumerable<IProgramInfo> /*IStartupInfo.*/Retrieve()
-        {
-            var registryEntries = this.GetRegistryEntries();
-            var programInfos = registryEntries.Select( this.CreateProgramInfoFrom ).ToList();
-            return programInfos;
-        }
 
 
         protected abstract RegistryHive TopLevelNode { get; }

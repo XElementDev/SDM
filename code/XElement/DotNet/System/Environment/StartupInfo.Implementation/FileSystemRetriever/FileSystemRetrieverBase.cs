@@ -7,12 +7,12 @@ using XElement.DotNet.System.Environment.Startup.DataTypes;
 namespace XElement.DotNet.System.Environment.Startup
 {
 #region not unit-tested
-    public abstract class FileSystemRetrieverBase : IStartupInfo
+    public abstract class FileSystemRetrieverBase : RetrieverBase<string>, IStartupInfo
     {
         public FileSystemRetrieverBase() { }
 
 
-        private IOrigin CreateOriginFrom( string filePath )
+        protected override IOrigin /*RetrieverBase<T1>.*/CreateOriginFrom( string filePath )
         {
             var origin = new FileOrigin
             {
@@ -23,18 +23,12 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
-        private IProgramInfo CreateProgramInfoFromFilePath( string filePath )
+        protected override IStartInfo /*RetrieverBase<T1>.*/CreateStartInfoFrom( string filePath )
         {
-            var programInfo = new ProgramInfo
-            {
-                Origin = this.CreateOriginFrom( filePath ), 
-                StartInfo = FileSystemRetrieverBase.CreateStartInfoFrom( filePath )
-            };
-            return programInfo;
+            return FileSystemRetrieverBase.CreateStartInfoFromString( filePath );
         }
 
-
-        private static IStartInfo CreateStartInfoFrom( string filePath )
+        private static IStartInfo CreateStartInfoFromString( string filePath )
         {
             var shortcut = FileSystemRetrieverBase.GetShortcutInfo( filePath );
             var startInfo = new StartInfo
@@ -43,6 +37,12 @@ namespace XElement.DotNet.System.Environment.Startup
                 FilePath = shortcut.TargetPath
             };
             return startInfo;
+        }
+
+
+        protected override IEnumerable<string> /*RetrieverBase<T1>.*/GetEntitiesForStartInfoCreation()
+        {
+            return this.GetFilePathsOfFilesInStartupFolder();
         }
 
 
@@ -67,21 +67,10 @@ namespace XElement.DotNet.System.Environment.Startup
         }
 
 
-        protected abstract bool IsForAllUsers { get; }
-
-
         private static bool IsHiddenFile( FileInfo fileInfo )
         {
             var isHidden = fileInfo.Attributes.HasFlag( FileAttributes.Hidden );
             return !isHidden;
-        }
-
-
-        public IEnumerable<IProgramInfo> Retrieve()
-        {
-            var filePaths = this.GetFilePathsOfFilesInStartupFolder();
-            var programInfos = filePaths.Select( this.CreateProgramInfoFromFilePath ).ToList();
-            return programInfos;
         }
 
 
