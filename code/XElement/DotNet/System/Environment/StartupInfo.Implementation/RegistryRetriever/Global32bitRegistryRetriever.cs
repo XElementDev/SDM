@@ -3,23 +3,14 @@
 namespace XElement.DotNet.System.Environment.Startup
 {
 #region not unit-tested
-    public class Global32bitRegistryRetriever : RegistryRetrieverBase, IStartupInfo
+    public class Global32bitRegistryRetriever : GlobalRegistryRetrieverBase, IStartupInfo
     {
         public Global32bitRegistryRetriever() { }
 
 
-        protected override bool /*RegistryRetrieverBase.*/IsForAllUsers { get { return true; } }
-
-
-        protected override RegistryView /*RegistryRetrieverBase.*/Mode
+        protected override RegistryView /*GlobalRegistryRetrieverBase.*/Mode
         {
             get { return RegistryView.Registry32; }
-        }
-
-
-        protected override RegistryHive /*RegistryRetrieverBase.*/TopLevelNode
-        {
-            get { return RegistryHive.LocalMachine; }
         }
     }
 #endregion
