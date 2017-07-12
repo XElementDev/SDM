@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Modules.ProgramInfo">
+
+    <!-- http://flaticons.net/customize.php?dir=People&icon=User-Group.png -->
+    <BitmapImage x:Key="AllUsers" 
+                 UriSource="./User-Group_d48-p8_000000.png" 
+    />
+
+    <!-- http://flaticons.net/customize.php?dir=Application&icon=User-Profile.png -->
+    <BitmapImage x:Key="CurrentUser" 
+                 UriSource="./User-Profile_d48-p8_000000.png" 
+    />
+
+</ResourceDictionary>

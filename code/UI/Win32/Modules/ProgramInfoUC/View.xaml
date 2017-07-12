@@ -10,6 +10,8 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Images.xaml" />
+                <ResourceDictionary Source="./Resources.xaml" />
                 <ResourceDictionary Source="./Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -21,6 +23,19 @@
             <Expander.Header>
                 <StackPanel 
                             Orientation="Horizontal">
+                    <Image 
+                           Source="{StaticResource AllUsers}" 
+                           Visibility="{Binding Path=ShowAllUsersImage, 
+                                                Mode=OneTime, 
+                                                Converter={StaticResource BoolToVisibilityConverter}}" 
+                    />
+                    <Image 
+                           Source="{StaticResource CurrentUser}" 
+                           Visibility="{Binding Path=ShowCurrentUserImage, 
+                                                Mode=OneTime, 
+                                                Converter={StaticResource BoolToVisibilityConverter}}" 
+                    />
+
                     <Image 
                            Source="{Binding Path=AppInfoVM.Icon}" 
                     />
