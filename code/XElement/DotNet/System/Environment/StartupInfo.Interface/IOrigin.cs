@@ -2,6 +2,9 @@
 {
     public interface IOrigin
     {
+        bool IsForAllUsers { get; }
+
+
         string Location { get; }
     }
 }

@@ -8,6 +8,9 @@ namespace XElement.DotNet.System.Environment.Startup
         public Local32bitRegistryRetriever() { }
 
 
+        protected override bool /*RegistryRetrieverBase.*/IsForAllUsers { get { return false; } }
+
+
         protected override RegistryView /*RegistryRetrieverBase.*/Mode
         {
             get { return RegistryView.Registry32; }

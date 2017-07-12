@@ -6,6 +6,9 @@
         public FileOrigin() { }
 
 
+        public bool /*IFileOrigin.*/IsForAllUsers { get; set; }
+
+
         public string /*IFileOrigin.*/Location { get; set; }
     }
 #endregion

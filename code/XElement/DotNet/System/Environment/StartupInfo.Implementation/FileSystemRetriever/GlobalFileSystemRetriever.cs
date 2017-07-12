@@ -5,7 +5,10 @@ namespace XElement.DotNet.System.Environment.Startup
 #region not unit-tested
     public class GlobalFileSystemRetriever : FileSystemRetrieverBase, IStartupInfo
     {
-        protected override string RoamingFolderPath
+        protected override bool /*FileSystemRetrieverBase.*/IsForAllUsers { get { return true; } }
+
+
+        protected override string /*FileSystemRetrieverBase.*/RoamingFolderPath
         {
             get { return SysEnv.GetFolderPath( SysEnv.SpecialFolder.CommonApplicationData ); }
         }

@@ -17,6 +17,7 @@ namespace XElement.DotNet.System.Environment.Startup
         {
             var origin = new RegistryOrigin
             {
+                IsForAllUsers = this.IsForAllUsers, 
                 Mode = this.Mode, 
                 SubKey = RegistryRetrieverBase.SUB_KEY, 
                 TopLevelNode = this.TopLevelNode, 
@@ -86,6 +87,9 @@ namespace XElement.DotNet.System.Environment.Startup
 
             return registryEntries;
         }
+
+
+        protected abstract bool IsForAllUsers { get; }
 
 
         protected abstract RegistryView Mode { get; }

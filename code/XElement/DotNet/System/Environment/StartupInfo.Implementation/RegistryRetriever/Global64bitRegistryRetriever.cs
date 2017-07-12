@@ -8,6 +8,9 @@ namespace XElement.DotNet.System.Environment.Startup
         public Global64bitRegistryRetriever() { }
 
 
+        protected override bool /*RegistryRetrieverBase.*/IsForAllUsers { get { return true; } }
+
+
         protected override RegistryView /*RegistryRetrieverBase.*/Mode
         {
             get { return RegistryView.Registry64; }

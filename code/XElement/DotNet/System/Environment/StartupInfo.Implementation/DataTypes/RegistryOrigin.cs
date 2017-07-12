@@ -5,6 +5,12 @@ namespace XElement.DotNet.System.Environment.Startup.DataTypes
 #region not unit-tested
     internal class RegistryOrigin : IRegistryOrigin
     {
+        public RegistryOrigin() { }
+
+
+        public bool /*IRegistryOrigin.*/IsForAllUsers { get; set; }
+
+
         // TODO: Implemented Location property properly. TLN must be contained. Mind also "Wow6432Node".
         public string /*IRegistryOrigin.*/Location { get { return this.SubKey; } }
 

@@ -12,11 +12,22 @@ namespace XElement.DotNet.System.Environment.Startup
         public FileSystemRetrieverBase() { }
 
 
+        private IOrigin CreateOriginFrom( string filePath )
+        {
+            var origin = new FileOrigin
+            {
+                IsForAllUsers = this.IsForAllUsers, 
+                Location = filePath
+            };
+            return origin;
+        }
+
+
         private IProgramInfo CreateProgramInfoFromFilePath( string filePath )
         {
             var programInfo = new ProgramInfo
             {
-                Origin = new FileOrigin { Location = filePath }, 
+                Origin = this.CreateOriginFrom( filePath ), 
                 StartInfo = FileSystemRetrieverBase.CreateStartInfoFrom( filePath )
             };
             return programInfo;
@@ -54,6 +65,9 @@ namespace XElement.DotNet.System.Environment.Startup
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut( filePath );
             return shortcut;
         }
+
+
+        protected abstract bool IsForAllUsers { get; }
 
 
         private static bool IsHiddenFile( FileInfo fileInfo )
