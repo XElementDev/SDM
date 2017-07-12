@@ -2,7 +2,7 @@
 using System.Linq;
 using XElement.DotNet.System.Environment.Startup.DataTypes;
 
-namespace XElement.DotNet.System.Environment.Startup
+namespace XElement.DotNet.System.Environment.Startup.Technical
 {
 #region not unit-tested
     public abstract class RetrieverBase<T> : IStartupInfo

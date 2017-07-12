@@ -1,4 +1,5 @@
-﻿using SysEnv = global::System.Environment;
+﻿using XElement.DotNet.System.Environment.Startup.Technical;
+using SysEnv = global::System.Environment;
 
 namespace XElement.DotNet.System.Environment.Startup
 {

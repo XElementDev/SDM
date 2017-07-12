@@ -1,6 +1,6 @@
 ﻿using Microsoft.Win32;
 
-namespace XElement.DotNet.System.Environment.Startup
+namespace XElement.DotNet.System.Environment.Startup.Technical
 {
 #region not unit-tested
     public abstract class LocalRegistryRetrieverBase : RegistryRetrieverBase, IStartupInfo

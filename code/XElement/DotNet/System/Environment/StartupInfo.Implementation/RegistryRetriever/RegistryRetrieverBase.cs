@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using XElement.DotNet.System.Environment.Startup.DataTypes;
 
-namespace XElement.DotNet.System.Environment.Startup
+namespace XElement.DotNet.System.Environment.Startup.Technical
 {
 #region not unit-tested
     //  --> https://stackoverflow.com/questions/13181009/c-sharp-get-list-of-application-which-runs-on-windows-startup-programatically
