@@ -1,6 +1,5 @@
 ﻿namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
 {
-    // TODO
 #region not unit-tested
     public class ViewModel
     {
