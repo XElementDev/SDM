@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Common">
+
+    <!-- http://www.iconarchive.com/show/windows-8-metro-icons-by-dakirby309/Apps-Aero-WinFlip-3D-Metro-icon.html -->
+    <BitmapImage x:Key="TaskbarIconIco" 
+                 UriSource="../Resources/Dakirby309-Windows-8-Metro-Apps-Aero-WinFlip-3D-Metro.ico" 
+    />
+
+</ResourceDictionary>
