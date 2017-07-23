@@ -3,12 +3,9 @@
 namespace XElement.SDM.UI.Win32
 {
 #region not unit-tested
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class ManagementWindow : Window
     {
-        public MainWindow()
+        public ManagementWindow()
         {
             InitializeComponent();
         }

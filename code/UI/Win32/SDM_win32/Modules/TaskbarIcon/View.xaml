@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="XElement.SDM.UI.Win32.Modules.TaskbarIconUC" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Modules.TaskbarIcon" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" 
+
+             xmlns:hardcodet="http://www.hardcodet.net/taskbar">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Common/Images.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <hardcodet:TaskbarIcon 
+                               IconSource="{StaticResource TaskbarIconIco}" 
+                               DoubleClickCommand="{Binding Path=ShowWindowCommand}" 
+                               ToolTipText="SDM - Startup Delay Manager">
+            <hardcodet:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem 
+                              Command="{Binding Path=ShowWindowCommand}" 
+                              Header="&lt;OPEN&gt;" 
+                    />
+                    <Separator />
+                    <MenuItem 
+                              Click="ExitMenuItem_Click" 
+                              Header="&lt;EXIT&gt;" 
+                    />
+                </ContextMenu>
+            </hardcodet:TaskbarIcon.ContextMenu>
+        </hardcodet:TaskbarIcon>
+    </Grid>
+
+</UserControl>

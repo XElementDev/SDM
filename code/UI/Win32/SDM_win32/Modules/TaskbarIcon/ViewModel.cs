@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using System.ComponentModel.Composition;
-using System.Windows;
 using System.Windows.Input;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 
@@ -36,14 +35,13 @@ namespace XElement.SDM.UI.Win32.Modules.TaskbarIcon
 
         private void ShowWindowCommand_Execute()
         {
-            var app = Application.Current;
-            app.MainWindow = this._mainWindowFactory.Get();
-            app.MainWindow.Show();
+            var mgmtWindow = this._mgmtWindowFactory.Get();
+            mgmtWindow.Show();
         }
 
 
         [Import]
-        private IFactory<MainWindow> _mainWindowFactory = null;
+        private IFactory<ManagementWindow> _mgmtWindowFactory = null;
 
         [Import]
         private Modules.TaskbarIcon.Model _model = null;

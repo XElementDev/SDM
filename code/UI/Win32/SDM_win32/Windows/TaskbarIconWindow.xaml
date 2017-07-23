@@ -1,0 +1,20 @@
+﻿<!-- Needed, due to (more or less) https://social.msdn.microsoft.com/Forums/vstudio/en-US/116bcd83-93bf-42f3-9bfe-da9e7de37546/messagebox-closes-immediately-in-dispatcherunhandledexception-handler?forum=wpf -->
+<Window x:Class="XElement.SDM.UI.Win32.TaskbarIconWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        mc:Ignorable="d" 
+        Title="SDM - Startup Delay Manager" Height="600" Width="800" 
+
+        xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules" 
+        ShowInTaskbar="False" 
+        Visibility="Hidden">
+
+    <Grid>
+        <modules:TaskbarIconUC 
+                               DataContext="{Binding}" 
+        />
+    </Grid>
+
+</Window>

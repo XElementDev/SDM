@@ -1,5 +1,4 @@
-﻿using Hardcodet.Wpf.TaskbarNotification;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.IO;
@@ -46,8 +45,11 @@ namespace XElement.SDM.UI.Win32
         private void ShowTaskbarIcon()
         {
             var app = Application.Current;
-            var taskbarIcon = (TaskbarIcon)app.FindResource( "TaskbarIconControl" );
-            taskbarIcon.DataContext = this._taskbarIconVM;
+            app.MainWindow = new TaskbarIconWindow
+            {
+                DataContext = this._taskbarIconVM
+            };
+            app.MainWindow.Show();
         }
 
 
