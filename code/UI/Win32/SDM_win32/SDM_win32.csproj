@@ -102,6 +102,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapping\Bootstrapper.cs" />
+    <Compile Include="Bootstrapping\MainWindowFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -144,6 +145,7 @@
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\Management\ViewModel.cs" />
+    <Compile Include="Modules\TaskbarIcon\Model.cs" />
     <Compile Include="Modules\TaskbarIcon\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -187,6 +189,10 @@
     <ProjectReference Include="..\..\..\Startup\ManagementLogic.MefExtensions\ManagementLogic.MefExtensions.csproj">
       <Project>{96316379-86dc-4ee4-91de-1beb7552b26e}</Project>
       <Name>ManagementLogic.MefExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\XElement\DesignPatterns\CreationalPatterns\FactoryMethod\FactoryMethod.Interface\FactoryMethod.Interface.csproj">
+      <Project>{7F4DC167-6ED5-4F72-BFAA-C822BD0879CC}</Project>
+      <Name>FactoryMethod.Interface</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>

@@ -10,7 +10,10 @@ namespace XElement.SDM.UI.Win32
 #region not unit-tested
     internal class Bootstrapper
     {
-        public Bootstrapper() { }
+        public Bootstrapper()
+        {
+            Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
+        }
 
 
         private ComposablePartCatalog CreateCatalog()
@@ -36,16 +39,7 @@ namespace XElement.SDM.UI.Win32
         public void Run()
         {
             this.InitializeMef();
-            this.ShowMainWindow();
             this.ShowTaskbarIcon();
-        }
-
-
-        private void ShowMainWindow()
-        {
-            var app = Application.Current;
-            app.MainWindow = new MainWindow { DataContext = this._mainVM };
-            app.MainWindow.Show();
         }
 
 
@@ -53,12 +47,12 @@ namespace XElement.SDM.UI.Win32
         {
             var app = Application.Current;
             var taskbarIcon = (TaskbarIcon)app.FindResource( "TaskbarIconControl" );
-            taskbarIcon.DataContext = this._mainVM.TaskbarIconVM;
+            taskbarIcon.DataContext = this._taskbarIconVM;
         }
 
 
         [Import]
-        private Modules.Main.ViewModel _mainVM = null;
+        private Modules.TaskbarIcon.ViewModel _taskbarIconVM = null;
     }
 #endregion
 }

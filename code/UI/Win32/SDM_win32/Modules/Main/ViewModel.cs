@@ -19,11 +19,7 @@ namespace XElement.SDM.UI.Win32.Modules.Main
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         {
             this.ManagementVM = new Management.ViewModel( this._model.ManagementModel );
-            this.TaskbarIconVM = new TaskbarIcon.ViewModel();
         }
-
-
-        public TaskbarIcon.ViewModel TaskbarIconVM { get; private set; }
 
 
         private Model _model;
