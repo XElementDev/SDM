@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using XElement.SDM.UI.Win32.Localization;
 
@@ -18,9 +17,10 @@ namespace XElement.SDM.UI.Win32.Modules
         private void ExitMenuItem_Click( object sender, RoutedEventArgs e )
         {
             var result = MessageBoxResult.No;
-            string message = Locale.TaskbarIconUC_ExitConfirmation;
-            result = MessageBox.Show( this._parentWindow, message, String.Empty, 
-                                      MessageBoxButton.YesNo, MessageBoxImage.Warning );
+            string message = Locale.TaskbarIconUC_ExitConfirmation_Text;
+            var caption = Locale.TaskbarIconUC_ExitConfirmation_Caption;
+            result = MessageBox.Show( this._parentWindow, message, caption, MessageBoxButton.YesNo, 
+                                      MessageBoxImage.Warning );
 
             if (result == MessageBoxResult.Yes)
             {

@@ -61,11 +61,21 @@ namespace XElement.SDM.UI.Win32.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you close this application, all managed applications that have not been started yet won&apos;t be started..
+        ///   Looks up a localized string similar to Are you sure you want to exit this application?.
         /// </summary>
-        public static string TaskbarIconUC_ExitConfirmation {
+        public static string TaskbarIconUC_ExitConfirmation_Caption {
             get {
-                return ResourceManager.GetString("TaskbarIconUC_ExitConfirmation", resourceCulture);
+                return ResourceManager.GetString("TaskbarIconUC_ExitConfirmation_Caption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you close this application, all managed applications that have not been started yet won&apos;t be started.
+        ///Are you sure?.
+        /// </summary>
+        public static string TaskbarIconUC_ExitConfirmation_Text {
+            get {
+                return ResourceManager.GetString("TaskbarIconUC_ExitConfirmation_Text", resourceCulture);
             }
         }
         
