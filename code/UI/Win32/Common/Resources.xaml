@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Common" 
+
+                    xmlns:localization="clr-namespace:XElement.SDM.UI.Win32.Localization;assembly=XElement.SDM.UI.Win32.Localization">
+
+    <localization:LocalizationForXaml x:Key="XamlLocalization" />
+
+</ResourceDictionary>

@@ -89,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Common\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\TaskbarIconWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -211,6 +215,14 @@
     <ProjectReference Include="..\..\..\XElement\DotNet\System\Environment\StartupInfo.MefExtensions\StartupInfo.MefExtensions.csproj">
       <Project>{317f4d74-3868-45ea-b2ca-5be5f5f6749f}</Project>
       <Name>StartupInfo.MefExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{bdfec72b-bfc8-428a-a58c-c328e5ab3d53}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Localization\Localization.csproj">
+      <Project>{b042f695-a8fd-49e7-a159-59cc9a38ecbc}</Project>
+      <Name>Localization</Name>
     </ProjectReference>
     <ProjectReference Include="..\Modules\ProgramInfosUC\Modules.ProgramInfosUC.csproj">
       <Project>{54e2813a-c359-4e8f-8e17-9c47fbc4e2e3}</Project>

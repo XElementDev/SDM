@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using XElement.SDM.UI.Win32.Localization;
 
 namespace XElement.SDM.UI.Win32.Modules
 {
@@ -17,11 +18,7 @@ namespace XElement.SDM.UI.Win32.Modules
         private void ExitMenuItem_Click( object sender, RoutedEventArgs e )
         {
             var result = MessageBoxResult.No;
-            var part1 = "IF YOU CLOSE THIS APPLICATION";
-            var part2 = "ALL MANAGED APPLICATIONS THAT HAVE NOT BEEN STARTED YET WON'T BE STARTED.";
-            var part3 = "ARE YOU SURE?";
-            var message = $"<{part1}, {part2}{Environment.NewLine}{part3}>";
-            result = MessageBox.Show( this._parentWindow, message, string.Empty, 
+            string message = Locale.TaskbarIconUC_ExitConfirmation;
             result = MessageBox.Show( this._parentWindow, message, String.Empty, 
                                       MessageBoxButton.YesNo, MessageBoxImage.Warning );
 

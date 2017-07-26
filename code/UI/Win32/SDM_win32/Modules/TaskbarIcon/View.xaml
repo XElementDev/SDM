@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Common/Images.xaml" />
+                <ResourceDictionary Source="../../Common/Resources.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -27,12 +28,14 @@
                 <ContextMenu>
                     <MenuItem 
                               Command="{Binding Path=ShowWindowCommand}" 
-                              Header="&lt;OPEN&gt;" 
+                              Header="{Binding Path=Locale.TaskbarIconUC_ShowMenuItem_Header, 
+                                               Source={StaticResource XamlLocalization}}" 
                     />
                     <Separator />
                     <MenuItem 
                               Click="ExitMenuItem_Click" 
-                              Header="&lt;EXIT&gt;" 
+                              Header="{Binding Path=Locale.TaskbarIconUC_ExitMenuItem_Header, 
+                                               Source={StaticResource XamlLocalization}}" 
                     />
                 </ContextMenu>
             </hardcodet:TaskbarIcon.ContextMenu>
