@@ -4,7 +4,7 @@ using System.ComponentModel.Composition.Primitives;
 using System.IO;
 using System.Windows;
 
-namespace XElement.SDM.UI.Win32
+namespace XElement.SDM.UI.Win32.Bootstrapping
 {
 #region not unit-tested
     internal class Bootstrapper

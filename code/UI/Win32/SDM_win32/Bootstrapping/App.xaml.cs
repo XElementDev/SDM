@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace XElement.SDM.UI.Win32
+namespace XElement.SDM.UI.Win32.Bootstrapping
 {
 #region not unit-tested
     public partial class App : Application
