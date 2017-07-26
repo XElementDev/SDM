@@ -22,6 +22,7 @@ namespace XElement.SDM.UI.Win32.Modules
             var part3 = "ARE YOU SURE?";
             var message = $"<{part1}, {part2}{Environment.NewLine}{part3}>";
             result = MessageBox.Show( this._parentWindow, message, string.Empty, 
+            result = MessageBox.Show( this._parentWindow, message, String.Empty, 
                                       MessageBoxButton.YesNo, MessageBoxImage.Warning );
 
             if (result == MessageBoxResult.Yes)
