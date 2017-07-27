@@ -61,6 +61,51 @@ namespace XElement.SDM.UI.Win32.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application title:.
+        /// </summary>
+        public static string ProgramInfoUC_ApplicationLabel_Content {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_ApplicationLabel_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arguments:.
+        /// </summary>
+        public static string ProgramInfoUC_ArgumentsLabel_Content {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_ArgumentsLabel_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company:.
+        /// </summary>
+        public static string ProgramInfoUC_CompanyLabel_Content {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_CompanyLabel_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Origin:.
+        /// </summary>
+        public static string ProgramInfoUC_OriginLabel_Content {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_OriginLabel_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target:.
+        /// </summary>
+        public static string ProgramInfoUC_TargetLabel_Content {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_TargetLabel_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to exit this application?.
         /// </summary>
         public static string TaskbarIconUC_ExitConfirmation_Caption {

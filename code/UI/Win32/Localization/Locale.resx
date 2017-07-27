@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ProgramInfoUC_ApplicationLabel_Content" xml:space="preserve">
+    <value>Application title:</value>
+    <comment>// 2017-07-27</comment>
+  </data>
+  <data name="ProgramInfoUC_ArgumentsLabel_Content" xml:space="preserve">
+    <value>Arguments:</value>
+    <comment>// 2017-07-27</comment>
+  </data>
+  <data name="ProgramInfoUC_CompanyLabel_Content" xml:space="preserve">
+    <value>Company:</value>
+    <comment>// 2017-07-27</comment>
+  </data>
+  <data name="ProgramInfoUC_OriginLabel_Content" xml:space="preserve">
+    <value>Origin:</value>
+    <comment>// 2017-07-27</comment>
+  </data>
+  <data name="ProgramInfoUC_TargetLabel_Content" xml:space="preserve">
+    <value>Target:</value>
+    <comment>// 2017-07-27</comment>
+  </data>
   <data name="TaskbarIconUC_ExitConfirmation_Caption" xml:space="preserve">
     <value>Are you sure you want to exit this application?</value>
     <comment>// 2017-07-26</comment>

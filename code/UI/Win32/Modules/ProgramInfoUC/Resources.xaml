@@ -4,6 +4,10 @@
 
                     xmlns:uiCommon="clr-namespace:XElement.Common.UI.Converter;assembly=XElement.UiCommon">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/XElement.SDM.UI.Win32.Common;component/Resources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
 
     <uiCommon:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     <!--<uiCommon:InversedBoolToVisibilityConverter x:Key="InversedBoolToVisibilityConverter" />-->

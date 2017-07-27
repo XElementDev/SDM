@@ -61,7 +61,8 @@
 
                 <Label 
                        Grid.Column="0" Grid.Row="0" 
-                       Content="&lt;APPLICATION&gt;" 
+                       Content="{Binding Path=Locale.ProgramInfoUC_ApplicationLabel_Content, 
+                                         Source={StaticResource XamlLocalization}}" 
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="0" 
@@ -70,7 +71,8 @@
 
                 <Label 
                        Grid.Column="0" Grid.Row="1" 
-                       Content="&lt;ORIGIN&gt;" 
+                       Content="{Binding Path=Locale.ProgramInfoUC_OriginLabel_Content, 
+                                         Source={StaticResource XamlLocalization}}" 
                 />
 
                 <Label 
@@ -80,7 +82,8 @@
 
                 <Label 
                        Grid.Column="0" Grid.Row="2" 
-                       Content="&lt;TARGET&gt;" 
+                       Content="{Binding Path=Locale.ProgramInfoUC_TargetLabel_Content, 
+                                         Source={StaticResource XamlLocalization}}" 
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="2" 
@@ -89,7 +92,8 @@
 
                 <Label 
                        Grid.Column="0" Grid.Row="3" 
-                       Content="&lt;ARGUMENTS&gt;" 
+                       Content="{Binding Path=Locale.ProgramInfoUC_ArgumentsLabel_Content, 
+                                         Source={StaticResource XamlLocalization}}" 
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="3" 
@@ -98,7 +102,8 @@
 
                 <Label 
                        Grid.Column="0" Grid.Row="4" 
-                       Content="&lt;COMPANY&gt;" 
+                       Content="{Binding Path=Locale.ProgramInfoUC_CompanyLabel_Content, 
+                                         Source={StaticResource XamlLocalization}}" 
                 />
                 <Label 
                        Grid.Column="1" Grid.Row="4" 

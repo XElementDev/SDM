@@ -105,6 +105,10 @@
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>
       <Name>StartupInfo.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{bdfec72b-bfc8-428a-a58c-c328e5ab3d53}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Shell32">
