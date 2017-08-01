@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Windows;
+using XElement.SDM.UI.Win32.Model.Events;
 
 namespace XElement.SDM.UI.Win32.Model.AutoSave
 {
 #region not unit-tested
     [Export]
-    internal class Model
+    internal class Model : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
-        public Model()
+        public Model( ModelDependencies dependencies )
         {
-            this.SubscribeEvents();
+            this._dependencies = dependencies;
         }
 
 
@@ -24,18 +24,24 @@ namespace XElement.SDM.UI.Win32.Model.AutoSave
         }
 
 
+        void IPartImportsSatisfiedNotification.OnImportsSatisfied()
+        {
+            this.SubscribeEvents();
+        }
+
+
         private void SubscribeEvents()
         {
-            var app = Application.Current;
-            app.Startup += ( s1, e1 ) => 
-            {
-                app.MainWindow.Closed += ( s2, e2 ) => this.OnApplicationClosing();
-            };
+            var appClosingEvent = this._dependencies.EventAggregator.GetEvent<ApplicationClosing>();
+            appClosingEvent.Subscribe( _ => this.OnApplicationClosing() );
         }
 
 
         [ImportMany]
         private IEnumerable<IAutoSaveTarget> _autoSaveTargets = null;
+
+
+        private ModelDependencies _dependencies;
     }
 #endregion
 }

@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.Composition;
+﻿using Microsoft.Practices.Prism.Events;
+using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
 using System.IO;
 using System.Windows;
+using XElement.SDM.UI.Win32.Model.Events;
 
 namespace XElement.SDM.UI.Win32.Bootstrapping
 {
@@ -11,6 +13,7 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
     {
         public Bootstrapper()
         {
+            this._eventAggregator = null;
             Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
         }
 
@@ -30,8 +33,16 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
         {
             var catalog = this.CreateCatalog();
             var container = new CompositionContainer( catalog );
+            container.ComposeExportedValue<IEventAggregator>( new EventAggregator() );
 
             container.ComposeParts( this );
+        }
+
+
+        private void RaiseApplicationClosingEvent()
+        {
+            var appClosingEvent = this._eventAggregator.GetEvent<ApplicationClosing>();
+            appClosingEvent.Publish( "irrelevant" );
         }
 
 
@@ -39,6 +50,7 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
         {
             this.InitializeMef();
             this.ShowTaskbarIcon();
+            this.SubscribeEvents();
         }
 
 
@@ -52,6 +64,16 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
             app.MainWindow.Show();
         }
 
+
+        private void SubscribeEvents()
+        {
+            var app = Application.Current;
+            app.MainWindow.Closed += ( s, e ) => this.RaiseApplicationClosingEvent();
+        }
+
+
+        [Import]
+        private IEventAggregator _eventAggregator;
 
         [Import]
         private Modules.TaskbarIcon.ViewModel _taskbarIconVM = null;
