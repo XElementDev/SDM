@@ -9,10 +9,10 @@ using System.Resources;
 namespace XElement.SDM.UI.Win32.Localization
 {
     [TestClass]
-    public class testLocalization
+    public class Test_Localization
     {
         [TestMethod]
-        public void testLocalization_DictionariesAreEquivalent_DefaultVsDe()
+        public void Localization_DictionariesAreEquivalent_DefaultVsDe()
         {
             var default_resourceSet = GetResourceSet();
             var deDE_resourceSet = GetResourceSet( CULTURE_GERMAN );
@@ -25,9 +25,9 @@ namespace XElement.SDM.UI.Win32.Localization
 
 
         [TestMethod]
-        public void testLocalization_default_NotEmptyNoneNullNoneEmpty()
+        public void Localization_default_NotEmptyNoneNullNoneEmpty()
         {
-            var resourceSet = testLocalization.GetResourceSet();
+            var resourceSet = Test_Localization.GetResourceSet();
 
             var dictionaryEntries = GetDictionaryEntriesFrom( resourceSet );
             var values = dictionaryEntries.Select( entry => (string)entry.Value ).ToList();
@@ -38,9 +38,9 @@ namespace XElement.SDM.UI.Win32.Localization
 
 
         [TestMethod]
-        public void testLocalization_deDE_NotEmptyNoneNullNoneEmpty()
+        public void Localization_deDE_NotEmptyNoneNullNoneEmpty()
         {
-            var resourceSet = testLocalization.GetResourceSet( CULTURE_GERMAN );
+            var resourceSet = Test_Localization.GetResourceSet( CULTURE_GERMAN );
 
             var dictionaryEntries = GetDictionaryEntriesFrom( resourceSet );
             var values = dictionaryEntries.Select( entry => (string)entry.Value ).ToList();
@@ -76,14 +76,14 @@ namespace XElement.SDM.UI.Win32.Localization
 
         private static ResourceSet GetResourceSet( string cultureName )
         {
-            return testLocalization.GetResourceSet( cultureName, inheritFromParents: false );
+            return Test_Localization.GetResourceSet( cultureName, inheritFromParents: false );
         }
 
         private static ResourceSet GetResourceSet()
         {
             string defaultCulture = String.Empty;
             bool isDefault = true;
-            return testLocalization.GetResourceSet( defaultCulture, isDefault );
+            return Test_Localization.GetResourceSet( defaultCulture, isDefault );
         }
 
 
