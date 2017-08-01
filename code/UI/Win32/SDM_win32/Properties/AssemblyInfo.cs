@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -51,3 +52,7 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion( "0.0.0.0" )]
 [assembly: AssemblyFileVersion( "0.0.0.0" )]
+
+#if DEBUG
+[assembly: InternalsVisibleTo( "Test_SDM_win32" )]
+#endif

@@ -66,6 +66,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "UI\Win32\Common\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_Localization", "UI\Win32\test_Localization\test_Localization.csproj", "{C0D05FCB-227F-4944-A900-7EB1ABCA4F2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_SDM_win32", "UI\Win32\test_SDM_win32\test_SDM_win32.csproj", "{64B1DEE7-D679-4042-A2C2-8B6B08F9A8FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -148,6 +150,10 @@ Global
 		{C0D05FCB-227F-4944-A900-7EB1ABCA4F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0D05FCB-227F-4944-A900-7EB1ABCA4F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0D05FCB-227F-4944-A900-7EB1ABCA4F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64B1DEE7-D679-4042-A2C2-8B6B08F9A8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64B1DEE7-D679-4042-A2C2-8B6B08F9A8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64B1DEE7-D679-4042-A2C2-8B6B08F9A8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64B1DEE7-D679-4042-A2C2-8B6B08F9A8FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -178,5 +184,6 @@ Global
 		{B042F695-A8FD-49E7-A159-59CC9A38ECBC} = {9E914993-6D6A-43F9-B7D0-873C016B3BAA}
 		{BDFEC72B-BFC8-428A-A58C-C328E5AB3D53} = {9E914993-6D6A-43F9-B7D0-873C016B3BAA}
 		{C0D05FCB-227F-4944-A900-7EB1ABCA4F2B} = {9E914993-6D6A-43F9-B7D0-873C016B3BAA}
+		{64B1DEE7-D679-4042-A2C2-8B6B08F9A8FE} = {9E914993-6D6A-43F9-B7D0-873C016B3BAA}
 	EndGlobalSection
 EndGlobal
