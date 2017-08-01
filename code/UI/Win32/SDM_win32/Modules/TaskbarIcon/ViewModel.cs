@@ -36,7 +36,14 @@ namespace XElement.SDM.UI.Win32.Modules.TaskbarIcon
         private void ShowWindowCommand_Execute()
         {
             var mgmtWindow = this._mgmtWindowFactory.Get();
-            mgmtWindow.Show();
+            if ( mgmtWindow.IsVisible )
+            {
+                mgmtWindow.Activate();
+            }
+            else
+            {
+                mgmtWindow.Show();
+            }
         }
 
 
