@@ -76,6 +76,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "UI\Win32\Proxy\Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceAdapter", "UI\Win32\Proxy\ServiceAdapter\ServiceAdapter.csproj", "{8E922D0B-6311-487F-840B-B93D4C426744}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "UI\Win32\Proxy\Serialization\Serialization.csproj", "{8A47879C-8FE3-4214-93C7-F5560FDDD645}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -174,6 +176,10 @@ Global
 		{8E922D0B-6311-487F-840B-B93D4C426744}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E922D0B-6311-487F-840B-B93D4C426744}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E922D0B-6311-487F-840B-B93D4C426744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A47879C-8FE3-4214-93C7-F5560FDDD645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A47879C-8FE3-4214-93C7-F5560FDDD645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A47879C-8FE3-4214-93C7-F5560FDDD645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A47879C-8FE3-4214-93C7-F5560FDDD645}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -209,5 +215,6 @@ Global
 		{D3EDDC6D-3E8F-45D7-8D22-43DF828873E8} = {90BAC7B7-A5FE-48D4-BC41-D797DAD2ED5A}
 		{7DE60F1F-5A90-43B9-AF13-5AD0CB4603CF} = {90BAC7B7-A5FE-48D4-BC41-D797DAD2ED5A}
 		{8E922D0B-6311-487F-840B-B93D4C426744} = {90BAC7B7-A5FE-48D4-BC41-D797DAD2ED5A}
+		{8A47879C-8FE3-4214-93C7-F5560FDDD645} = {90BAC7B7-A5FE-48D4-BC41-D797DAD2ED5A}
 	EndGlobalSection
 EndGlobal
