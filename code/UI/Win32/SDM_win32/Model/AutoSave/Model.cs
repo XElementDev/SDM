@@ -33,7 +33,7 @@ namespace XElement.SDM.UI.Win32.Model.AutoSave
         private void SubscribeEvents()
         {
             var appClosingEvent = this._dependencies.EventAggregator.GetEvent<ApplicationClosing>();
-            appClosingEvent.Subscribe( _ => this.OnApplicationClosing() );
+            appClosingEvent.Subscribe( this.OnApplicationClosing );
         }
 
 

@@ -1,4 +1,4 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿using Prism.Events;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
@@ -21,10 +21,13 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
         private ComposablePartCatalog CreateCatalog()
         {
             var catalog = new AggregateCatalog();
+
             var assembly = typeof( App ).Assembly;
+            catalog.Catalogs.Add( new AssemblyCatalog( assembly ) );
+
             string path = Path.GetDirectoryName( assembly.Location );
-            catalog.Catalogs.Add( new AggregateCatalog( new AssemblyCatalog( assembly ),
-                                                        new DirectoryCatalog( path ) ) );
+            catalog.Catalogs.Add( new DirectoryCatalog( path, "*mef*" ) );
+
             return catalog;
         }
 
@@ -33,7 +36,6 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
         {
             var catalog = this.CreateCatalog();
             var container = new CompositionContainer( catalog );
-            container.ComposeExportedValue<IEventAggregator>( new EventAggregator() );
 
             container.ComposeParts( this );
         }
@@ -42,7 +44,7 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
         private void RaiseApplicationClosingEvent()
         {
             var appClosingEvent = this._eventAggregator.GetEvent<ApplicationClosing>();
-            appClosingEvent.Publish( "irrelevant" );
+            appClosingEvent.Publish();
         }
 
 
