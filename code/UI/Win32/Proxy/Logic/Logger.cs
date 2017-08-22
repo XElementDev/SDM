@@ -18,11 +18,11 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
 
         public static Logger Get()
         {
-            if ( Logger._singleton == null )
+            if ( _singleton == null )
             {
-                Logger._singleton = new Logger();
+                _singleton = new Logger();
             }
-            return Logger._singleton;
+            return _singleton;
         }
 
 
@@ -35,14 +35,14 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
 
         private void InitializeEventLogger()
         {
-            if ( !EventLog.SourceExists( Logger.EVENT_SOURCE ) )
+            if ( !EventLog.SourceExists( EVENT_SOURCE ) )
             {
-                EventLog.CreateEventSource( Logger.EVENT_SOURCE, Logger.LOG_NAME );
+                EventLog.CreateEventSource( EVENT_SOURCE, LOG_NAME );
             }
 
             this._eventLog = new EventLog();
-            this._eventLog.Source = Logger.EVENT_SOURCE;
-            this._eventLog.Log = Logger.LOG_NAME;
+            this._eventLog.Source = EVENT_SOURCE;
+            this._eventLog.Log = LOG_NAME;
         }
 
 
