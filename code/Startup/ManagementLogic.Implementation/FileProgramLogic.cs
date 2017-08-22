@@ -1,13 +1,13 @@
-﻿using IWshRuntimeLibrary;
+using IWshRuntimeLibrary;
 using System.IO;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
-    internal class FileProgramInfo : IProgramLogic
+    internal class FileProgramLogic : IProgramLogic
     {
-        public FileProgramInfo( IProgramInfo programInfo )
+        public FileProgramLogic( IProgramInfo programInfo )
         {
             this._programInfo = programInfo;
         }

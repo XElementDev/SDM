@@ -1,12 +1,12 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
-    internal class RegistryProgramInfo : IProgramLogic
+    internal class RegistryProgramLogic : IProgramLogic
     {
-        public RegistryProgramInfo( IProgramInfo programInfo )
+        public RegistryProgramLogic( IProgramInfo programInfo )
         {
             this._programInfo = programInfo;
         }

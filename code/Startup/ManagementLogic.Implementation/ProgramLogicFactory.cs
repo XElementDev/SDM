@@ -15,11 +15,11 @@ namespace XElement.SDM.ManagementLogic
 
             if ( programInfo.Origin is IFileOrigin )
             {
-                instance = new FileProgramInfo( programInfo );
+                instance = new FileProgramLogic( programInfo );
             }
             else if ( programInfo.Origin is IRegistryOrigin )
             {
-                instance = new RegistryProgramInfo( programInfo );
+                instance = new RegistryProgramLogic( programInfo );
             }
 
             return instance;

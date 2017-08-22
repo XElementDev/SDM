@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileProgramInfo.cs" />
+    <Compile Include="FileProgramLogic.cs" />
     <Compile Include="ProgramLogicFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistryProgramInfo.cs" />
+    <Compile Include="RegistryProgramLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
