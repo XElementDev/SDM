@@ -3,6 +3,7 @@
 namespace XElement.SDM.UI.Win32.Proxy
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     class Program
     {
         static void Main( string[] args )

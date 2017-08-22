@@ -1,8 +1,9 @@
-﻿using System.Reflection;
+using System.Reflection;
 
 namespace XElement.SDM.UI.Win32.Proxy.Service
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     public class AssemblyInfoAccessor
     {
         public AssemblyInfoAccessor()

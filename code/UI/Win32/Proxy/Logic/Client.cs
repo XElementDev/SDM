@@ -1,9 +1,10 @@
-﻿using NamedPipeWrapper;
+using NamedPipeWrapper;
 using System;
 
 namespace XElement.SDM.UI.Win32.Proxy.Logic
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     public class Client
     {
         public Client( string pipeName )

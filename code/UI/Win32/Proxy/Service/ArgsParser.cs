@@ -1,8 +1,9 @@
-﻿using System.Linq;
+using System.Linq;
 
 namespace XElement.SDM.UI.Win32.Proxy.Service
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     internal class ArgsParser
     {
         public ArgsParser( string[] args )
