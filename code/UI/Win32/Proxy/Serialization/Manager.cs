@@ -8,6 +8,7 @@ using XElement.SDM.UI.Win32.Serialization.DataTypes;
 namespace XElement.SDM.UI.Win32.Proxy.Serialization
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     public class Manager : IManager
     {
         public Manager()
