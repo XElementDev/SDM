@@ -40,7 +40,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter.cs" />
+    <Compile Include="ClientServer.cs" />
+    <Compile Include="ProgramLogicFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyParametersDTO.cs" />
+    <Compile Include="ProxyProgramLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Startup\ManagementLogic.Interface\ManagementLogic.Interface.csproj">
+      <Project>{290D3B05-9DAB-4324-AB86-34CAF5AA6BB1}</Project>
+      <Name>ManagementLogic.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
+      <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>
+      <Name>StartupInfo.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{7DE60F1F-5A90-43B9-AF13-5AD0CB4603CF}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Serialization\Serialization.csproj">
+      <Project>{8A47879C-8FE3-4214-93C7-F5560FDDD645}</Project>
+      <Name>Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{D3EDDC6D-3E8F-45D7-8D22-43DF828873E8}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
