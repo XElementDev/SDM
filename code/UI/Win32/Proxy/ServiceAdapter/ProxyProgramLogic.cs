@@ -8,6 +8,7 @@ using ProxySerializationManager = XElement.SDM.UI.Win32.Proxy.Serialization.Mana
 namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     internal class ProxyProgramLogic : IProgramLogic
     {
         public ProxyProgramLogic( IProgramInfo programInfo )

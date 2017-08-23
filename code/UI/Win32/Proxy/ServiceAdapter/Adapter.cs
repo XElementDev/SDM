@@ -7,6 +7,7 @@ using XElement.SDM.UI.Win32.Proxy.Service;
 namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     internal class Adapter
     {
         public Adapter( string pipeName )
