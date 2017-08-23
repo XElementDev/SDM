@@ -79,7 +79,7 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
 
         private void InitializeServerPipe()
         {
-            PipeSecurity pipeSecurity = Server.CreatePipeSecurity();
+            PipeSecurity pipeSecurity = CreatePipeSecurity();
             this._serverPipe = new NamedPipeServer<string>( this._pipeName, pipeSecurity );
             this.SubscribeEvents();
         }
