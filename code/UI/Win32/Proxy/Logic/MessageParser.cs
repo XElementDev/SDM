@@ -1,4 +1,4 @@
-using XElement.DotNet.System.Environment.Startup;
+using XElement.SDM.UI.Win32.Proxy.Serialization;
 using IProxySerializationManager = XElement.SDM.UI.Win32.Proxy.Serialization.IManager;
 using ProxySerializationManager = XElement.SDM.UI.Win32.Proxy.Serialization.Manager;
 
@@ -13,9 +13,9 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
         }
 
 
-        public IProgramInfo Parse( string serialized )
+        public IProxyParameters Parse( string serialized )
         {
-            IProgramInfo deserialized = null;
+            IProxyParameters deserialized = null;
 
             if ( serialized != null )
             {

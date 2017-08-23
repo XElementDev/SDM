@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Web.Script.Serialization;
 using XElement.DotNet.System.Environment.Startup;
+using XElement.SDM.UI.Win32.Proxy.Serialization;
 
 namespace XElement.SDM.UI.Win32.Proxy.Logic
 {
@@ -26,9 +27,9 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
         }
 
 
-        public string GetLogRepresentationOf( IProgramInfo programInfo )
+        public string GetLogRepresentationOf( IProxyParameters proxyParams )
         {
-            var stringRepresentation = this._serializer.Serialize( programInfo );
+            var stringRepresentation = this._serializer.Serialize( proxyParams );
             return stringRepresentation;
         }
 

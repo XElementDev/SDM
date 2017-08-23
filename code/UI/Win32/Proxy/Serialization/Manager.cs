@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.UI.Win32.Serialization.DataTypes;
 
 namespace XElement.SDM.UI.Win32.Proxy.Serialization
@@ -17,24 +16,24 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
         }
 
 
-        public IProgramInfo /*IManager.*/Deserialize( string serialized )
+        public IProxyParameters /*IManager.*/Deserialize( string serialized )
         {
-            IProgramInfo deserialized = null;
+            IProxyParameters deserialized = null;
 
             var bytes = Convert.FromBase64String( serialized );
             using (var stream = new MemoryStream( bytes ))
             {
                 var deserializedObj = this._formatter.Deserialize( stream );
-                deserialized = deserializedObj as IProgramInfo;
+                deserialized = deserializedObj as IProxyParameters;
             }
 
             return deserialized;
         }
 
 
-        public string /*IManager.*/Serialize( IProgramInfo toSerialize )
+        public string /*IManager.*/Serialize( IProxyParameters toSerialize )
         {
-            var serialized = this.Serialize( new SerializableProgramInfo( toSerialize ) );
+            var serialized = this.Serialize( new SerializableProxyParameters( toSerialize ) );
             return serialized;
         }
 

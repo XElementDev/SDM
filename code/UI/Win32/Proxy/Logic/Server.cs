@@ -6,6 +6,7 @@ using System.Security.Principal;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
+using XElement.SDM.UI.Win32.Proxy.Serialization;
 
 namespace XElement.SDM.UI.Win32.Proxy.Logic
 {
@@ -55,8 +56,8 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
 
         private void DoWork( string message )
         {
-            var programInfo = new MessageParser().Parse( message );
-            if (programInfo == null)
+            var proxyParams = new MessageParser().Parse( message );
+            if (proxyParams == null)
             {
                 var error = String.Format( "Parsed message (of type {0}) must not be null.", 
                                            typeof( IProgramInfo ).ToString() );
@@ -64,11 +65,14 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
             }
             else
             {
-                var programInfoAsString = Logger.Get().GetLogRepresentationOf( programInfo );
-                Logger.Get().Log( $"Parsed message looks like this: {programInfoAsString}" );
+                var proxyParamsAsString = Logger.Get().GetLogRepresentationOf( proxyParams );
+                Logger.Get().Log( $"Parsed message looks like this: {proxyParamsAsString}" );
 
-                var command = this._programLogicFactory.Get( programInfo );
-                command.Do();//TODO: Add Undo()!!!
+                var command = this._programLogicFactory.Get( proxyParams.ProgramInfo );
+                if ( proxyParams.CommandMethod == CommandMethod.Do )
+                    command.Do();
+                else if ( proxyParams.CommandMethod == CommandMethod.Undo )
+                    command.Undo();
             }
         }
 

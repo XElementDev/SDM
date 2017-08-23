@@ -40,8 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandMethodEnum.cs" />
     <Compile Include="IManager.cs" />
+    <Compile Include="IProxyParameters.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="SerializableProxyParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
