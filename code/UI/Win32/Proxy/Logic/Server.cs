@@ -11,6 +11,7 @@ using XElement.SDM.UI.Win32.Proxy.Serialization;
 namespace XElement.SDM.UI.Win32.Proxy.Logic
 {
 #region not unit-tested
+    //TODO: DRY w.r.t. CSH project
     public class Server
     {
         public Server( string pipeName )
