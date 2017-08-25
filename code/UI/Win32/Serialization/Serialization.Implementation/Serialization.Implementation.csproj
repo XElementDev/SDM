@@ -56,6 +56,10 @@
       <Project>{40DC1197-96B8-49AE-A839-E3E2DB70A9D5}</Project>
       <Name>DelayLogic.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\XElement\DotNet\System\Enum\Enum.csproj">
+      <Project>{8375130B-5D58-4036-993C-4A7F883D4B4A}</Project>
+      <Name>Enum</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\XElement\DotNet\System\Environment\StartupInfo.Interface\StartupInfo.Interface.csproj">
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>
       <Name>StartupInfo.Interface</Name>
