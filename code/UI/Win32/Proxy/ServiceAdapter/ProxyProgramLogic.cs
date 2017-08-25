@@ -20,7 +20,7 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
 
         private Client CreateClient()
         {
-            Client client = new Client( this.GetPipeName() );
+            Client client = new Client( ClientServer.PIPE_NAME_ALL_USERS );
             return client;
         }
 
@@ -51,26 +51,9 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
         }
 
 
-        private string GetPipeName()
-        {
-            string pipeName = null;
-
-            if (this._programInfo.Origin.IsForAllUsers)
-            {
-                pipeName = ClientServer.PIPE_NAME_ALL_USERS;
-            }
-            else
-            {
-                pipeName = ClientServer.PIPE_NAME_CURRENT_USER;
-            }
-
-            return pipeName;
-        }
-
-
         private void TryLaunchServer()
         {
-            var server = new Adapter( this.GetPipeName() );
+            var server = new Adapter( ClientServer.PIPE_NAME_ALL_USERS );
             if( server.CanStart() )
             {
                 server.Launch();
