@@ -6,7 +6,8 @@ using XElement.SDM.UI.Win32.Serialization.DataTypes;
 namespace XElement.SDM.UI.Win32.Proxy.Serialization
 {
 #region not unit-tested
-    internal class SerializableProxyParameters : IProxyParameters
+    [XmlRoot( "ProxyParameters" )]
+    public class SerializableProxyParameters : IProxyParameters
     {
         public SerializableProxyParameters() { }
 

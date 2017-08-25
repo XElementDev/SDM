@@ -1,8 +1,6 @@
 using System;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-using XElement.SDM.UI.Win32.Serialization.DataTypes;
+using System.Xml.Serialization;
 
 namespace XElement.SDM.UI.Win32.Proxy.Serialization
 {
@@ -12,7 +10,7 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
     {
         public Manager()
         {
-            this._formatter = new BinaryFormatter();
+            this._serializer = new XmlSerializer( typeof( SerializableProxyParameters ) );
         }
 
 
@@ -23,7 +21,7 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
             var bytes = Convert.FromBase64String( serialized );
             using (var stream = new MemoryStream( bytes ))
             {
-                var deserializedObj = this._formatter.Deserialize( stream );
+                var deserializedObj = this._serializer.Deserialize( stream );
                 deserialized = deserializedObj as IProxyParameters;
             }
 
@@ -33,17 +31,12 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
 
         public string /*IManager.*/Serialize( IProxyParameters toSerialize )
         {
-            var serialized = this.Serialize( new SerializableProxyParameters( toSerialize ) );
-            return serialized;
-        }
-
-        private string Serialize( SerializableProgramInfo toSerialize )
-        {
             string serialized = null;
 
+            var serializableProxyParams = new SerializableProxyParameters( toSerialize );
             using ( var stream = new MemoryStream() )
             {
-                this._formatter.Serialize( stream, toSerialize );
+                this._serializer.Serialize( stream, serializableProxyParams );
                 var bytes = stream.ToArray();
                 serialized = Convert.ToBase64String( bytes );
             }
@@ -52,7 +45,7 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
         }
 
 
-        private IFormatter _formatter;
+        private XmlSerializer _serializer;
     }
 #endregion
 }
