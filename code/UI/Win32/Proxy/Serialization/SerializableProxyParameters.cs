@@ -1,5 +1,5 @@
-using System;
 using System.Xml.Serialization;
+using XElement.DotNet.System;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.UI.Win32.Serialization.DataTypes;
 
@@ -12,7 +12,7 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
 
         public SerializableProxyParameters( IProxyParameters copyFrom )
         {
-            this.CommandMethod = Enum.GetName( typeof( CommandMethod ), copyFrom.CommandMethod );
+            this.CommandMethod = EnumHelper.GetStringFromEnum( copyFrom.CommandMethod );
             this.ProgramInfo = new SerializableProgramInfo( copyFrom.ProgramInfo );
         }
 
@@ -22,7 +22,7 @@ namespace XElement.SDM.UI.Win32.Proxy.Serialization
 
         CommandMethod IProxyParameters.CommandMethod
         {
-            get { return (CommandMethod)Enum.Parse( typeof( CommandMethod ), this.CommandMethod ); }
+            get { return EnumHelper.GetEnumFromString<CommandMethod>( this.CommandMethod ); }
         }
 
 

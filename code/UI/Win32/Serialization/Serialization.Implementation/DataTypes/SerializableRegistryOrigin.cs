@@ -1,6 +1,6 @@
-﻿using Microsoft.Win32;
-using System;
+using Microsoft.Win32;
 using System.Xml.Serialization;
+using XElement.DotNet.System;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.UI.Win32.Serialization.DataTypes
@@ -12,32 +12,10 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 
         public SerializableRegistryOrigin( IRegistryOrigin copyFrom )
         {
-            this.Mode = GetStringFromEnum( copyFrom.Mode );
+            this.Mode = EnumHelper.GetStringFromEnum( copyFrom.Mode );
             this.SubKey = copyFrom.SubKey;
-            this.TopLevelNode = GetStringFromEnum( copyFrom.TopLevelNode );
+            this.TopLevelNode = EnumHelper.GetStringFromEnum( copyFrom.TopLevelNode );
             this.ValueName = copyFrom.ValueName;
-        }
-
-
-        //  --> https://stackoverflow.com/questions/79126/create-generic-method-constraining-t-to-an-enum
-        private static T GetEnumFromString<T>( string toParse ) where T : struct, IConvertible
-        {
-            if ( !typeof( T ).IsEnum )
-            {
-                throw new ArgumentException();
-            }
-            var parsed = Enum.Parse( typeof( T ), toParse );
-            return (T)parsed;
-        }
-
-
-        private static string GetStringFromEnum<T>( T value ) where T : struct, IConvertible
-        {
-            if ( !typeof( T ).IsEnum )
-            {
-                throw new ArgumentException();
-            }
-            return Enum.GetName( typeof( T ), value );
         }
 
 
@@ -55,7 +33,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 
         RegistryView IRegistryOrigin.Mode
         {
-            get { return GetEnumFromString<RegistryView>( this.Mode ); }
+            get { return EnumHelper.GetEnumFromString<RegistryView>( this.Mode ); }
         }
 
 
@@ -68,7 +46,7 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 
         RegistryHive IRegistryOrigin.TopLevelNode
         {
-            get { return GetEnumFromString<RegistryHive>( this.TopLevelNode ); }
+            get { return EnumHelper.GetEnumFromString<RegistryHive>( this.TopLevelNode ); }
         }
 
 
