@@ -239,6 +239,10 @@
       <Project>{b4f5dac6-dab5-4159-a194-4f895c8caad5}</Project>
       <Name>Modules.ProgramInfoUC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Proxy\ServiceAdapter.MefExtensions\ServiceAdapter.MefExtensions.csproj">
+      <Project>{0af2ba7c-fb8d-433b-b1b7-968637a526ef}</Project>
+      <Name>ServiceAdapter.MefExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Serialization\Serialization.Implementation\Serialization.Implementation.csproj">
       <Project>{e7ae916a-ae83-415c-86a0-6102b9bf81b1}</Project>
       <Name>Serialization.Implementation</Name>
