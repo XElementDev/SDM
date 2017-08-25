@@ -40,12 +40,22 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
         }
 
 
+        private ProcessStartInfo CreateStartInfo()
+        {
+            var startInfo = new ProcessStartInfo
+            {
+                Arguments = this._pipeName,
+                CreateNoWindow = true,
+                FileName = this.PathToLinkCreatorSvcExe,
+                WindowStyle = ProcessWindowStyle.Hidden
+            };
+            return startInfo;
+        }
+
+
         public void Launch()
         {
-            var process = new Process();
-            process.StartInfo.FileName = this.PathToLinkCreatorSvcExe;
-            process.StartInfo.Arguments = this._pipeName;
-            process.StartInfo.CreateNoWindow = true;    // TODO check why a window is created
+            var process = new Process { StartInfo = this.CreateStartInfo() };
             process.Start();    // TODO handle if user does not allow admin rights
         }
 
