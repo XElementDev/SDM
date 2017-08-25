@@ -1,6 +1,6 @@
 ﻿using XElement.SDM.UI.Win32.Proxy.Service;
 
-namespace XElement.SDM.UI.Win32.Proxy
+namespace XElement.SDM.UI.Win32.Proxy.Service
 {
 #region not unit-tested
     //TODO: DRY w.r.t. CSH project
