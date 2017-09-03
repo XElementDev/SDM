@@ -3,6 +3,7 @@ using System;
 using System.IO.Pipes;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using System.Threading;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
@@ -101,8 +102,9 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
 
         public void StayAlive()
         {
-            while (true)
+            while ( true )
             {
+                Thread.Sleep( TWO_SECONDS );
             }
         }
 
@@ -114,6 +116,9 @@ namespace XElement.SDM.UI.Win32.Proxy.Logic
             this._serverPipe.ClientMessage += this.ClientMessage;
             this._serverPipe.Error += this.OnError;
         }
+
+
+        private const int TWO_SECONDS = 2000;
 
 
         private string _pipeName;
