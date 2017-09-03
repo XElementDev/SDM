@@ -6,6 +6,14 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 #region not unit-tested
     public abstract class AbstractSerializableOrigin : IOrigin
     {
+        public AbstractSerializableOrigin() { }
+
+        public AbstractSerializableOrigin( IOrigin copyFrom )
+        {
+            this.IsForAllUsers = copyFrom.IsForAllUsers;
+        }
+
+
         [XmlAttribute( "isForAllUsers" )]
         public bool /*IOrigin.*/IsForAllUsers { get; set; }
 

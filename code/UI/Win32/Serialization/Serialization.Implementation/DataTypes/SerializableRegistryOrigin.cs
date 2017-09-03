@@ -8,9 +8,9 @@ namespace XElement.SDM.UI.Win32.Serialization.DataTypes
 #region not unit-tested
     public class SerializableRegistryOrigin : AbstractSerializableOrigin, IRegistryOrigin
     {
-        public SerializableRegistryOrigin() { }
+        public SerializableRegistryOrigin() : base() { }
 
-        public SerializableRegistryOrigin( IRegistryOrigin copyFrom )
+        public SerializableRegistryOrigin( IRegistryOrigin copyFrom ) : base( copyFrom )
         {
             this.Mode = EnumHelper.GetStringFromEnum( copyFrom.Mode );
             this.SubKey = copyFrom.SubKey;
