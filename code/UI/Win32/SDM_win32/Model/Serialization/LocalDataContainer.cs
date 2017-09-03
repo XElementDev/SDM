@@ -7,6 +7,7 @@ using XElement.SDM.UI.Win32.Serialization;
 namespace XElement.SDM.UI.Win32.Model.Serialization
 {
 #region not unit-tested
+    //TODO: Split local user data from global user data.
     [Export]
     [Export( typeof( IAutoSaveTarget ) )]
     internal class LocalDataContainer : IAutoSaveTarget
