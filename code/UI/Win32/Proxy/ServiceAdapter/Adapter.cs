@@ -31,9 +31,8 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
         }
 
 
-        //  --> 2016-08-10, Ian:
+        //  --> 2017-09-03, Ian:
         //      Workaround because of 'https://github.com/acdvorak/named-pipe-wrapper/issues/7'.
-        //TODO:Check if issue is still present.
         private void CanStart_Workaround()
         {
             new NamedPipeServerStream( this._pipeName ).Dispose();
