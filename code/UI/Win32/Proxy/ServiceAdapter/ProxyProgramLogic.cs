@@ -20,7 +20,7 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
 
         private Client CreateClient()
         {
-            Client client = new Client( ClientServer.PIPE_NAME_ALL_USERS );
+            var client = new Client( ClientServer.PIPE_NAME_ALL_USERS );
             return client;
         }
 

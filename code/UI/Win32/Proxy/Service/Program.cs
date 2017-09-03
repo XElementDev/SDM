@@ -1,3 +1,5 @@
+using XElement.SDM.UI.Win32.Proxy.Logic;
+
 namespace XElement.SDM.UI.Win32.Proxy.Service
 {
 #region not unit-tested
@@ -6,12 +8,21 @@ namespace XElement.SDM.UI.Win32.Proxy.Service
     {
         static void Main( string[] args )
         {
-            var parser = new ArgsParser( args );
-
-            var server = new Logic.Server( parser.PipeName );
-            server.Start();
-            server.StayAlive();
+            var pipeName = new ArgsParser( args ).PipeName;
+            InitializeServer( pipeName );
         }
+
+
+
+        private static void InitializeServer( string pipeName )
+        {
+            _server = new Server( pipeName );
+            _server.Start();
+            _server.StayAlive();
+        }
+
+
+        private static Server _server;
     }
 #endregion
 }
