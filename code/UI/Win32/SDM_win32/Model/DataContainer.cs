@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Linq;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.UI.Win32.Model.Serialization;
 
@@ -38,17 +39,23 @@ namespace XElement.SDM.UI.Win32.Model
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         {
             var delayedApplications = new List<IProgramInfo>();
+            delayedApplications.AddRange( this._globalData.Data.DelayedApplications );
             delayedApplications.AddRange( this._localData.Data.DelayedApplications );
-            // TODO: add global data
             this.DelayedApplications = delayedApplications;
         }
 
 
         private void UpdatePrivateDataContainers()
         {
-            this._localData.Data = new Data { DelayedApplications = this.DelayedApplications };
+            var global = this.DelayedApplications.Where( pi => pi.Origin.IsForAllUsers ).ToList();
+            var local = this.DelayedApplications.Where( pi => !pi.Origin.IsForAllUsers ).ToList();
+            this._globalData.Data = new Data { DelayedApplications = global };
+            this._localData.Data = new Data { DelayedApplications = local };
         }
 
+
+        [Import]
+        private GlobalDataContainer _globalData = null;
 
         [Import]
         private LocalDataContainer _localData = null;

@@ -117,6 +117,7 @@
     <Compile Include="Bootstrapping\Bootstrapper.cs" />
     <Compile Include="Model\AutoSave\ModelDependencies.cs" />
     <Compile Include="Model\Events\Events.cs" />
+    <Compile Include="Model\Serialization\GlobalDataContainer.cs" />
     <Compile Include="Windows\TaskbarIconWindow.xaml.cs">
       <DependentUpon>TaskbarIconWindow.xaml</DependentUpon>
     </Compile>
