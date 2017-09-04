@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.DelayLogic;
