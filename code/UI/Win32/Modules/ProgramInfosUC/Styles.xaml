@@ -3,6 +3,9 @@
 
     <Style TargetType="ListBox">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+
+        <!-- taken from https://stackoverflow.com/questions/7500446/listbox-item-that-stretches-to-width-of-listbox-but-not-past-the-width -->
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
     </Style>
 
 </ResourceDictionary>
