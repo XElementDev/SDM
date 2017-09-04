@@ -18,99 +18,115 @@
     </UserControl.Resources>
 
 
-    <StackPanel>
-        <Expander>
-            <Expander.Header>
-                <StackPanel 
-                            Orientation="Horizontal">
-                    <Image 
-                           Source="{StaticResource AllUsers}" 
-                           Visibility="{Binding Path=ShowAllUsersImage, 
-                                                Mode=OneTime, 
-                                                Converter={StaticResource BoolToVisibilityConverter}}" 
-                    />
-                    <Image 
-                           Source="{StaticResource CurrentUser}" 
-                           Visibility="{Binding Path=ShowCurrentUserImage, 
-                                                Mode=OneTime, 
-                                                Converter={StaticResource BoolToVisibilityConverter}}" 
-                    />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-                    <Image 
-                           Source="{Binding Path=AppInfoVM.Icon}" 
-                    />
+        <DockPanel 
+                   Grid.Row="0">
+            <Image 
+                   DockPanel.Dock="Left" 
+                   Source="{StaticResource AllUsers}" 
+                   Visibility="{Binding Path=ShowAllUsersImage, 
+                                        Mode=OneTime, 
+                                        Converter={StaticResource BoolToVisibilityConverter}}" 
+            />
+            <Image 
+                   DockPanel.Dock="Left" 
+                   Source="{StaticResource CurrentUser}" 
+                   Visibility="{Binding Path=ShowCurrentUserImage, 
+                                        Mode=OneTime, 
+                                        Converter={StaticResource BoolToVisibilityConverter}}" 
+            />
 
-                    <Label 
-                           Content="{Binding Path=AppInfoVM.Description}" 
-                    />
-                </StackPanel>
-            </Expander.Header>
+            <Image 
+                   DockPanel.Dock="Left" 
+                   Source="{Binding Path=AppInfoVM.Icon}" 
+            />
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="2*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+            <Label 
+                   DockPanel.Dock="Left" 
+                   Content="{Binding Path=AppInfoVM.Description}" 
+                   VerticalAlignment="Center" 
+            />
 
-                <Label 
-                       Grid.Column="0" Grid.Row="0" 
-                       Content="{Binding Path=Locale.ProgramInfoUC_ApplicationLabel_Content, 
-                                         Source={StaticResource XamlLocalization}}" 
-                />
-                <Label 
-                       Grid.Column="1" Grid.Row="0" 
-                       Content="TODO" 
-                />
+            <Expander x:Name="_expander" 
+                      DockPanel.Dock="Right" 
+                      IsExpanded="False" 
+                      HorizontalAlignment="Right" VerticalAlignment="Center" 
+            />
+        </DockPanel>
 
-                <Label 
-                       Grid.Column="0" Grid.Row="1" 
-                       Content="{Binding Path=Locale.ProgramInfoUC_OriginLabel_Content, 
-                                         Source={StaticResource XamlLocalization}}" 
-                />
+        <Grid 
+              Grid.Row="1" 
+              Visibility="{Binding ElementName=_expander, 
+                                   Path=IsExpanded, 
+                                   Converter={StaticResource BoolToVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-                <Label 
-                       Grid.Column="1" Grid.Row="1" 
-                       Content="{Binding Path=Model.ProgramInfo.Origin.Location, Mode=OneWay}" 
-                />
+            <Label 
+                   Grid.Column="0" Grid.Row="0" 
+                   Content="{Binding Path=Locale.ProgramInfoUC_ApplicationLabel_Content, 
+                                     Source={StaticResource XamlLocalization}}" 
+            />
+            <Label 
+                   Grid.Column="1" Grid.Row="0" 
+                   Content="TODO" 
+            />
 
-                <Label 
-                       Grid.Column="0" Grid.Row="2" 
-                       Content="{Binding Path=Locale.ProgramInfoUC_TargetLabel_Content, 
-                                         Source={StaticResource XamlLocalization}}" 
-                />
-                <Label 
-                       Grid.Column="1" Grid.Row="2" 
-                       Content="{Binding Path=Model.ProgramInfo.StartInfo.FilePath, Mode=OneWay}" 
-                />
+            <Label 
+                   Grid.Column="0" Grid.Row="1" 
+                   Content="{Binding Path=Locale.ProgramInfoUC_OriginLabel_Content, 
+                                     Source={StaticResource XamlLocalization}}" 
+            />
 
-                <Label 
-                       Grid.Column="0" Grid.Row="3" 
-                       Content="{Binding Path=Locale.ProgramInfoUC_ArgumentsLabel_Content, 
-                                         Source={StaticResource XamlLocalization}}" 
-                />
-                <Label 
-                       Grid.Column="1" Grid.Row="3" 
-                       Content="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
-                />
+            <Label 
+                   Grid.Column="1" Grid.Row="1" 
+                   Content="{Binding Path=Model.ProgramInfo.Origin.Location, Mode=OneWay}" 
+            />
 
-                <Label 
-                       Grid.Column="0" Grid.Row="4" 
-                       Content="{Binding Path=Locale.ProgramInfoUC_CompanyLabel_Content, 
-                                         Source={StaticResource XamlLocalization}}" 
-                />
-                <Label 
-                       Grid.Column="1" Grid.Row="4" 
-                       Content="{Binding Path=AppInfoVM.Company}" 
-                />
-            </Grid>
-        </Expander>
-    </StackPanel>
+            <Label 
+                   Grid.Column="0" Grid.Row="2" 
+                   Content="{Binding Path=Locale.ProgramInfoUC_TargetLabel_Content, 
+                                     Source={StaticResource XamlLocalization}}" 
+            />
+            <Label 
+                   Grid.Column="1" Grid.Row="2" 
+                   Content="{Binding Path=Model.ProgramInfo.StartInfo.FilePath, Mode=OneWay}" 
+            />
+
+            <Label 
+                   Grid.Column="0" Grid.Row="3" 
+                   Content="{Binding Path=Locale.ProgramInfoUC_ArgumentsLabel_Content, 
+                                     Source={StaticResource XamlLocalization}}" 
+            />
+            <Label 
+                   Grid.Column="1" Grid.Row="3" 
+                   Content="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
+            />
+
+            <Label 
+                   Grid.Column="0" Grid.Row="4" 
+                   Content="{Binding Path=Locale.ProgramInfoUC_CompanyLabel_Content, 
+                                     Source={StaticResource XamlLocalization}}" 
+            />
+            <Label 
+                   Grid.Column="1" Grid.Row="4" 
+                   Content="{Binding Path=AppInfoVM.Company}" 
+            />
+        </Grid>
+    </Grid>
 
 </UserControl>
