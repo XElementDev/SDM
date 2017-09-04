@@ -12,6 +12,7 @@
     <Style x:Key="_buttonBase" TargetType="Button">
         <Setter Property="Grid.Column" Value="1" />
         <Setter Property="Height" Value="40" />
+        <Setter Property="Margin" Value="4 2" />
         <Setter Property="Width" Value="40" />
     </Style>
 
