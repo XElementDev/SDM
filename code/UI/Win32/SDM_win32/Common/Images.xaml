@@ -2,6 +2,16 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:local="clr-namespace:XElement.SDM.UI.Win32.LocalCommon">
 
+    <!-- http://flaticons.net/customize.php?dir=Mobile%20Application&icon=Next.png -->
+    <BitmapImage x:Key="DelayStartupImage" 
+                 UriSource="../Resources/Next_d48-p8_000000.png" 
+    />
+
+    <!-- http://flaticons.net/customize.php?dir=Mobile%20Application&icon=Previous.png -->
+    <BitmapImage x:Key="PromoteStartupImage" 
+                 UriSource="../Resources/Previous_d48-p8_000000.png" 
+    />
+
     <!-- http://www.iconarchive.com/show/windows-8-metro-icons-by-dakirby309/Apps-Aero-WinFlip-3D-Metro-icon.html -->
     <BitmapImage x:Key="TaskbarIconIco" 
                  UriSource="../Resources/Dakirby309-Windows-8-Metro-Apps-Aero-WinFlip-3D-Metro.ico" 

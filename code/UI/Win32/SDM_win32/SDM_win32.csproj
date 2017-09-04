@@ -254,7 +254,10 @@
       <Name>Serialization.Interface</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Next_d48-p8_000000.png" />
+    <Resource Include="Resources\Previous_d48-p8_000000.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Dakirby309-Windows-8-Metro-Apps-Aero-WinFlip-3D-Metro.ico" />
   </ItemGroup>

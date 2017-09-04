@@ -4,6 +4,11 @@
 
                     xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules;assembly=XElement.SDM.UI.Win32.Modules.ProgramInfosUC">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../../Common/Images.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
     <Style x:Key="_buttonBase" TargetType="Button">
         <Setter Property="Grid.Column" Value="1" />
         <Setter Property="Height" Value="40" />
@@ -18,7 +23,13 @@
 
 
     <Style x:Key="DoCommandStyle" TargetType="Button" BasedOn="{StaticResource _buttonBase}">
-        <Setter Property="Content" Value="--&gt;" />
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image 
+                       Source="{StaticResource DelayStartupImage}" 
+                />
+            </Setter.Value>
+        </Setter>
         <Setter Property="Grid.Row" Value="1" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
     </Style>
@@ -32,7 +43,13 @@
     </Style>
 
     <Style x:Key="UndoCommandStyle" TargetType="Button" BasedOn="{StaticResource _buttonBase}">
-        <Setter Property="Content" Value="&lt;--" />
+        <Setter Property="Content">
+            <Setter.Value>
+                <Image 
+                       Source="{StaticResource PromoteStartupImage}" 
+                />
+            </Setter.Value>
+        </Setter>
         <Setter Property="Grid.Row" Value="2" />
         <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
