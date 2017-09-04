@@ -13,7 +13,7 @@ namespace XElement.SDM.UI.Win32.Model
         public DelayModel() { }
 
 
-        //  --> TODO: Check/make sure that only deserialized applications are started here.
+        //TODO: Check/make sure that only deserialized applications are started here.
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         {
             var delayedStartups = new List<IDelayInfo>();
