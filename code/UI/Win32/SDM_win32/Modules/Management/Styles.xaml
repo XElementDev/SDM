@@ -1,6 +1,8 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-                    xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Modules.Management">
+                    xmlns:local="clr-namespace:XElement.SDM.UI.Win32.Modules.Management" 
+
+                    xmlns:modules="clr-namespace:XElement.SDM.UI.Win32.Modules;assembly=XElement.SDM.UI.Win32.Modules.ProgramInfosUC">
 
     <Style x:Key="_buttonBase" TargetType="Button">
         <Setter Property="Grid.Column" Value="1" />
@@ -9,15 +11,29 @@
     </Style>
 
 
+    <Style TargetType="modules:ProgramInfosUC">
+        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.RowSpan" Value="2" />
+    </Style>
+
+
     <Style x:Key="DoCommandStyle" TargetType="Button" BasedOn="{StaticResource _buttonBase}">
         <Setter Property="Content" Value="--&gt;" />
-        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="Grid.Row" Value="1" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+
+    <Style x:Key="HeaderStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="Margin" Value="8 0 0 0" />
     </Style>
 
     <Style x:Key="UndoCommandStyle" TargetType="Button" BasedOn="{StaticResource _buttonBase}">
         <Setter Property="Content" Value="&lt;--" />
-        <Setter Property="Grid.Row" Value="1" />
+        <Setter Property="Grid.Row" Value="2" />
         <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
 

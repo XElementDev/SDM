@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ManagementUC_OsLabel_Content" xml:space="preserve">
+    <value>Managed by operating system</value>
+    <comment>// 2017-09-04</comment>
+  </data>
+  <data name="ManagementUC_SdmLabel_Content" xml:space="preserve">
+    <value>Managed by this application</value>
+    <comment>// 2017-09-04</comment>
+  </data>
   <data name="ProgramInfoUC_ApplicationLabel_Content" xml:space="preserve">
     <value>Application title:</value>
     <comment>// 2017-07-27</comment>

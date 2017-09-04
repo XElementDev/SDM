@@ -82,6 +82,10 @@
       <Project>{9BDDE43E-7458-476D-980C-C2B32566B129}</Project>
       <Name>StartupInfo.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{bdfec72b-bfc8-428a-a58c-c328e5ab3d53}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SDM_win32\SDM_win32.csproj">
       <Project>{120b5863-0e3d-4a41-8615-eae31b64b482}</Project>
       <Name>SDM_win32</Name>
