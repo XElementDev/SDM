@@ -19,6 +19,10 @@ namespace XElement.SDM.UI.Win32.Modules.Main
 
         [Import]
         public DelayModel DelayModel { get; set; }
+
+
+        [Import]
+        public StartupRegistration StartupRegistration { get; set; }
         #endregion
     }
 #endregion

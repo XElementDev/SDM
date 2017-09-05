@@ -119,6 +119,10 @@
     <Compile Include="Model\Events\Events.cs" />
     <Compile Include="Model\Serialization\AbstractDataContainer.cs" />
     <Compile Include="Model\Serialization\GlobalDataContainer.cs" />
+    <Compile Include="Model\StartupRegistry\FileOriginDTO.cs" />
+    <Compile Include="Model\StartupRegistry\ProgramInfoDTO.cs" />
+    <Compile Include="Model\StartupRegistry\StartInfoDTO.cs" />
+    <Compile Include="Model\StartupRegistry\StartupRegistration.cs" />
     <Compile Include="Windows\TaskbarIconWindow.xaml.cs">
       <DependentUpon>TaskbarIconWindow.xaml</DependentUpon>
     </Compile>
