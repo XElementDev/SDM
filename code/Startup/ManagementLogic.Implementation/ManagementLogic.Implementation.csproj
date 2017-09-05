@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileProgramLogic.cs" />
+    <Compile Include="AbstractProgramLogic.cs" />
     <Compile Include="ProgramLogicFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistryProgramLogic.cs" />

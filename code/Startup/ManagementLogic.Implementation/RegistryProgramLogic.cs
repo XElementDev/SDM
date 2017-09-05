@@ -4,21 +4,12 @@ using XElement.DotNet.System.Environment.Startup;
 namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
-    internal class RegistryProgramLogic : IProgramLogic
+    internal class RegistryProgramLogic : AbstractProgramLogic, IProgramLogic
     {
-        public RegistryProgramLogic( IProgramInfo programInfo )
-        {
-            this._programInfo = programInfo;
-        }
+        public RegistryProgramLogic( IProgramInfo programInfo ) : base( programInfo ) { }
 
 
-        public void /*IProgramLogic.*/DelayStartup()
-        {
-            this.Do();
-        }
-
-
-        public void /*IProgramLogic.*/Do()
+        public override void /*AbstractProgramLogic.*/DelayStartup()
         {
             this.SubKey.DeleteValue( this.Origin.ValueName );
         }
@@ -30,9 +21,11 @@ namespace XElement.SDM.ManagementLogic
         }
 
 
-        public void /*IProgramLogic.*/PromoteStartup()
+        public override void /*AbstractProgramLogic.*/PromoteStartup()
         {
-            this.Undo();
+            var startInfo = this._programInfo.StartInfo;
+            string value = $"\"{startInfo.FilePath}\" {startInfo.Arguments}";
+            this.SubKey.SetValue( this.Origin.ValueName, value );
         }
 
 
@@ -45,17 +38,6 @@ namespace XElement.SDM.ManagementLogic
                 return subKey;
             }
         }
-
-
-        public void /*IProgramLogic.*/Undo()
-        {
-            var startInfo = this._programInfo.StartInfo;
-            string value = $"\"{startInfo.FilePath}\" {startInfo.Arguments}";
-            this.SubKey.SetValue( this.Origin.ValueName, value );
-        }
-
-
-        private IProgramInfo _programInfo;
     }
 #endregion
 }

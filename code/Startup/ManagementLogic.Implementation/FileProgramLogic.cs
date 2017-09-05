@@ -5,21 +5,12 @@ using XElement.DotNet.System.Environment.Startup;
 namespace XElement.SDM.ManagementLogic
 {
 #region not unit-tested
-    internal class FileProgramLogic : IProgramLogic
+    internal class FileProgramLogic : AbstractProgramLogic, IProgramLogic
     {
-        public FileProgramLogic( IProgramInfo programInfo )
-        {
-            this._programInfo = programInfo;
-        }
+        public FileProgramLogic( IProgramInfo programInfo ) : base( programInfo ) { }
 
 
-        public void /*IProgramLogic.*/DelayStartup()
-        {
-            this.Do();
-        }
-
-
-        public void /*IProgramLogic.*/Do()
+        public override void /*AbstractProgramLogic.*/DelayStartup()
         {
             var fileName = this._programInfo.Origin.Location;
             var fileInfo = new FileInfo( fileName );
@@ -27,14 +18,8 @@ namespace XElement.SDM.ManagementLogic
         }
 
 
-        public void /*IProgramLogic.*/PromoteStartup()
-        {
-            this.Undo();
-        }
-
-
         //  --> https://stackoverflow.com/questions/18023379/creating-a-file-shortcut-lnk
-        public void /*IProgramLogic.*/Undo()
+        public override void /*AbstractProgramLogic.*/PromoteStartup()
         {
             var fileName = this._programInfo.Origin.Location;
             var wsh = new IWshShell_Class();
@@ -43,9 +28,6 @@ namespace XElement.SDM.ManagementLogic
             shortcut.Arguments = this._programInfo.StartInfo.Arguments;
             shortcut.Save();
         }
-
-
-        private IProgramInfo _programInfo;
     }
 #endregion
 }
