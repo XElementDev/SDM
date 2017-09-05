@@ -12,6 +12,12 @@ namespace XElement.SDM.ManagementLogic
         }
 
 
+        public void /*IProgramLogic.*/DelayStartup()
+        {
+            this.Do();
+        }
+
+
         public void /*IProgramLogic.*/Do()
         {
             this.SubKey.DeleteValue( this.Origin.ValueName );
@@ -21,6 +27,12 @@ namespace XElement.SDM.ManagementLogic
         private IRegistryOrigin Origin
         {
             get { return (IRegistryOrigin)this._programInfo.Origin; }
+        }
+
+
+        public void /*IProgramLogic.*/PromoteStartup()
+        {
+            this.Undo();
         }
 
 

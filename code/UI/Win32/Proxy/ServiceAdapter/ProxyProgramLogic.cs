@@ -37,10 +37,13 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
         }
 
 
-        public void /*IProgramLogic.*/Do()
+        public void /*IProgramLogic.*/DelayStartup()
         {
             this.Execute( CommandMethod.Do );
         }
+
+
+        public void /*IProgramLogic.*/Do() { this.DelayStartup(); }
 
 
         private void Execute( CommandMethod cmdMethod )
@@ -48,6 +51,12 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
             this.TryLaunchServer();
             var client = this.CreateClient();
             client.PlayBack( this.CreateMessage( cmdMethod ) );
+        }
+
+
+        public void /*IProgramLogic.*/PromoteStartup()
+        {
+            this.Execute( CommandMethod.Undo );
         }
 
 
@@ -61,10 +70,7 @@ namespace XElement.SDM.UI.Win32.Proxy.ServiceAdapter
         }
 
 
-        public void /*IProgramLogic.*/Undo()
-        {
-            this.Execute( CommandMethod.Undo );
-        }
+        public void /*IProgramLogic.*/Undo() { this.PromoteStartup(); }
 
 
         private IProgramInfo _programInfo;

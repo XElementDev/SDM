@@ -13,11 +13,23 @@ namespace XElement.SDM.ManagementLogic
         }
 
 
+        public void /*IProgramLogic.*/DelayStartup()
+        {
+            this.Do();
+        }
+
+
         public void /*IProgramLogic.*/Do()
         {
             var fileName = this._programInfo.Origin.Location;
             var fileInfo = new FileInfo( fileName );
             fileInfo.Delete();
+        }
+
+
+        public void /*IProgramLogic.*/PromoteStartup()
+        {
+            this.Undo();
         }
 
 
