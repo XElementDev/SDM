@@ -76,55 +76,55 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label 
-                   Grid.Column="0" Grid.Row="0" 
-                   Content="{Binding Path=Locale.ProgramInfoUC_ApplicationLabel_Content, 
-                                     Source={StaticResource XamlLocalization}}" 
+            <TextBlock 
+                       Grid.Column="0" Grid.Row="0" 
+                       Text="{Binding Path=Locale.ProgramInfoUC_ApplicationLabel_Content, 
+                                      Source={StaticResource XamlLocalization}}" 
             />
-            <Label 
-                   Grid.Column="1" Grid.Row="0" 
-                   Content="TODO" 
-            />
-
-            <Label 
-                   Grid.Column="0" Grid.Row="1" 
-                   Content="{Binding Path=Locale.ProgramInfoUC_OriginLabel_Content, 
-                                     Source={StaticResource XamlLocalization}}" 
+            <TextBlock 
+                       Grid.Column="1" Grid.Row="0" 
+                       Text="TODO" 
             />
 
-            <Label 
-                   Grid.Column="1" Grid.Row="1" 
-                   Content="{Binding Path=Model.ProgramInfo.Origin.Location, Mode=OneWay}" 
+            <TextBlock 
+                       Grid.Column="0" Grid.Row="1" 
+                       Text="{Binding Path=Locale.ProgramInfoUC_OriginLabel_Content, 
+                                      Source={StaticResource XamlLocalization}}" 
             />
 
-            <Label 
-                   Grid.Column="0" Grid.Row="2" 
-                   Content="{Binding Path=Locale.ProgramInfoUC_TargetLabel_Content, 
-                                     Source={StaticResource XamlLocalization}}" 
-            />
-            <Label 
-                   Grid.Column="1" Grid.Row="2" 
-                   Content="{Binding Path=Model.ProgramInfo.StartInfo.FilePath, Mode=OneWay}" 
+            <TextBlock 
+                       Grid.Column="1" Grid.Row="1" 
+                       Text="{Binding Path=Model.ProgramInfo.Origin.Location, Mode=OneWay}" 
             />
 
-            <Label 
-                   Grid.Column="0" Grid.Row="3" 
-                   Content="{Binding Path=Locale.ProgramInfoUC_ArgumentsLabel_Content, 
-                                     Source={StaticResource XamlLocalization}}" 
+            <TextBlock 
+                       Grid.Column="0" Grid.Row="2" 
+                       Text="{Binding Path=Locale.ProgramInfoUC_TargetLabel_Content, 
+                                      Source={StaticResource XamlLocalization}}" 
             />
-            <Label 
-                   Grid.Column="1" Grid.Row="3" 
-                   Content="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
+            <TextBlock 
+                       Grid.Column="1" Grid.Row="2" 
+                       Text="{Binding Path=Model.ProgramInfo.StartInfo.FilePath, Mode=OneWay}" 
             />
 
-            <Label 
-                   Grid.Column="0" Grid.Row="4" 
-                   Content="{Binding Path=Locale.ProgramInfoUC_CompanyLabel_Content, 
-                                     Source={StaticResource XamlLocalization}}" 
+            <TextBlock 
+                       Grid.Column="0" Grid.Row="3" 
+                       Text="{Binding Path=Locale.ProgramInfoUC_ArgumentsLabel_Content, 
+                                      Source={StaticResource XamlLocalization}}" 
             />
-            <Label 
-                   Grid.Column="1" Grid.Row="4" 
-                   Content="{Binding Path=AppInfoVM.Company}" 
+            <TextBlock 
+                       Grid.Column="1" Grid.Row="3" 
+                       Text="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
+            />
+
+            <TextBlock 
+                       Grid.Column="0" Grid.Row="4" 
+                       Text="{Binding Path=Locale.ProgramInfoUC_CompanyLabel_Content, 
+                                      Source={StaticResource XamlLocalization}}" 
+            />
+            <TextBlock 
+                       Grid.Column="1" Grid.Row="4" 
+                       Text="{Binding Path=AppInfoVM.Company}" 
             />
         </Grid>
     </Grid>
