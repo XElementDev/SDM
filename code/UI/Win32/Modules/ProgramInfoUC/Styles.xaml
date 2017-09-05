@@ -16,6 +16,11 @@
     <Style x:Key="ContentLabelStyle" 
            TargetType="TextBlock" 
            BasedOn="{StaticResource _textBlockStyleBase}">
+        <Setter 
+                Property="ToolTipService.ToolTip" 
+                Value="{Binding Path=Text, 
+                                RelativeSource={RelativeSource Self}}" 
+        />
     </Style>
 
     <Style x:Key="DescriptorLabelStyle" 
