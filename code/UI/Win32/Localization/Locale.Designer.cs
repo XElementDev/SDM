@@ -106,6 +106,15 @@ namespace XElement.SDM.UI.Win32.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        public static string ProgramInfoUC_NoCmdArguments_Text {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_NoCmdArguments_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Origin:.
         /// </summary>
         public static string ProgramInfoUC_OriginLabel_Content {

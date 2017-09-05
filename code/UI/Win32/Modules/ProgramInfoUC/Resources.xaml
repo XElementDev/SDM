@@ -10,6 +10,6 @@
 
 
     <uiCommon:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-    <!--<uiCommon:InversedBoolToVisibilityConverter x:Key="InversedBoolToVisibilityConverter" />-->
+    <uiCommon:InversedBoolToVisibilityConverter x:Key="InversedBoolToVisibilityConverter" />
 
 </ResourceDictionary>

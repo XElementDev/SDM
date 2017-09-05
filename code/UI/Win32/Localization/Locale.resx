@@ -137,6 +137,10 @@
     <value>Company:</value>
     <comment>// 2017-07-27</comment>
   </data>
+  <data name="ProgramInfoUC_NoCmdArguments_Text" xml:space="preserve">
+    <value>None</value>
+    <comment>// 2017-09-05</comment>
+  </data>
   <data name="ProgramInfoUC_OriginLabel_Content" xml:space="preserve">
     <value>Origin:</value>
     <comment>// 2017-07-27</comment>

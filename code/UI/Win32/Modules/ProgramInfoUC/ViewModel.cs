@@ -1,4 +1,6 @@
-﻿namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
+using System;
+
+namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
 {
 #region not unit-tested
     public class ViewModel
@@ -6,13 +8,26 @@
         public ViewModel( Model model )
         {
             this.Model = model;
-            var filePath = this.Model.ProgramInfo.StartInfo.FilePath;
-            this.AppInfoVM = new ApplicationInformationViewModel( filePath );
-            this.InitializeAdminPrivilegesInfo();
+            this.Initialize();
         }
 
 
         public ApplicationInformationViewModel AppInfoVM { get; private set; }
+
+
+        public bool HasCmdArguments { get; private set; }
+
+
+        private void Initialize()
+        {
+            var filePath = this.Model.ProgramInfo.StartInfo.FilePath;
+            this.AppInfoVM = new ApplicationInformationViewModel( filePath );
+
+            var cmdArgs = this.Model.ProgramInfo.StartInfo.Arguments.Trim() ?? String.Empty;
+            this.HasCmdArguments = cmdArgs != String.Empty;
+
+            this.InitializeAdminPrivilegesInfo();
+        }
 
 
         private void InitializeAdminPrivilegesInfo()

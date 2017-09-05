@@ -120,8 +120,20 @@
             />
             <TextBlock 
                        Grid.Column="1" Grid.Row="3" 
+                       Text="{Binding Path=Locale.ProgramInfoUC_NoCmdArguments_Text, 
+                                      Source={StaticResource XamlLocalization}}" 
+                       Style="{StaticResource DescriptorLabelStyle}" 
+                       Visibility="{Binding Path=HasCmdArguments, 
+                                            Mode=OneWay, 
+                                            Converter={StaticResource InversedBoolToVisibilityConverter}}" 
+            />
+            <TextBlock 
+                       Grid.Column="1" Grid.Row="3" 
                        Text="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
                        Style="{StaticResource ContentLabelStyle}" 
+                       Visibility="{Binding Path=HasCmdArguments, 
+                                            Mode=OneWay, 
+                                            Converter={StaticResource BoolToVisibilityConverter}}" 
             />
 
             <TextBlock 
