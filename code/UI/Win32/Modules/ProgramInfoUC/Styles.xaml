@@ -16,6 +16,8 @@
     <Style x:Key="ContentLabelStyle" 
            TargetType="TextBlock" 
            BasedOn="{StaticResource _textBlockStyleBase}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
         <Setter 
                 Property="ToolTipService.ToolTip" 
                 Value="{Binding Path=Text, 
