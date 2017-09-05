@@ -80,50 +80,60 @@
                        Grid.Column="0" Grid.Row="0" 
                        Text="{Binding Path=Locale.ProgramInfoUC_ApplicationLabel_Content, 
                                       Source={StaticResource XamlLocalization}}" 
+                       Style="{StaticResource DescriptorLabelStyle}" 
             />
             <TextBlock 
                        Grid.Column="1" Grid.Row="0" 
                        Text="TODO" 
+                       Style="{StaticResource ContentLabelStyle}" 
             />
 
             <TextBlock 
                        Grid.Column="0" Grid.Row="1" 
                        Text="{Binding Path=Locale.ProgramInfoUC_OriginLabel_Content, 
                                       Source={StaticResource XamlLocalization}}" 
+                       Style="{StaticResource DescriptorLabelStyle}" 
             />
             <TextBlock 
                        Grid.Column="1" Grid.Row="1" 
                        Text="{Binding Path=Model.ProgramInfo.Origin.Location, Mode=OneWay}" 
+                       Style="{StaticResource ContentLabelStyle}" 
             />
 
             <TextBlock 
                        Grid.Column="0" Grid.Row="2" 
                        Text="{Binding Path=Locale.ProgramInfoUC_TargetLabel_Content, 
                                       Source={StaticResource XamlLocalization}}" 
+                       Style="{StaticResource DescriptorLabelStyle}" 
             />
             <TextBlock 
                        Grid.Column="1" Grid.Row="2" 
                        Text="{Binding Path=Model.ProgramInfo.StartInfo.FilePath, Mode=OneWay}" 
+                       Style="{StaticResource ContentLabelStyle}" 
             />
 
             <TextBlock 
                        Grid.Column="0" Grid.Row="3" 
                        Text="{Binding Path=Locale.ProgramInfoUC_ArgumentsLabel_Content, 
                                       Source={StaticResource XamlLocalization}}" 
+                       Style="{StaticResource DescriptorLabelStyle}" 
             />
             <TextBlock 
                        Grid.Column="1" Grid.Row="3" 
                        Text="{Binding Path=Model.ProgramInfo.StartInfo.Arguments, Mode=OneWay}" 
+                       Style="{StaticResource ContentLabelStyle}" 
             />
 
             <TextBlock 
                        Grid.Column="0" Grid.Row="4" 
                        Text="{Binding Path=Locale.ProgramInfoUC_CompanyLabel_Content, 
                                       Source={StaticResource XamlLocalization}}" 
+                       Style="{StaticResource DescriptorLabelStyle}" 
             />
             <TextBlock 
                        Grid.Column="1" Grid.Row="4" 
                        Text="{Binding Path=AppInfoVM.Company}" 
+                       Style="{StaticResource ContentLabelStyle}" 
             />
         </Grid>
     </Grid>
