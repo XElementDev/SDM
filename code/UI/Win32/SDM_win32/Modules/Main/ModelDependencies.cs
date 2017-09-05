@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Composition;
+using System.ComponentModel.Composition;
 using XElement.SDM.UI.Win32.Model;
 using AutoSave = global::XElement.SDM.UI.Win32.Model.AutoSave;
 
