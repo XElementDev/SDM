@@ -38,7 +38,7 @@
     <Style x:Key="HeaderStyle" TargetType="Label">
         <Setter Property="FontSize" Value="20" />
         <Setter Property="FontWeight" Value="Light" />
-        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="Foreground" Value="DarkGray" />
         <Setter Property="Grid.Row" Value="0" />
         <Setter Property="Margin" Value="8 0 0 0" />
     </Style>

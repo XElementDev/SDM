@@ -26,6 +26,7 @@
     <Style x:Key="DescriptorLabelStyle" 
            TargetType="TextBlock" 
            BasedOn="{StaticResource _textBlockStyleBase}">
+        <Setter Property="Foreground" Value="DarkGray" />
     </Style>
 
 </ResourceDictionary>
