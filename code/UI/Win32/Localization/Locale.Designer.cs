@@ -81,27 +81,27 @@ namespace XElement.SDM.UI.Win32.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Application title:.
         /// </summary>
-        public static string ProgramInfoUC_ApplicationLabel_Content {
+        public static string ProgramInfoUC_ApplicationLabel_Text {
             get {
-                return ResourceManager.GetString("ProgramInfoUC_ApplicationLabel_Content", resourceCulture);
+                return ResourceManager.GetString("ProgramInfoUC_ApplicationLabel_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Arguments:.
         /// </summary>
-        public static string ProgramInfoUC_ArgumentsLabel_Content {
+        public static string ProgramInfoUC_ArgumentsLabel_Text {
             get {
-                return ResourceManager.GetString("ProgramInfoUC_ArgumentsLabel_Content", resourceCulture);
+                return ResourceManager.GetString("ProgramInfoUC_ArgumentsLabel_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Company:.
         /// </summary>
-        public static string ProgramInfoUC_CompanyLabel_Content {
+        public static string ProgramInfoUC_CompanyLabel_Text {
             get {
-                return ResourceManager.GetString("ProgramInfoUC_CompanyLabel_Content", resourceCulture);
+                return ResourceManager.GetString("ProgramInfoUC_CompanyLabel_Text", resourceCulture);
             }
         }
         
@@ -117,18 +117,18 @@ namespace XElement.SDM.UI.Win32.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Origin:.
         /// </summary>
-        public static string ProgramInfoUC_OriginLabel_Content {
+        public static string ProgramInfoUC_OriginLabel_Text {
             get {
-                return ResourceManager.GetString("ProgramInfoUC_OriginLabel_Content", resourceCulture);
+                return ResourceManager.GetString("ProgramInfoUC_OriginLabel_Text", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Target:.
         /// </summary>
-        public static string ProgramInfoUC_TargetLabel_Content {
+        public static string ProgramInfoUC_TargetLabel_Text {
             get {
-                return ResourceManager.GetString("ProgramInfoUC_TargetLabel_Content", resourceCulture);
+                return ResourceManager.GetString("ProgramInfoUC_TargetLabel_Text", resourceCulture);
             }
         }
         

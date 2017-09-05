@@ -125,15 +125,15 @@
     <value>Managed by this application</value>
     <comment>// 2017-09-04</comment>
   </data>
-  <data name="ProgramInfoUC_ApplicationLabel_Content" xml:space="preserve">
+  <data name="ProgramInfoUC_ApplicationLabel_Text" xml:space="preserve">
     <value>Application title:</value>
     <comment>// 2017-07-27</comment>
   </data>
-  <data name="ProgramInfoUC_ArgumentsLabel_Content" xml:space="preserve">
+  <data name="ProgramInfoUC_ArgumentsLabel_Text" xml:space="preserve">
     <value>Arguments:</value>
     <comment>// 2017-07-27</comment>
   </data>
-  <data name="ProgramInfoUC_CompanyLabel_Content" xml:space="preserve">
+  <data name="ProgramInfoUC_CompanyLabel_Text" xml:space="preserve">
     <value>Company:</value>
     <comment>// 2017-07-27</comment>
   </data>
@@ -141,11 +141,11 @@
     <value>None</value>
     <comment>// 2017-09-05</comment>
   </data>
-  <data name="ProgramInfoUC_OriginLabel_Content" xml:space="preserve">
+  <data name="ProgramInfoUC_OriginLabel_Text" xml:space="preserve">
     <value>Origin:</value>
     <comment>// 2017-07-27</comment>
   </data>
-  <data name="ProgramInfoUC_TargetLabel_Content" xml:space="preserve">
+  <data name="ProgramInfoUC_TargetLabel_Text" xml:space="preserve">
     <value>Target:</value>
     <comment>// 2017-07-27</comment>
   </data>
