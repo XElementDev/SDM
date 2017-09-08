@@ -38,6 +38,9 @@
   <PropertyGroup>
     <StartupObject>XElement.SDM.UI.Win32.Bootstrapping.App</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>..\..\..\..\assets\icon\SDM.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
@@ -263,7 +266,9 @@
     <Resource Include="Resources\Previous_d48-p8_000000.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Dakirby309-Windows-8-Metro-Apps-Aero-WinFlip-3D-Metro.ico" />
+    <Resource Include="..\..\..\..\assets\icon\SDM.ico">
+      <Link>Resources\SDM.ico</Link>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
