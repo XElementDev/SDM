@@ -45,11 +45,15 @@
         <Button 
                 Command="{Binding Path=DelayStartupCommand}" 
                 CommandParameter="{Binding Path=StartupProgramInfosVM.SelectedProgramInfoVM}" 
+                ToolTip="{Binding Path=Locale.ManagementUC_DelayButton_ToolTip, 
+                                  Source={StaticResource XamlLocalization}}" 
                 Style="{StaticResource DoCommandStyle}" 
         />
         <Button 
                 Command="{Binding Path=PromoteStartupCommand}" 
                 CommandParameter="{Binding Path=DelayedProgramInfosVM.SelectedProgramInfoVM}" 
+                ToolTip="{Binding Path=Locale.ManagementUC_PromoteButton_ToolTip, 
+                                  Source={StaticResource XamlLocalization}}" 
                 Style="{StaticResource UndoCommandStyle}" 
         />
 

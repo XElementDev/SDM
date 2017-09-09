@@ -61,11 +61,29 @@ namespace XElement.SDM.UI.Win32.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delay startup.
+        /// </summary>
+        public static string ManagementUC_DelayButton_ToolTip {
+            get {
+                return ResourceManager.GetString("ManagementUC_DelayButton_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Managed by operating system.
         /// </summary>
         public static string ManagementUC_OsLabel_Content {
             get {
                 return ResourceManager.GetString("ManagementUC_OsLabel_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Promote startup.
+        /// </summary>
+        public static string ManagementUC_PromoteButton_ToolTip {
+            get {
+                return ResourceManager.GetString("ManagementUC_PromoteButton_ToolTip", resourceCulture);
             }
         }
         
