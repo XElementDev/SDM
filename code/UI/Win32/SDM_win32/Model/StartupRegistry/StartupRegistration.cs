@@ -2,7 +2,6 @@ using System;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
@@ -17,6 +16,7 @@ namespace XElement.SDM.UI.Win32.Model
     {
         private StartupRegistration()
         {
+            this._appInfoAccessor = null;
             this._programLogicFactory = null;
             this._startupInfo = null;
         }
@@ -54,22 +54,17 @@ namespace XElement.SDM.UI.Win32.Model
             var startInfo = new StartInfoDTO
             {
                 Arguments = String.Empty, 
-                FilePath = this.GetFilePath()
+                FilePath = this._appInfoAccessor.FilePath
             };
             return startInfo;
-        }
-
-
-        private string GetFilePath()
-        {
-            return Assembly.GetExecutingAssembly().Location;
         }
 
 
         private bool IsStartup()
         {
             var programInfos = this._startupInfo.Retrieve();
-            bool isStartup = programInfos.Any( pi => pi.StartInfo.FilePath == this.GetFilePath() );
+            Func<string, bool> doFilePathsMatch = path => path == this._appInfoAccessor.FilePath;
+            bool isStartup = programInfos.Any( pi => doFilePathsMatch( pi.StartInfo.FilePath ) );
             return isStartup;
         }
 
@@ -96,6 +91,9 @@ namespace XElement.SDM.UI.Win32.Model
             }
         }
 
+
+        [Import]
+        private ApplicationInfoAccessor _appInfoAccessor;
 
         [Import]
         private IFactory<IProgramLogic, IProgramInfo> _programLogicFactory;

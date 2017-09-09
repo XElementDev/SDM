@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System;
+using System.Linq;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
 
@@ -11,11 +12,8 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         {
             this._dependencies = dependencies;
 
-            var delayed = new ProgramInfos.Model( parameters.DelayedProgramInfos );
-            this.DelayedProgramInfosModel = delayed;
-
-            var startup = new ProgramInfos.Model( parameters.StartupProgramInfos );
-            this.StartupProgramInfosModel = startup;
+            this.InitializeDelayedProgramInfosModel( parameters );
+            this.InitializeStartupProgramInfosModel( parameters );
 
             this.SubscribeEvents();
         }
@@ -37,6 +35,23 @@ namespace XElement.SDM.UI.Win32.Modules.Management
             var programLogic = this.CreateProgramLogic( programInfo );
             programLogic.Do();
             this.DelayedProgramInfosModel.Add( programInfo );
+        }
+
+
+        private void InitializeDelayedProgramInfosModel( ModelParameters parameters )
+        {
+            var model = new ProgramInfos.Model( parameters.DelayedProgramInfos );
+            this.DelayedProgramInfosModel = model;
+        }
+
+
+        private void InitializeStartupProgramInfosModel( ModelParameters parameters )
+        {
+            string appFilePath = this._dependencies.AppInfoAccessor.FilePath;
+            Func<IProgramInfo, bool> isThisApp = pi => pi.StartInfo.FilePath == appFilePath;
+            var filtered = parameters.StartupProgramInfos.Where( pi => !isThisApp( pi ) ).ToList();
+            var model = new ProgramInfos.Model( filtered );
+            this.StartupProgramInfosModel = model;
         }
 
 

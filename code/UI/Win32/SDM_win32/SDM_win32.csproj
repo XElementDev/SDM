@@ -118,6 +118,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapping\Bootstrapper.cs" />
+    <Compile Include="Model\ApplicationInfoAccessor.cs" />
     <Compile Include="Model\AutoSave\ModelDependencies.cs" />
     <Compile Include="Model\Events\Events.cs" />
     <Compile Include="Model\Serialization\AbstractDataContainer.cs" />

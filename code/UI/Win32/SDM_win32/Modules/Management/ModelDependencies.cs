@@ -15,6 +15,10 @@ namespace XElement.SDM.UI.Win32.Modules.Management
 
 
         [Import]
+        public ApplicationInfoAccessor AppInfoAccessor { get; set; }
+
+
+        [Import]
         public DataContainer DataContainer { get; set; }
 
 
