@@ -125,6 +125,10 @@
     <value>Managed by this application</value>
     <comment>// 2017-09-04</comment>
   </data>
+  <data name="ProgramInfoUC_AllUsersImage_ToolTip" xml:space="preserve">
+    <value>For all users</value>
+    <comment>// 2017-09-09</comment>
+  </data>
   <data name="ProgramInfoUC_ApplicationLabel_Text" xml:space="preserve">
     <value>Application title:</value>
     <comment>// 2017-07-27</comment>
@@ -136,6 +140,10 @@
   <data name="ProgramInfoUC_CompanyLabel_Text" xml:space="preserve">
     <value>Company:</value>
     <comment>// 2017-07-27</comment>
+  </data>
+  <data name="ProgramInfoUC_CurrentUserImage_ToolTip" xml:space="preserve">
+    <value>For the current user</value>
+    <comment>// 2017-09-09</comment>
   </data>
   <data name="ProgramInfoUC_NoCmdArguments_Text" xml:space="preserve">
     <value>None</value>

@@ -32,6 +32,8 @@
                    Visibility="{Binding Path=ShowAllUsersImage, 
                                         Mode=OneTime, 
                                         Converter={StaticResource BoolToVisibilityConverter}}" 
+                   ToolTip="{Binding Path=Locale.ProgramInfoUC_AllUsersImage_ToolTip, 
+                                      Source={StaticResource XamlLocalization}}" 
             />
             <Image 
                    DockPanel.Dock="Left" 
@@ -39,6 +41,8 @@
                    Visibility="{Binding Path=ShowCurrentUserImage, 
                                         Mode=OneTime, 
                                         Converter={StaticResource BoolToVisibilityConverter}}" 
+                   ToolTip="{Binding Path=Locale.ProgramInfoUC_CurrentUserImage_ToolTip, 
+                                      Source={StaticResource XamlLocalization}}" 
             />
 
             <Image 

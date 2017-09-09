@@ -79,6 +79,15 @@ namespace XElement.SDM.UI.Win32.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For all users.
+        /// </summary>
+        public static string ProgramInfoUC_AllUsersImage_ToolTip {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_AllUsersImage_ToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Application title:.
         /// </summary>
         public static string ProgramInfoUC_ApplicationLabel_Text {
@@ -102,6 +111,15 @@ namespace XElement.SDM.UI.Win32.Localization {
         public static string ProgramInfoUC_CompanyLabel_Text {
             get {
                 return ResourceManager.GetString("ProgramInfoUC_CompanyLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For the current user.
+        /// </summary>
+        public static string ProgramInfoUC_CurrentUserImage_ToolTip {
+            get {
+                return ResourceManager.GetString("ProgramInfoUC_CurrentUserImage_ToolTip", resourceCulture);
             }
         }
         
