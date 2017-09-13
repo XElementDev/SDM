@@ -32,8 +32,8 @@ namespace XElement.SDM.UI.Win32.Model
         //void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         //{
         //    var delayedApplications = new List<IDelayedApplicationInfo>();
+        //    delayedApplications.AddRange( this._globalData.Data.DelayedApplications );
         //    delayedApplications.AddRange( this._localData.Data.DelayedApplications );
-        //    // TODO: add global data
         //    this.DelayedApplications = delayedApplications;
         //}
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
