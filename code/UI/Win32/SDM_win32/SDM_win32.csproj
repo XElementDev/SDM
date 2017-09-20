@@ -127,6 +127,8 @@
     <Compile Include="Model\StartupRegistry\ProgramInfoDTO.cs" />
     <Compile Include="Model\StartupRegistry\StartInfoDTO.cs" />
     <Compile Include="Model\StartupRegistry\StartupRegistration.cs" />
+    <Compile Include="Modules\About\Model.cs" />
+    <Compile Include="Modules\About\ViewModel.cs" />
     <Compile Include="Windows\TaskbarIconWindow.xaml.cs">
       <DependentUpon>TaskbarIconWindow.xaml</DependentUpon>
     </Compile>
@@ -271,5 +273,6 @@
       <Link>Resources\SDM.ico</Link>
     </Resource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
