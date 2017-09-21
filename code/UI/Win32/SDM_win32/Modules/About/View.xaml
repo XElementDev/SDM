@@ -9,6 +9,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Common/Images.xaml" />
                 <ResourceDictionary Source="./Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -17,6 +18,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -54,6 +56,23 @@
                 </TextBlock>
             </StackPanel>
         </GroupBox>
+
+        <TextBlock 
+                   Grid.Column="0" Grid.Row="2" 
+                   Margin="0 4 0 0">
+            <Span>
+                <Image 
+                       Source="{StaticResource GitHub_Mark}" 
+                       Height="32" Width="32" 
+                       Margin="0 0 4 0" 
+                />
+                <Run Text="Visit us on" />
+                <Hyperlink NavigateUri="https://github.com/XElementDev/SDM" 
+                           RequestNavigate="Hyperlink_RequestNavigate">
+                    <Run Text="GitHub"/>
+                </Hyperlink>
+            </Span>
+        </TextBlock>
     </Grid>
 
 </UserControl>
