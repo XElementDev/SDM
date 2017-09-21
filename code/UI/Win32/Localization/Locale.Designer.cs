@@ -169,6 +169,15 @@ namespace XElement.SDM.UI.Win32.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About….
+        /// </summary>
+        public static string TaskbarIconUC_AboutMenuItem_Header {
+            get {
+                return ResourceManager.GetString("TaskbarIconUC_AboutMenuItem_Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to exit this application?.
         /// </summary>
         public static string TaskbarIconUC_ExitConfirmation_Caption {
