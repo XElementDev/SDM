@@ -9,7 +9,6 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../Common/Images.xaml" />
                 <ResourceDictionary Source="./Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -17,62 +16,50 @@
 
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        <StackPanel>
+            <GroupBox>
+                <StackPanel>
+                    <TextBlock 
+                               Text="{Binding Path=Model.ProductName, Mode=OneTime}" 
+                    />
 
-        <GroupBox 
-                  Grid.Column="0" Grid.Row="0">
-            <StackPanel>
-                <TextBlock 
-                           Text="{Binding Path=Model.ProductName, Mode=OneTime}" 
-                />
+                    <TextBlock 
+                               Text="{Binding Path=Version, Mode=OneTime}" 
+                    />
 
-                <TextBlock 
-                           Text="{Binding Path=Version, Mode=OneTime}" 
-                />
+                    <TextBlock 
+                               Text="{Binding Path=Model.Copyright, Mode=OneTime}" 
+                    />
+                </StackPanel>
+            </GroupBox>
 
-                <TextBlock 
-                           Text="{Binding Path=Model.Copyright, Mode=OneTime}" 
-                />
-            </StackPanel>
-        </GroupBox>
+            <GroupBox 
+                      Header="Credits:">
+                <StackPanel>
+                    <TextBlock>
+                        <Span>
+                            <Run Text="Thanks to" />
+                                <Hyperlink NavigateUri="http://flaticons.net/" 
+                                           RequestNavigate="Hyperlink_RequestNavigate">
+                                    <Run Text="FlatIcons"/>
+                                </Hyperlink>
+                        </Span>
+                    </TextBlock>
+                </StackPanel>
+            </GroupBox>
 
-        <GroupBox 
-                  Grid.Column="0" Grid.Row="1" 
-                  Header="Credits:">
-            <StackPanel>
-                <TextBlock>
-                    <Span>
-                        <Run Text="Thanks to" />
-                            <Hyperlink NavigateUri="http://flaticons.net/" 
-                                       RequestNavigate="Hyperlink_RequestNavigate">
-                                <Run Text="FlatIcons"/>
-                            </Hyperlink>
-                    </Span>
-                </TextBlock>
-            </StackPanel>
-        </GroupBox>
-
-        <TextBlock 
-                   Grid.Column="0" Grid.Row="2" 
-                   Margin="0 4 0 0">
-            <Span>
-                <Image 
-                       Source="{StaticResource GitHub_Mark}" 
-                       Height="32" Width="32" 
-                       Margin="0 0 4 0" 
-                />
-                <Run Text="Visit us on" />
-                <Hyperlink NavigateUri="https://github.com/XElementDev/SDM" 
-                           RequestNavigate="Hyperlink_RequestNavigate">
-                    <Run Text="GitHub"/>
-                </Hyperlink>
-            </Span>
-        </TextBlock>
+            <TextBlock 
+                       Margin="0 4 0 0">
+                <Span>
+                    <Image Style="{StaticResource GitHubLogoStyle}" />
+                    <Run Text="Visit us on" />
+                    <Hyperlink NavigateUri="https://github.com/XElementDev/SDM" 
+                               RequestNavigate="Hyperlink_RequestNavigate">
+                        <Run Text="GitHub"/>
+                    </Hyperlink>
+                </Span>
+            </TextBlock>
+        </StackPanel>
     </Grid>
 
 </UserControl>
