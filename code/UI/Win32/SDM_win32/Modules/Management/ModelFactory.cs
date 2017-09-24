@@ -4,24 +4,24 @@ using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 namespace XElement.SDM.UI.Win32.Modules.Management
 {
 #region not unit-tested
-    [Export( typeof( IFactory<Model, ModelParameters> ) )]
-    internal class ModelFactory : IFactory<Model, ModelParameters>
+    [Export( typeof( IFactory<ManagementModel, ManagementModelParameters> ) )]
+    internal class ManagementModelFactory : IFactory<ManagementModel, ManagementModelParameters>
     {
         [ImportingConstructor]
-        private ModelFactory()
+        private ManagementModelFactory()
         {
             this._dependencies = null;
         }
 
 
-        public Model /*IFactoryT2.*/Get( ModelParameters parameters )
+        public ManagementModel /*IFactoryT2.*/Get( ManagementModelParameters parameters )
         {
-            return new Model( parameters, this._dependencies );
+            return new ManagementModel( parameters, this._dependencies );
         }
 
 
         [Import]
-        private ModelDependencies _dependencies;
+        private MainModelDependencies _dependencies;
     }
 #endregion
 }

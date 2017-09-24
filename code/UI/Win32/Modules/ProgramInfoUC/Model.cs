@@ -3,9 +3,9 @@ using XElement.DotNet.System.Environment.Startup;
 namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
 {
 #region not unit-tested
-    public class Model
+    public class ProgramInfoModel
     {
-        public Model( IProgramInfo programInfo )
+        public ProgramInfoModel( IProgramInfo programInfo )
         {
             this.ProgramInfo = programInfo;
         }

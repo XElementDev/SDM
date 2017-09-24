@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
+using XElement.SDM.UI.Win32.Modules.Main;
 
 namespace XElement.SDM.UI.Win32
 {
@@ -53,7 +54,7 @@ namespace XElement.SDM.UI.Win32
 
             var instance = mefImport.Target.Get();
 
-            var actual = instance.DataContext as Modules.Main.ViewModel;
+            var actual = instance.DataContext as MainViewModel;
             Assert.IsNotNull( actual );
             Assert.AreSame( expected, actual );
         }
@@ -90,7 +91,7 @@ namespace XElement.SDM.UI.Win32
 
 
         private class MefImportTestHelper : 
-            MefTestUtils.ImportTestHelper<Modules.Main.ViewModel, ManagementWindow>
+            MefTestUtils.ImportTestHelper<MainViewModel, ManagementWindow>
         { }
     }
 }

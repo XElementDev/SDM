@@ -1,12 +1,13 @@
 using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.SDM.UI.Win32.Common;
+using XElement.SDM.UI.Win32.Modules.Main;
 
 namespace XElement.SDM.UI.Win32
 {
     [Export( typeof( IFactory<ManagementWindow> ) )]
     internal class ManagementWindowFactory : 
-        WindowFactoryBase<Modules.Main.ViewModel, ManagementWindow>, IFactory<ManagementWindow>
+        WindowFactoryBase<MainViewModel, ManagementWindow>, IFactory<ManagementWindow>
     {
         [ImportingConstructor]
         private ManagementWindowFactory() : base()
@@ -15,14 +16,14 @@ namespace XElement.SDM.UI.Win32
         }
 
 
-        protected override Modules.Main.ViewModel /*WindowFactoryBaseT2.*/ViewModel
+        protected override MainViewModel /*WindowFactoryBaseT2.*/ViewModel
         {
             get { return this._mainVM; }
         }
 
 
         [Import]
-        private Modules.Main.ViewModel _mainVM;
+        private MainViewModel _mainVM;
 
     }
 }

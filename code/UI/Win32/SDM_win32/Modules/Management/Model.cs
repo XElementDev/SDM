@@ -2,13 +2,15 @@ using System;
 using System.Linq;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.ManagementLogic;
+using XElement.SDM.UI.Win32.Modules.ProgramInfos;
 
 namespace XElement.SDM.UI.Win32.Modules.Management
 {
 #region not unit-tested
-    internal class Model
+    internal class ManagementModel
     {
-        public Model( ModelParameters parameters, ModelDependencies dependencies )
+        public ManagementModel( ManagementModelParameters parameters, 
+                                MainModelDependencies dependencies )
         {
             this._dependencies = dependencies;
 
@@ -26,7 +28,7 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         }
 
 
-        public ProgramInfos.Model DelayedProgramInfosModel { get; private set; }
+        public ProgramInfosModel DelayedProgramInfosModel { get; private set; }
 
 
         public void DelayStartup( IProgramInfo programInfo )
@@ -38,24 +40,24 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         }
 
 
-        private void InitializeDelayedProgramInfosModel( ModelParameters parameters )
+        private void InitializeDelayedProgramInfosModel( ManagementModelParameters parameters )
         {
-            var model = new ProgramInfos.Model( parameters.DelayedProgramInfos );
+            var model = new ProgramInfosModel( parameters.DelayedProgramInfos );
             this.DelayedProgramInfosModel = model;
         }
 
 
-        private void InitializeStartupProgramInfosModel( ModelParameters parameters )
+        private void InitializeStartupProgramInfosModel( ManagementModelParameters parameters )
         {
             string appFilePath = this._dependencies.AppInfoAccessor.FilePath;
             Func<IProgramInfo, bool> isThisApp = pi => pi.StartInfo.FilePath == appFilePath;
             var filtered = parameters.StartupProgramInfos.Where( pi => !isThisApp( pi ) ).ToList();
-            var model = new ProgramInfos.Model( filtered );
+            var model = new ProgramInfosModel( filtered );
             this.StartupProgramInfosModel = model;
         }
 
 
-        public ProgramInfos.Model StartupProgramInfosModel { get; private set; }
+        public ProgramInfosModel StartupProgramInfosModel { get; private set; }
 
 
         public void PromoteStartup( IProgramInfo programInfo )
@@ -78,7 +80,7 @@ namespace XElement.SDM.UI.Win32.Modules.Management
         }
 
 
-        private ModelDependencies _dependencies;
+        private MainModelDependencies _dependencies;
     }
 #endregion
 }

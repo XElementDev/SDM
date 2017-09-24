@@ -6,10 +6,10 @@ namespace XElement.SDM.UI.Win32.Modules.About
 {
 #region not unit-tested
     [Export]
-    internal class Model
+    internal class AboutModel
     {
         [ImportingConstructor]
-        private Model()
+        private AboutModel()
         {
             this.InitializeAssemblyInfos();
         }

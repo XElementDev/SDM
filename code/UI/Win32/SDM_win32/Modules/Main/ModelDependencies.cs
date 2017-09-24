@@ -1,20 +1,20 @@
 using System.ComponentModel.Composition;
 using XElement.SDM.UI.Win32.Model;
-using AutoSave = global::XElement.SDM.UI.Win32.Model.AutoSave;
+using XElement.SDM.UI.Win32.Model.AutoSave;
 
 namespace XElement.SDM.UI.Win32.Modules.Main
 {
 #region not unit-tested
     [Export]
-    internal class ModelDependencies
+    internal class MainModelDependencies
     {
         [ImportingConstructor]
-        public ModelDependencies() { }
+        public MainModelDependencies() { }
 
 
         #region import-only
         [Import]
-        public AutoSave.Model AutoSaveModel { get; set; }
+        public AutoSaveModel AutoSaveModel { get; set; }
 
 
         [Import]

@@ -8,10 +8,10 @@ namespace XElement.SDM.UI.Win32.Modules.Management
 {
 #region not unit-tested
     [Export]
-    internal class ModelDependencies
+    internal class MainModelDependencies
     {
         [ImportingConstructor]
-        public ModelDependencies() { }
+        public MainModelDependencies() { }
 
 
         [Import]

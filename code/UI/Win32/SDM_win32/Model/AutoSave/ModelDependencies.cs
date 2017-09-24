@@ -5,10 +5,10 @@ namespace XElement.SDM.UI.Win32.Model.AutoSave
 {
 #region not unit-tested
     [Export]
-    internal class ModelDependencies
+    internal class AutoSaveModelDependencies
     {
         [ImportingConstructor]
-        public ModelDependencies() { }
+        public AutoSaveModelDependencies() { }
 
 
         [Import]

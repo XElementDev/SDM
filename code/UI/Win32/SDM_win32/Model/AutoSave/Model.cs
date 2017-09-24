@@ -6,10 +6,10 @@ namespace XElement.SDM.UI.Win32.Model.AutoSave
 {
 #region not unit-tested
     [Export]
-    internal class Model : IPartImportsSatisfiedNotification
+    internal class AutoSaveModel : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
-        public Model( ModelDependencies dependencies )
+        public AutoSaveModel( AutoSaveModelDependencies dependencies )
         {
             this._dependencies = dependencies;
         }
@@ -41,7 +41,7 @@ namespace XElement.SDM.UI.Win32.Model.AutoSave
         private IEnumerable<IAutoSaveTarget> _autoSaveTargets = null;
 
 
-        private ModelDependencies _dependencies;
+        private AutoSaveModelDependencies _dependencies;
     }
 #endregion
 }

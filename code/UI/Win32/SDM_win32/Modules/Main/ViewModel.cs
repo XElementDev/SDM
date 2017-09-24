@@ -1,28 +1,29 @@
 using System.ComponentModel.Composition;
+using XElement.SDM.UI.Win32.Modules.Management;
 
 namespace XElement.SDM.UI.Win32.Modules.Main
 {
 #region not unit-tested
     [Export]
-    internal class ViewModel : IPartImportsSatisfiedNotification
+    internal class MainViewModel : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
-        public ViewModel( Model model )
+        public MainViewModel( MainModel model )
         {
             this._model = model;
         }
 
 
-        public Management.ViewModel ManagementVM { get; private set; }
+        public ManagementViewModel ManagementVM { get; private set; }
 
 
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         {
-            this.ManagementVM = new Management.ViewModel( this._model.ManagementModel );
+            this.ManagementVM = new ManagementViewModel( this._model.ManagementModel );
         }
 
 
-        private Model _model;
+        private MainModel _model;
     }
 #endregion
 }

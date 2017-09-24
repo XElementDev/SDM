@@ -78,7 +78,7 @@ namespace XElement.SDM.UI.Win32.Bootstrapping
         private IEventAggregator _eventAggregator;
 
         [Import]
-        private Modules.TaskbarIcon.ViewModel _taskbarIconVM = null;
+        private Modules.TaskbarIcon.TaskbarIconViewModel _taskbarIconVM = null;
     }
 #endregion
 }

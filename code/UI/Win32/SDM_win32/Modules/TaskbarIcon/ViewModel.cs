@@ -8,10 +8,10 @@ namespace XElement.SDM.UI.Win32.Modules.TaskbarIcon
 {
 #region not unit-tested
     [Export]
-    internal class ViewModel
+    internal class TaskbarIconViewModel
     {
         [ImportingConstructor]
-        private ViewModel()
+        private TaskbarIconViewModel()
         {
             this._aboutWindowFactory = null;
             this.InitializeCommands();
@@ -71,7 +71,7 @@ namespace XElement.SDM.UI.Win32.Modules.TaskbarIcon
         private IFactory<ManagementWindow> _mgmtWindowFactory = null;
 
         [Import]
-        private Modules.TaskbarIcon.Model _model = null;
+        private TaskbarIconModel _model = null;
     }
 #endregion
 }

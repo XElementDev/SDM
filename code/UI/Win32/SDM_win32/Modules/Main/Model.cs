@@ -2,28 +2,31 @@ using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 using XElement.DotNet.System.Environment.Startup;
 using XElement.SDM.UI.Win32.Model;
+using XElement.SDM.UI.Win32.Modules.Management;
 
 namespace XElement.SDM.UI.Win32.Modules.Main
 {
 #region not unit-tested
     [Export]
-    internal class Model : IPartImportsSatisfiedNotification
+    internal class MainModel : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
-        public Model( ModelDependencies dependencies )
+        public MainModel( MainModelDependencies dependencies )
         {
             this._dependencies = dependencies;
+
+            this._dataContainer = null;
             this._managementModelFactory = null;
             this._startupInfo = null;
         }
 
 
-        public Management.Model ManagementModel { get; private set; }
+        public ManagementModel ManagementModel { get; private set; }
 
 
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()
         {
-            var mgmtParams = new Management.ModelParameters
+            var mgmtParams = new ManagementModelParameters
             {
                 DelayedProgramInfos = this._dataContainer.DelayedApplications, 
                 StartupProgramInfos = this._startupInfo.Retrieve()
@@ -34,16 +37,16 @@ namespace XElement.SDM.UI.Win32.Modules.Main
 
 
         [Import]
-        private DataContainer _dataContainer = null;
+        private DataContainer _dataContainer;
 
         [Import]
-        private IFactory<Management.Model, Management.ModelParameters> _managementModelFactory = null;
+        private IFactory<ManagementModel, ManagementModelParameters> _managementModelFactory;
 
         [Import]
-        private IStartupInfo _startupInfo = null;
+        private IStartupInfo _startupInfo;
 
 
-        private ModelDependencies _dependencies;
+        private MainModelDependencies _dependencies;
     }
 #endregion
 }

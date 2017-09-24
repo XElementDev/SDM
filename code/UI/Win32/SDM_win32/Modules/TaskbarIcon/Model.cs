@@ -5,10 +5,10 @@ namespace XElement.SDM.UI.Win32.Modules.TaskbarIcon
 {
 #region not unit-tested
     [Export]
-    internal class Model
+    internal class TaskbarIconModel
     {
         [ImportingConstructor]
-        private Model() { }
+        private TaskbarIconModel() { }
 
 
         public void ExitApplication()

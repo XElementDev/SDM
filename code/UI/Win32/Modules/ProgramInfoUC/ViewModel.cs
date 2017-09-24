@@ -4,9 +4,9 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
 {
 #region not unit-tested
     //TODO: Visiualize that a program has already been started
-    public class ViewModel
+    public class ProgramInfoViewModel
     {
-        public ViewModel( Model model )
+        public ProgramInfoViewModel( ProgramInfoModel model )
         {
             this.Model = model;
             this.Initialize();
@@ -38,7 +38,7 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfo
         }
 
 
-        public Model Model { get; private set; }
+        public ProgramInfoModel Model { get; private set; }
 
 
         public bool ShowAllUsersImage { get; private set; }

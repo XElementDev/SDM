@@ -53,7 +53,7 @@ namespace XElement.SDM.UI.Win32.Modules.About
 
             var instance = mefImport.Target.Get();
 
-            var actual = instance.DataContext as Modules.About.ViewModel;
+            var actual = instance.DataContext as AboutViewModel;
             Assert.IsNotNull( actual );
             Assert.AreSame( expected, actual );
         }
@@ -90,7 +90,7 @@ namespace XElement.SDM.UI.Win32.Modules.About
 
 
         private class MefImportTestHelper : 
-            MefTestUtils.ImportTestHelper<Modules.About.ViewModel, AboutWindow>
+            MefTestUtils.ImportTestHelper<AboutViewModel, AboutWindow>
         { }
     }
 }

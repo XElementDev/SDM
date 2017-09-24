@@ -42,9 +42,9 @@ namespace XElement.SDM.UI.Win32.Modules
         }
 
 
-        private TaskbarIcon.ViewModel TaskbarIconVM
+        private TaskbarIcon.TaskbarIconViewModel TaskbarIconVM
         {
-            get { return this.DataContext as TaskbarIcon.ViewModel; }
+            get { return this.DataContext as TaskbarIcon.TaskbarIconViewModel; }
         }
 
 

@@ -4,14 +4,14 @@ namespace XElement.SDM.UI.Win32.Modules.About
 {
 #region not unit-tested
     [Export]
-    internal class ViewModel : IPartImportsSatisfiedNotification
+    internal class AboutViewModel : IPartImportsSatisfiedNotification
     {
         [ImportingConstructor]
-        private ViewModel() { }
+        private AboutViewModel() { }
 
 
         [Import]
-        public Model Model { get; private set; }
+        public AboutModel Model { get; private set; }
 
 
         void IPartImportsSatisfiedNotification.OnImportsSatisfied()

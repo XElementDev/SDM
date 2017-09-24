@@ -2,14 +2,15 @@ using GalaSoft.MvvmLight;
 using PropertyChanged;
 using System.Collections.Generic;
 using System.Linq;
+using XElement.SDM.UI.Win32.Modules.ProgramInfo;
 
 namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
 {
 #region not unit-tested
     [AddINotifyPropertyChangedInterface]
-    public class ViewModel : ViewModelBase
+    public class ProgramInfosViewModel : ViewModelBase
     {
-        public ViewModel( Model model )
+        public ProgramInfosViewModel( ProgramInfosModel model )
         {
             this._model = model;
             this.InitializeProgramInfoVMs();
@@ -21,16 +22,16 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
         private void InitializeProgramInfoVMs()
         {
             var programInfoVMs = this._model.ProgramInfoModels
-                .Select( pim => new ProgramInfo.ViewModel( pim ) ).ToList();
+                .Select( pim => new ProgramInfoViewModel( pim ) ).ToList();
             this.ProgramInfoVMs = programInfoVMs;
         }
 
 
         [DoNotNotify]
-        public IEnumerable<ProgramInfo.ViewModel> ProgramInfoVMs { get; private set; }
+        public IEnumerable<ProgramInfoViewModel> ProgramInfoVMs { get; private set; }
 
 
-        public ProgramInfo.ViewModel SelectedProgramInfoVM { get; set; }
+        public ProgramInfoViewModel SelectedProgramInfoVM { get; set; }
 
 
         private void UpdateProgramInfoVMs()
@@ -40,7 +41,7 @@ namespace XElement.SDM.UI.Win32.Modules.ProgramInfos
         }
 
 
-        private Model _model;
+        private ProgramInfosModel _model;
     }
 #endregion
 }
