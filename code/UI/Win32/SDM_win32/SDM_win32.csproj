@@ -121,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ManagementWindow.xaml">
+    <Page Include="Modules\Management\Window.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -152,9 +152,9 @@
     <Compile Include="Modules\TaskbarIcon\Window.xaml.cs">
       <DependentUpon>Window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ManagementWindowFactory.cs" />
-    <Compile Include="Windows\ManagementWindow.xaml.cs">
-      <DependentUpon>ManagementWindow.xaml</DependentUpon>
+    <Compile Include="Modules\Management\WindowFactory.cs" />
+    <Compile Include="Modules\Management\Window.xaml.cs">
+      <DependentUpon>Window.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Modules\Main\View.xaml">
