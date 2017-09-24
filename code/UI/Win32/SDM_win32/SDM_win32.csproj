@@ -109,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Modules\About\Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\TaskbarIconWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -140,6 +144,9 @@
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\About\ViewModel.cs" />
+    <Compile Include="Modules\About\Window.xaml.cs">
+      <DependentUpon>Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\TaskbarIconWindow.xaml.cs">
       <DependentUpon>TaskbarIconWindow.xaml</DependentUpon>
     </Compile>
