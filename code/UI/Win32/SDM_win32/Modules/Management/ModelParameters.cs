@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using XElement.DotNet.System.Environment.Startup;
 
 namespace XElement.SDM.UI.Win32.Modules.Management

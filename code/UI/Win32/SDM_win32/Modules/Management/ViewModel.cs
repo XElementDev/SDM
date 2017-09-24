@@ -1,4 +1,4 @@
-﻿using GalaSoft.MvvmLight.CommandWpf;    // https://blog.jsinh.in/relay-command-canexecute-not-working-using-mvvmlight-toolkit-in-wpf/#.WQyFleXyhHY
+using GalaSoft.MvvmLight.CommandWpf;    // https://blog.jsinh.in/relay-command-canexecute-not-working-using-mvvmlight-toolkit-in-wpf/#.WQyFleXyhHY
 using System;
 using System.Linq;
 using System.Windows.Input;

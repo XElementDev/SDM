@@ -1,4 +1,4 @@
-﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight;
 using PropertyChanged;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Composition;
+using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
 
 namespace XElement.SDM.UI.Win32.Modules.Management

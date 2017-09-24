@@ -1,4 +1,4 @@
-﻿using Prism.Events;
+using Prism.Events;
 using System.ComponentModel.Composition;
 
 namespace XElement.SDM.UI.Win32.Model.AutoSave
