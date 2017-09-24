@@ -15,7 +15,7 @@ namespace XElement.SDM.UI.Win32.Modules.About
         }
 
 
-        protected override Modules.About.ViewModel ViewModel
+        protected override Modules.About.ViewModel /*WindowFactoryBaseT2.*/ViewModel
         {
             get { return this._aboutVM; }
         }
