@@ -130,6 +130,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapping\Bootstrapper.cs" />
+    <Compile Include="Common\WindowFactoryBaseT2.cs" />
     <Compile Include="Model\ApplicationInfoAccessor.cs" />
     <Compile Include="Model\AutoSave\ModelDependencies.cs" />
     <Compile Include="Model\Events\Events.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Modules\About\Window.xaml.cs">
       <DependentUpon>Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\About\WindowFactory.cs" />
     <Compile Include="Windows\TaskbarIconWindow.xaml.cs">
       <DependentUpon>TaskbarIconWindow.xaml</DependentUpon>
     </Compile>

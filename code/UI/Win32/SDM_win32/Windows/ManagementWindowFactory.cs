@@ -1,43 +1,28 @@
-﻿using System.ComponentModel.Composition;
+using System.ComponentModel.Composition;
 using XElement.DesignPatterns.CreationalPatterns.FactoryMethod;
+using XElement.SDM.UI.Win32.Common;
 
 namespace XElement.SDM.UI.Win32
 {
     [Export( typeof( IFactory<ManagementWindow> ) )]
-    internal class ManagementWindowFactory : IFactory<ManagementWindow>
+    internal class ManagementWindowFactory : 
+        WindowFactoryBase<Modules.Main.ViewModel, ManagementWindow>, IFactory<ManagementWindow>
     {
         [ImportingConstructor]
-        private ManagementWindowFactory()
+        private ManagementWindowFactory() : base()
         {
             this._mainVM = null;
-            this._previousMgmtWindow = null;
         }
 
 
-        public ManagementWindow /*IFactoryT1.*/Get()
+        protected override Modules.Main.ViewModel ViewModel
         {
-            bool notOpenedYet = this._previousMgmtWindow == null;
-            if ( notOpenedYet || this._hasWindowBeenClosed )
-            {
-                this._previousMgmtWindow = new ManagementWindow
-                {
-                    DataContext = this._mainVM
-                };
-                this._hasWindowBeenClosed = false;
-                this._previousMgmtWindow.Closed += ( s, e ) => this._hasWindowBeenClosed = true;
-            }
-
-            return this._previousMgmtWindow;
+            get { return this._mainVM; }
         }
 
 
         [Import]
         private Modules.Main.ViewModel _mainVM;
-
-
-        private bool _hasWindowBeenClosed;
-
-        private ManagementWindow _previousMgmtWindow;
 
     }
 }
