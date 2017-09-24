@@ -33,6 +33,12 @@
                     />
                     <Separator />
                     <MenuItem 
+                              Command="{Binding Path=ShowAboutWindowCommand}" 
+                              Header="{Binding Path=Locale.TaskbarIconUC_AboutMenuItem_Header, 
+                                               Source={StaticResource XamlLocalization}}" 
+                    />
+                    <Separator />
+                    <MenuItem 
                               Click="ExitMenuItem_Click" 
                               Header="{Binding Path=Locale.TaskbarIconUC_ExitMenuItem_Header, 
                                                Source={StaticResource XamlLocalization}}" 
