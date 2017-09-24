@@ -9,7 +9,7 @@ using System.Windows;
 [assembly: AssemblyTitle( "SDM_win32" )]
 [assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "" )]
+[assembly: AssemblyCompany( "XElement" )]
 [assembly: AssemblyProduct( "SDM" )]
 [assembly: AssemblyCopyright( "Copyright © XElement 2017" )]
 [assembly: AssemblyTrademark( "" )]
